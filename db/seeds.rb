@@ -10,16 +10,16 @@ puts 'Creating categories...'
 
 # file = URI.open(asset_path 'images/a0fxd7saxlav374ibgpfrt7ip416.jpg')
 
-cat_restaurant = Category.create!(name: "Restaurant")
+cat_restaurant = Category.create!(name: "Restaurants")
 # restaurant.photo.attach(io: File.open("app/assets/images/restaurant.jpeg"), filename: 'restaurant.jpeg', content_type: 'image/jpg')
 
-cat_gym = Category.create!(name: "Gym")
+cat_gym = Category.create!(name: "Gyms")
 # gym.photo.attach(io: File.open("app/assets/images/gym.jpeg"), filename: 'gym.jpeg', content_type: 'image/jpg')
 
-cat_park = Category.create!(name: "Park")
+cat_park = Category.create!(name: "Parks")
 # park.photo.attach(io: File.open("app/assets/images/park.jpeg"), filename: 'park.jpeg', content_type: 'image/jpg')
 
-cat_restroom = Category.create!(name: "Restroom")
+cat_restroom = Category.create!(name: "Restrooms")
 # restroom.photo.attach(io: File.open("app/assets/images/restroom.jpeg"), filename: 'restroom.jpeg', content_type: 'image/jpg')
 
 

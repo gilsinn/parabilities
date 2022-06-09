@@ -1,8 +1,9 @@
 <h1>Categories</h1>
+
 <div>
-  <ul>
-    <li><% @categories.each do |category| %>
-        <%= category.name %>
-    </li>
-  </ul>
+  <ol>
+    <%= @categories.each do |category| %>
+      <li><%= link_to category.name, categories_path(category.name) %></li>
+    <% end %>
+  </ol>
 </div>
