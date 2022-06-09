@@ -41,7 +41,7 @@ puts 'Creating ...gyms'
 
 10.times do
   Facility.create!(
-    name: "#{Faker::Ancient.hero} Gym",
+    name: "#{Faker::Games::Pokemon.move} Gym",
     address: Faker::Address.street_address,
     phone: Faker::PhoneNumber.phone_number,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
@@ -68,7 +68,7 @@ end
 puts 'Creating ...restrooms'
 10.times do
   Facility.create!(
-    name: "#{Faker::Address.street_name} Restroom",
+    name: "#{Faker::Movies::HarryPotter.location} Restroom",
     address: Faker::Address.street_address,
     phone: '',
     price_range: '',
