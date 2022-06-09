@@ -43,7 +43,7 @@ category4 = Category.new(name: "Restroom")
 category4.save!
 
 
-puts 'Creating facilities...restaurants'
+puts 'Creating ...restaurants'
 
 10.times do
   Facility.create!(
@@ -51,10 +51,48 @@ puts 'Creating facilities...restaurants'
     address: Faker::Internet.email,
     phone: Faker::,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
-    category: "Restaurants",
+    category: "Restaurant",
     verified_status: true,
     verified_date: Faker::
    )
 end
+
+puts 'Creating ...gyms'
+
+10.times do
+  Facility.create!(
+    name: Faker::Name.name,
+    address: Faker::Internet.email,
+    phone: Faker::,
+    price_range: ['$', '$$', '$$$', '$$$$'].sample,
+    category: "Gym",
+    verified_status: true,
+    verified_date: Faker::
+   )
+
+puts 'Creating ...parks'
+
+  10.times do
+  Facility.create!(
+    name: Faker::Name.name,
+    address: Faker::Internet.email,
+    phone: Faker::,
+    price_range: ['$', '$$', '$$$', '$$$$'].sample,
+    category: "Park",
+    verified_status: true,
+    verified_date: Faker::
+    )
+
+puts 'Creating ...restrooms'
+10.times do
+  Facility.create!(
+    name: Faker::Name.name,
+    address: Faker::Internet.email,
+    phone: Faker::,
+    price_range: ['$', '$$', '$$$', '$$$$'].sample,
+    category: "Restroom",
+    verified_status: true,
+    verified_date: Faker::
+    )
 
 puts "Seeding completed!"
