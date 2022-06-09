@@ -10,10 +10,115 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_08_042414) do
+ActiveRecord::Schema.define(version: 2022_06_09_040400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "channels", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "review_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["review_id"], name: "index_comments_on_review_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "cuisines", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "facilities", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.integer "phone"
+    t.string "price_range"
+    t.boolean "verified_status"
+    t.date "verified_date"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_facilities_on_category_id"
+  end
+
+  create_table "facility_cuisines", force: :cascade do |t|
+    t.bigint "facility_id", null: false
+    t.bigint "cuisine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cuisine_id"], name: "index_facility_cuisines_on_cuisine_id"
+    t.index ["facility_id"], name: "index_facility_cuisines_on_facility_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "channel_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["channel_id"], name: "index_messages_on_channel_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "opening_hours", force: :cascade do |t|
+    t.string "day"
+    t.string "hours"
+    t.bigint "facility_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["facility_id"], name: "index_opening_hours_on_facility_id"
+  end
+
+  create_table "rating_type_categories", force: :cascade do |t|
+    t.bigint "rating_type_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_rating_type_categories_on_category_id"
+    t.index ["rating_type_id"], name: "index_rating_type_categories_on_rating_type_id"
+  end
+
+  create_table "rating_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "review_ratings", force: :cascade do |t|
+    t.integer "rating"
+    t.bigint "rating_type_id", null: false
+    t.bigint "review_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["rating_type_id"], name: "index_review_ratings_on_rating_type_id"
+    t.index ["review_id"], name: "index_review_ratings_on_review_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.datetime "datetime"
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "facility_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["facility_id"], name: "index_reviews_on_facility_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +132,18 @@ ActiveRecord::Schema.define(version: 2022_06_08_042414) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "reviews"
+  add_foreign_key "comments", "users"
+  add_foreign_key "facilities", "categories"
+  add_foreign_key "facility_cuisines", "cuisines"
+  add_foreign_key "facility_cuisines", "facilities"
+  add_foreign_key "messages", "channels"
+  add_foreign_key "messages", "users"
+  add_foreign_key "opening_hours", "facilities"
+  add_foreign_key "rating_type_categories", "categories"
+  add_foreign_key "rating_type_categories", "rating_types"
+  add_foreign_key "review_ratings", "rating_types"
+  add_foreign_key "review_ratings", "reviews"
+  add_foreign_key "reviews", "facilities"
+  add_foreign_key "reviews", "users"
 end

@@ -26,30 +26,35 @@ puts 'Creating categories...'
 
 # file = URI.open(asset_path 'images/a0fxd7saxlav374ibgpfrt7ip416.jpg')
 
-restaurants = Category.new(name: "Restaurants")
-# restaurants.photo.attach(io: File.open("app/assets/images/restaurant.jpeg"), filename: 'restaurant.jpeg', content_type: 'image/jpg')
-restaurants.save!
+category1 = Category.new(name: "Restaurant")
+# restaurant.photo.attach(io: File.open("app/assets/images/restaurant.jpeg"), filename: 'restaurant.jpeg', content_type: 'image/jpg')
+category1.save!
 
-gyms = Category.new(name: "Gyms")
-# gyms.photo.attach(io: File.open("app/assets/images/gyms.jpeg"), filename: 'gyms.jpeg', content_type: 'image/jpg')
-gyms.save!
+category2 = Category.new(name: "Gym")
+# gym.photo.attach(io: File.open("app/assets/images/gym.jpeg"), filename: 'gym.jpeg', content_type: 'image/jpg')
+category2.save!
 
-parks = Category.new(name: "Parks")
-# parks.photo.attach(io: File.open("app/assets/images/parks.jpeg"), filename: 'parks.jpeg', content_type: 'image/jpg')
-parks.save!
+category3 = Category.new(name: "Park")
+# park.photo.attach(io: File.open("app/assets/images/park.jpeg"), filename: 'park.jpeg', content_type: 'image/jpg')
+category3.save!
 
-restrooms = Category.new(name: "Restrooms")
-# bathrooms.photo.attach(io: File.open("app/assets/images/bathrooms.jpeg"), filename: 'bathrooms.jpeg', content_type: 'image/jpg')
-bathrooms.save!
+category4 = Category.new(name: "Restroom")
+# restroom.photo.attach(io: File.open("app/assets/images/restroom.jpeg"), filename: 'restroom.jpeg', content_type: 'image/jpg')
+category4.save!
 
 
-puts 'Creating facilities...'
+puts 'Creating facilities...restaurants'
 
-20.times do
+10.times do
   Facility.create!(
     name: Faker::Name.name,
-    email: Faker::Internet.email,
-  )
+    address: Faker::Internet.email,
+    phone: Faker::,
+    price_range: ['$', '$$', '$$$', '$$$$'].sample,
+    category: "Restaurants",
+    verified_status: true,
+    verified_date: Faker::
+   )
 end
 
 puts "Seeding completed!"
