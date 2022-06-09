@@ -68,7 +68,7 @@ end
 puts 'Creating ...restrooms'
 10.times do
   Facility.create!(
-    name: '',
+    name: "#{Faker::Address.street_name} Restroom",
     address: Faker::Address.street_address,
     phone: '',
     price_range: '',
