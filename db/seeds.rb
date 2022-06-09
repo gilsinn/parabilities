@@ -38,7 +38,7 @@ parks = Category.new(name: "Parks")
 # parks.photo.attach(io: File.open("app/assets/images/parks.jpeg"), filename: 'parks.jpeg', content_type: 'image/jpg')
 parks.save!
 
-bathrooms = Category.new(name: "Bathrooms")
+restrooms = Category.new(name: "Restrooms")
 # bathrooms.photo.attach(io: File.open("app/assets/images/bathrooms.jpeg"), filename: 'bathrooms.jpeg', content_type: 'image/jpg')
 bathrooms.save!
 
