@@ -1,3 +1,4 @@
+require 'faker'
 
 puts 'Cleaning database...'
 Category.destroy_all
@@ -28,7 +29,7 @@ puts 'Creating ...restaurants'
   Facility.create!(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
-    phone: Faker::PhoneNumber.phone_number_with_country_code,
+    phone: Faker::PhoneNumber.phone_number,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_restaurant.id,
     verified_status: true,
@@ -42,12 +43,13 @@ puts 'Creating ...gyms'
   Facility.create!(
     name: "#{Faker::Ancient.hero} Gym",
     address: Faker::Address.street_address,
-    phone: Faker::PhoneNumber.phone_number_with_country_code,
+    phone: Faker::PhoneNumber.phone_number,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_gym.id,
     verified_status: true,
     verified_date: Faker::Date.backward(days: 1000)
    )
+end
 
 puts 'Creating ...parks'
 
@@ -55,12 +57,13 @@ puts 'Creating ...parks'
   Facility.create!(
     name: "#{Faker::Fantasy::Tolkien.location} Park",
     address: Faker::Address.street_address,
-    phone: Faker::PhoneNumber.phone_number_with_country_code,
+    phone: Faker::PhoneNumber.phone_number,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_park.id,
     verified_status: true,
     verified_date: Faker::Date.backward(days: 1000)
   )
+end
 
 puts 'Creating ...restrooms'
 10.times do
@@ -73,5 +76,6 @@ puts 'Creating ...restrooms'
     verified_status: true,
     verified_date: Faker::Date.backward(days: 1000)
   )
+end
 
 puts "Seeding completed!"
