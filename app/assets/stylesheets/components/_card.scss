@@ -13,9 +13,13 @@
 }
 
 .details {
-
+  display: inline-block;
+  margin-bottom: 0.2rem;
 }
 
 .badge-verified {
   align-self: flex-end;
+  color: white;
+  background-color: plum;
+  border-radius: 6px;
 }
