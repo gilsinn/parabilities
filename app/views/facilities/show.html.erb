@@ -5,7 +5,7 @@
   <%= render "facilities/facility_review_card" %>
 
   <%= simple_form_for([ @facility, @review]) do |f| %>
-    <%= f.input :content, as: :text %>
+    <%= f.input :content, :as => :hidden %>
     <%= f.button :submit %>
   <% end %>
 
