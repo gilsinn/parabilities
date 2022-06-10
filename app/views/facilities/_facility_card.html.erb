@@ -5,7 +5,8 @@
 
     <div class="col-8 details">
       <h2><%= facility.name %></h2>
-      <p>300 metres away</p>
+
+      <p><%= facility.distance  %> metres away</p>
       <span><%= facility.address %></span>
       <div>
         <i class="fa-regular fa-star"></i>
@@ -16,7 +17,7 @@
       </div>
     </div>
 
-    <div class="col-4 status">
+    <div class="col-3 status">
       <div class="badge badge-verified">
         <% if facility.verified_status == true %>
           <h3>Verified</h3>
