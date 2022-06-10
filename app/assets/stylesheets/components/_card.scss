@@ -51,7 +51,21 @@
   font-size: 6px;
 }
 
+
+// Review-card
+.review-card {
+  background-color: rgb(188, 187, 187);
+  border-radius: 16px;
+  padding: 8px;
+}
+
 .username {
   padding: 16px;
   display: flex;
+}
+
+.user-profile {
+  background-color: rgb(208, 208, 208);
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
 }
