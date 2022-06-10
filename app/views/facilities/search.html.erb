@@ -1,10 +1,11 @@
-<h1>test</h1>
-  <% if @facilities.empty? %>
-    <a href="http://maps.google.com/maps?q=<%= @query%>">Google</a>
-  <% else %>
-  <div class="verified-card">
-        <div class="icons">⚙️</div>
-
+<% if @facilities.empty? %>
+  <h1>Sorry, <%= @query.capitalize %> could not be found</h1>
+  <p>Would you like to find it on google instead?</p>
+  <a href="http://maps.google.com/maps?q=<%= @query%>">Google</a>
+<% else %>
+  <% @facilities.each do |facility| %>
+    <div class="verified-card">
+      <div class="icons">⚙️</div>
         <div class="row">
           <div class="col-8 details">
             <h2>Location name</h2>
@@ -12,10 +13,11 @@
             <p>Address</p>
             ⭐️⭐️⭐️⭐️⭐️
           </div>
-
           <div class="col-4 status">
             <div class="badge badge-verified">Verified</div>
           </div>
         </div>
       </div>
+    </div>
   <% end %>
+<% end %>
