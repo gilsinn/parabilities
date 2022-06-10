@@ -98,7 +98,7 @@ end
 
 puts 'Creating ...cuisines'
 
-cuisines = %w(French Italian Japanese Korean Chinese Indian Malay)
+cuisines = %w[French Italian Japanese Korean Chinese Indian Malay]
 cuisines.each do |cuisine|
   Cuisine.create!(name: cuisine)
 end
@@ -117,6 +117,22 @@ restaurants.each do |restaurant|
   FacilityCuisine.create!(
     facility_id: restaurant.id,
     cuisine_id: cuisine.id
+  )
+end
+
+# ---------------------
+# opening hours seeds
+# ---------------------
+
+facilities = Facility.all
+days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat']
+hours = %w[24hrs 10am-10pm]
+
+facilities.each do |facility|
+  OpeningHour.create!(
+    day: "Closed on #{days.sample}",
+    hours: hours.sample,
+    facility_id: facility.id,
   )
 end
 
