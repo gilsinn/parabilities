@@ -6,6 +6,7 @@ Facility.destroy_all
 puts 'Database Clean!'
 
 
+
 # ---------------------
 # Categories seeds
 # ---------------------
@@ -137,5 +138,20 @@ facilities.each do |facility|
 end
 
 
+# ---------------------
+# reviews seeds
+# ---------------------
+
+users = User.all
+facilities = Facility.all
+
+20.times do
+  Review.create!(
+    datetime: Faker::Time.backward(days: 180, format: :short),
+    content: Faker::Restaurant.review ,
+    user_id: users.sample.id,
+    facility_id: facilities.sample.id
+  )
+end
 
 puts "Seeding completed!"
