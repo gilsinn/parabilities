@@ -136,6 +136,15 @@ facilities.each do |facility|
   )
 end
 
+# ---------------------
+# rating types seeds
+# ---------------------
 
+puts 'Creating ...rating types'
+
+rating_types = %w[Wheelchair Staff Ambience Bathroom]
+rating_types.each do |rating_type|
+  RatingType.create!(name: rating_type)
+end
 
 puts "Seeding completed!"
