@@ -6,6 +6,7 @@ Facility.destroy_all
 puts 'Database Clean!'
 
 
+
 # ---------------------
 # Categories seeds
 # ---------------------
@@ -137,5 +138,58 @@ facilities.each do |facility|
 end
 
 
+# ---------------------
+# users seeds
+# ---------------------
+
+Ann = User.create!(
+  # firstname: "Ann",
+  # lastname: "Baker",
+  # username: "ann",
+  email: "ann@abc.com",
+  password: "123456"
+)
+
+Joe = User.create!(
+  # firstname: "Joe",
+  # lastname: "Smith",
+  # username: "joe",
+  email: "joe@abc.com",
+  password: "123456"
+)
+
+Bob = User.create!(
+  # firstname: "Bob",
+  # lastname: "Miller",
+  # username: "bob",
+  email: "bob@abc.com",
+  password: "123456"
+)
+
+10.times do
+  User.create!(
+    # firstname: Faker::Name.first_name ,
+    # lastname: Faker::Name.last_name,
+    # username: "samesame",
+    email: Faker::Internet.email,
+    password: "888888"
+  )
+end
+
+# ---------------------
+# reviews seeds
+# ---------------------
+
+users = User.all
+facilities = Facility.all
+
+20.times do
+  Review.create!(
+    datetime: Faker::Time.backward(days: 180, format: :short),
+    content: Faker::Restaurant.review ,
+    user_id: users.sample.id,
+    facility_id: facilities.sample.id
+  )
+end
 
 puts "Seeding completed!"
