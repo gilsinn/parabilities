@@ -4,6 +4,11 @@
 
   <%= render "facility_review_card" %>
 
+  <%= simple_form_for([ @facility, @review]) do |f| %>
+    <%= f.input :content, as: :text %>
+    <%= f.button :submit %>
+  <% end %>
+
   <p><%= link_to "Back", category_path(@facility.category.name) %></p>
   <p><%= link_to "Home", root_path %></p>
 
