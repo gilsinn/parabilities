@@ -29,6 +29,7 @@ puts 'Creating ...restaurants'
   Facility.create!(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
+    distance: rand(1..1000),
     phone: Faker::PhoneNumber.phone_number_with_country_code,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_restaurant.id,
@@ -43,6 +44,7 @@ puts 'Creating ...gyms'
   Facility.create!(
     name: "#{Faker::Games::Pokemon.move} Gym",
     address: Faker::Address.street_address,
+    distance: rand(1..1000),
     phone: Faker::PhoneNumber.phone_number,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_gym.id,
@@ -53,10 +55,11 @@ end
 
 puts 'Creating ...parks'
 
-10.times do
+20.times do
   Facility.create!(
     name: "#{Faker::Fantasy::Tolkien.location} Park",
     address: Faker::Address.street_address,
+    distance: rand(1..1000),
     phone: Faker::PhoneNumber.phone_number,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_park.id,
@@ -66,10 +69,11 @@ puts 'Creating ...parks'
 end
 
 puts 'Creating ...restrooms'
-10.times do
+20.times do
   Facility.create!(
     name: "#{Faker::Movies::HarryPotter.location} Restroom",
     address: Faker::Address.street_address,
+    distance: rand(1..1000),
     phone: '',
     price_range: '',
     category_id: cat_restroom.id,
