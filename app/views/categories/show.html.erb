@@ -1,8 +1,10 @@
 <h1><%= @category.name %></h1>
 <br>
-<div>
+<div class="cards container">
   <% @facilities.each do |facility| %>
-    <li><%= link_to facility.name, facility_path(facility.id) %></li>
+    <%= link_to facility_path(facility) do %>
+      <%= render "facilities/facility_card", facility: facility %>
+    <% end %>
   <% end %>
 </div>
 <br>

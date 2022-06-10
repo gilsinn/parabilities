@@ -1,0 +1,38 @@
+.cards {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap:16px;
+}
+
+.icons {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.verified-card {
+  background-color: silver;
+  color: black;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.details {
+  display: inline-block;
+  margin: 0;
+  text-decoration: none;
+}
+
+.badge-verified {
+  color: white;
+  background-color: plum;
+  border-radius: 6px;
+  position: relative;
+  top: 115px;
+  right: 15px;
+}
