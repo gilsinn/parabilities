@@ -1,0 +1,21 @@
+.cards {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap:16px;
+}
+
+.verified-card {
+  background-color: silver;
+  color: black;
+  text-decoration: none;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.details {
+
+}
+
+.badge-verified {
+  align-self: flex-end;
+}

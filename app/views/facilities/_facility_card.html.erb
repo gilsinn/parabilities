@@ -1,16 +1,21 @@
+
 <div class="verified-card">
   <div class="icons"><i class="fa-solid fa-wheelchair"></i></div>
-  <div class="row">
+  <div class="row justify-content-between">
+
     <div class="col-8 details">
       <h2><%= facility.name %></h2>
       <p>300 metres away</p>
-      <p><h3><%= facility.address %></h3></p>
-      <i class="fa-regular fa-star"></i>
-      <i class="fa-regular fa-star"></i>
-      <i class="fa-regular fa-star"></i>
-      <i class="fa-regular fa-star"></i>
-      <i class="fa-regular fa-star"></i>
+      <span><%= facility.address %></span>
+      <div>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
     </div>
+
     <div class="col-4 status">
       <div class="badge badge-verified">
         <% if facility.verified_status == true %>
@@ -20,5 +25,6 @@
         <% end %>
       </div>
     </div>
+
   </div>
 </div>
