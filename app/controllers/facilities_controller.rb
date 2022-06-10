@@ -1,4 +1,7 @@
 class FacilitiesController < ApplicationController
+  include PgSearch::Model
+  multisearchable against: [:name]
+end
 
   def new
     @facility = Facility.new
@@ -10,5 +13,3 @@ class FacilitiesController < ApplicationController
   def show
     @facility = Facility.find(params[:id])
   end
-
-end
