@@ -1,1 +1,5 @@
-<h1>Review</h1>
+<h1>Share Your Experience</h1>
+<%= simple_form_for [ @facility, @review] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class:"btn btn-primary" %>
+<% end %>
