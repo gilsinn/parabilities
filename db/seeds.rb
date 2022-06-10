@@ -6,75 +6,189 @@ Facility.destroy_all
 puts 'Database Clean!'
 
 
+
+# ---------------------
+# Categories seeds
+# ---------------------
+
 puts 'Creating categories...'
 
 # file = URI.open(asset_path 'images/a0fxd7saxlav374ibgpfrt7ip416.jpg')
 
 cat_restaurant = Category.create!(name: "Restaurants")
-# restaurant.photo.attach(io: File.open("app/assets/images/restaurant.jpeg"), filename: 'restaurant.jpeg', content_type: 'image/jpg')
+# cat_restaurant.photo.attach(io: File.open("app/assets/images/restaurant.jpeg"), filename: 'restaurant.jpeg', content_type: 'image/jpg')
 
 cat_gym = Category.create!(name: "Gyms")
-# gym.photo.attach(io: File.open("app/assets/images/gym.jpeg"), filename: 'gym.jpeg', content_type: 'image/jpg')
+# cat_gym.photo.attach(io: File.open("app/assets/images/gym.jpeg"), filename: 'gym.jpeg', content_type: 'image/jpg')
 
 cat_park = Category.create!(name: "Parks")
-# park.photo.attach(io: File.open("app/assets/images/park.jpeg"), filename: 'park.jpeg', content_type: 'image/jpg')
+# cat_park.photo.attach(io: File.open("app/assets/images/park.jpeg"), filename: 'park.jpeg', content_type: 'image/jpg')
 
 cat_restroom = Category.create!(name: "Restrooms")
-# restroom.photo.attach(io: File.open("app/assets/images/restroom.jpeg"), filename: 'restroom.jpeg', content_type: 'image/jpg')
+# cat_restroom.photo.attach(io: File.open("app/assets/images/restroom.jpeg"), filename: 'restroom.jpeg', content_type: 'image/jpg')
 
+
+
+
+# ---------------------
+# Facilities seeds
+# ---------------------
 
 puts 'Creating ...restaurants'
 
-10.times do
+20.times do
   Facility.create!(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
-    phone: Faker::PhoneNumber.phone_number,
+    distance: rand(1..1000),
+    phone: Faker::PhoneNumber.phone_number_with_country_code,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_restaurant.id,
-    verified_status: true,
+    verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
    )
 end
 
 puts 'Creating ...gyms'
 
-10.times do
+20.times do
   Facility.create!(
     name: "#{Faker::Games::Pokemon.move} Gym",
     address: Faker::Address.street_address,
+    distance: rand(1..1000),
     phone: Faker::PhoneNumber.phone_number,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_gym.id,
-    verified_status: true,
+    verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
    )
 end
 
 puts 'Creating ...parks'
 
-10.times do
+20.times do
   Facility.create!(
     name: "#{Faker::Fantasy::Tolkien.location} Park",
     address: Faker::Address.street_address,
+    distance: rand(1..1000),
     phone: Faker::PhoneNumber.phone_number,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_park.id,
-    verified_status: true,
+    verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
   )
 end
 
 puts 'Creating ...restrooms'
-10.times do
+20.times do
   Facility.create!(
     name: "#{Faker::Movies::HarryPotter.location} Restroom",
     address: Faker::Address.street_address,
-    phone: '',
-    price_range: '',
+    distance: rand(1..1000),
+    # phone: Faker::PhoneNumber.phone_number,
+    # price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_restroom.id,
-    verified_status: true,
+    verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
+  )
+end
+
+# ---------------------
+# Cuisines seeds
+# ---------------------
+
+puts 'Creating ...cuisines'
+
+cuisines = %w[French Italian Japanese Korean Chinese Indian Malay]
+cuisines.each do |cuisine|
+  Cuisine.create!(name: cuisine)
+end
+
+# ---------------------
+# facilities_cuisines seeds
+# ---------------------
+
+puts 'Creating ...restaurants cuisines'
+
+restaurants = Facility.where(category_id: 1)
+cuisines = Cuisine.all
+
+restaurants.each do |restaurant|
+  cuisine = cuisines.sample
+  FacilityCuisine.create!(
+    facility_id: restaurant.id,
+    cuisine_id: cuisine.id
+  )
+end
+
+# ---------------------
+# opening hours seeds
+# ---------------------
+
+facilities = Facility.all
+days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat']
+hours = %w[24hrs 10am-10pm]
+
+facilities.each do |facility|
+  OpeningHour.create!(
+    day: "Closed on #{days.sample}",
+    hours: hours.sample,
+    facility_id: facility.id,
+  )
+end
+
+
+# ---------------------
+# users seeds
+# ---------------------
+
+Ann = User.create!(
+  # firstname: "Ann",
+  # lastname: "Baker",
+  # username: "ann",
+  email: "ann@abc.com",
+  password: "123456"
+)
+
+Joe = User.create!(
+  # firstname: "Joe",
+  # lastname: "Smith",
+  # username: "joe",
+  email: "joe@abc.com",
+  password: "123456"
+)
+
+Bob = User.create!(
+  # firstname: "Bob",
+  # lastname: "Miller",
+  # username: "bob",
+  email: "bob@abc.com",
+  password: "123456"
+)
+
+10.times do
+  User.create!(
+    # firstname: Faker::Name.first_name ,
+    # lastname: Faker::Name.last_name,
+    # username: "samesame",
+    email: Faker::Internet.email,
+    password: "888888"
+  )
+end
+
+# ---------------------
+# reviews seeds
+# ---------------------
+
+users = User.all
+facilities = Facility.all
+
+20.times do
+  Review.create!(
+    datetime: Faker::Time.backward(days: 180, format: :short),
+    content: Faker::Restaurant.review ,
+    user_id: users.sample.id,
+    facility_id: facilities.sample.id
   )
 end
 
