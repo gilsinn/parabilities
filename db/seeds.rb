@@ -192,4 +192,45 @@ facilities = Facility.all
   )
 end
 
+# ---------------------
+# messages seeds
+# ---------------------
+
+users = User.all
+channels = Channel.all
+
+20.times do
+  Review.create!(
+    content: Faker::Lorem.sentence,
+    user_id: users.sample.id,
+    channel_id: channels.sample.id
+  )
+end
+
+# ---------------------
+# comments seeds
+# ---------------------
+
+users = User.all
+reviews = Review.all
+
+20.times do
+  Comment.create!(
+    comment: Faker::Lorem.sentence,
+    user_id: users.sample.id,
+    review_id: reviews.sample.id
+  )
+end
+
+# ---------------------
+# channels seeds
+# ---------------------
+
+3.times do
+  Channel.create!(
+    name: Faker::Lorem.sentence,
+
+  )
+end
+
 puts "Seeding completed!"
