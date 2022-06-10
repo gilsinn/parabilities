@@ -1,3 +1,3 @@
 class OpeningHour < ApplicationRecord
-  has_many :facilities
+  has_many :facililities
 end

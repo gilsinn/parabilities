@@ -67,6 +67,8 @@ cat_restroom = Category.create!(name: "Restrooms")
 # opening hours seeds
 # ---------------------
 
+puts 'Creating opening hours...'
+
 days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat']
 hours = ['24hrs', '10am-10pm', '7am-2pm']
 
@@ -83,7 +85,7 @@ end
 
 opening_hours = OpeningHour.all
 
-puts 'Creating ...restaurants'
+puts 'Creating restaurants...'
 
 20.times do
   Facility.create!(
@@ -93,13 +95,13 @@ puts 'Creating ...restaurants'
     phone: Faker::PhoneNumber.phone_number_with_country_code,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_restaurant.id,
-    opening_hours_id: opening_hours.sample.id,
+    opening_hour_id: opening_hours.sample.id,
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
    )
 end
 
-puts 'Creating ...gyms'
+puts 'Creating gyms...'
 
 20.times do
   Facility.create!(
@@ -109,13 +111,13 @@ puts 'Creating ...gyms'
     phone: Faker::PhoneNumber.phone_number,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_gym.id,
-    opening_hours_id: opening_hours.sample.id,
+    opening_hour_id: opening_hours.sample.id,
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
    )
 end
 
-puts 'Creating ...parks'
+puts 'Creating parks...'
 
 20.times do
   Facility.create!(
@@ -125,13 +127,13 @@ puts 'Creating ...parks'
     phone: Faker::PhoneNumber.phone_number,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_park.id,
-    opening_hours_id: opening_hours.sample.id,
+    opening_hour_id: opening_hours.sample.id,
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
   )
 end
 
-puts 'Creating ...restrooms'
+puts 'Creating restrooms...'
 20.times do
   Facility.create!(
     name: "#{Faker::Movies::HarryPotter.location} Restroom",
@@ -140,7 +142,7 @@ puts 'Creating ...restrooms'
     # phone: Faker::PhoneNumber.phone_number,
     # price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_restroom.id,
-    opening_hours_id: opening_hours.sample.id,
+    opening_hour_id: opening_hours.sample.id,
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
   )
@@ -150,7 +152,7 @@ end
 # Cuisines seeds
 # ---------------------
 
-puts 'Creating ...cuisines'
+puts 'Creating cuisines...'
 
 cuisines = %w[French Italian Japanese Korean Chinese Indian Malay]
 cuisines.each do |cuisine|
@@ -161,7 +163,7 @@ end
 # facilities_cuisines seeds
 # ---------------------
 
-puts 'Creating ...restaurants cuisines'
+puts 'Creating restaurants cuisines...'
 
 restaurants = Facility.where(category_id: 1)
 cuisines = Cuisine.all
@@ -178,24 +180,58 @@ end
 # rating types seeds
 # ---------------------
 
-puts 'Creating ...rating types'
+puts 'Creating rating types...'
 
-rating_types = %w[Wheelchair Staff Ambience Bathroom]
+rating_types = %w[Wheelchair Staff Ambience Toilet]
 rating_types.each do |rating_type|
   RatingType.create!(name: rating_type)
 end
 
 # ------------------------------
-# rating-types categories seeds
+# rating_types categories seeds
 # ------------------------------
 
+puts 'Creating categories rating types...'
 
+# categories = {1: "Restaurants", 2: "Gyms", 3: "Parks", 4: "Restrooms"}
 
+restaurant_rating_type = [1, 2, 3, 4]
+restaurant_rating_type.each do |rating_type|
+  RatingTypeCategory.create!(
+    category_id: 1,
+    rating_type_id: rating_type
+  )
+end
 
+gym_rating_type = [1, 2, 3, 4]
+gym_rating_type.each do |rating_type|
+  RatingTypeCategory.create!(
+    category_id: 2,
+    rating_type_id: rating_type
+  )
+end
+
+park_rating_type = [1, 3, 4]
+park_rating_type.each do |rating_type|
+  RatingTypeCategory.create!(
+    category_id: 3,
+    rating_type_id: rating_type
+  )
+end
+
+restroom_rating_type = [1, 4]
+restroom_rating_type.each do |rating_type|
+  RatingTypeCategory.create!(
+    category_id: 4,
+    rating_type_id: rating_type
+  )
+end
 
 # ---------------------
 # reviews seeds
 # ---------------------
+
+puts 'Creating reviews...'
 
 users = User.all
 facilities = Facility.all
@@ -212,6 +248,9 @@ end
 # ---------------------
 # review ratings seeds
 # ---------------------
+
+puts 'Creating review ratings...'
+
 reviews = Review.all
 rating_types = RatingType.all
 
@@ -225,17 +264,19 @@ reviews.each do |review|
   end
 end
 
-
-
 # ---------------------
 # channels seeds
 # ---------------------
+
+puts 'Creating channel...'
 
 Channel.create!(name: "Community")
 
 # ---------------------
 # messages seeds
 # ---------------------
+
+puts 'Creating messages...'
 
 users = User.all
 
@@ -250,6 +291,8 @@ end
 # ---------------------
 # comments seeds
 # ---------------------
+
+puts 'Creating comments...'
 
 users = User.all
 reviews = Review.all

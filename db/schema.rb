@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_10_105142) do
+ActiveRecord::Schema.define(version: 2022_06_10_170519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 2022_06_10_105142) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "distance"
-    t.bigint "opening_hours_id", null: false
+    t.bigint "opening_hour_id", null: false
     t.index ["category_id"], name: "index_facilities_on_category_id"
-    t.index ["opening_hours_id"], name: "index_facilities_on_opening_hours_id"
+    t.index ["opening_hour_id"], name: "index_facilities_on_opening_hour_id"
   end
 
   create_table "facility_cuisines", force: :cascade do |t|
@@ -136,7 +136,7 @@ ActiveRecord::Schema.define(version: 2022_06_10_105142) do
   add_foreign_key "comments", "reviews"
   add_foreign_key "comments", "users"
   add_foreign_key "facilities", "categories"
-  add_foreign_key "facilities", "opening_hours", column: "opening_hours_id"
+  add_foreign_key "facilities", "opening_hours"
   add_foreign_key "facility_cuisines", "cuisines"
   add_foreign_key "facility_cuisines", "facilities"
   add_foreign_key "messages", "channels"
