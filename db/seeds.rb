@@ -27,6 +27,8 @@ cat_restroom = Category.create!(name: "Restrooms")
 # cat_restroom.photo.attach(io: File.open("app/assets/images/restroom.jpeg"), filename: 'restroom.jpeg', content_type: 'image/jpg')
 
 
+
+
 # ---------------------
 # Facilities seeds
 # ---------------------
@@ -100,5 +102,24 @@ cuisines = %w(French Italian Japanese Korean Chinese Indian Malay)
 cuisines.each do |cuisine|
   Cuisine.create!(name: cuisine)
 end
+
+# ---------------------
+# facilities_cuisines seeds
+# ---------------------
+
+puts 'Creating ...restaurants cuisines'
+
+restaurants = Facility.where(category_id: 1)
+cuisines = Cuisine.all
+
+restaurants.each do |restaurant|
+  cuisine = cuisines.sample
+  FacilityCuisine.create!(
+    facility_id: restaurant.id,
+    cuisine_id: cuisine.id
+  )
+end
+
+
 
 puts "Seeding completed!"
