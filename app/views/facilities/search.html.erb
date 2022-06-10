@@ -1,0 +1,21 @@
+<h1>test</h1>
+  <% if @facilities.empty? %>
+    <a href="http://maps.google.com/maps?q=<%= @query%>">Google</a>
+  <% else %>
+  <div class="verified-card">
+        <div class="icons">⚙️</div>
+
+        <div class="row">
+          <div class="col-8 details">
+            <h2>Location name</h2>
+            <p>300 metres away</p>
+            <p>Address</p>
+            ⭐️⭐️⭐️⭐️⭐️
+          </div>
+
+          <div class="col-4 status">
+            <div class="badge badge-verified">Verified</div>
+          </div>
+        </div>
+      </div>
+  <% end %>

@@ -10,4 +10,11 @@ class FacilitiesController < ApplicationController
   def show
     @facility = Facility.find(params[:id])
   end
+
+  def search
+    # @facility = Facility.seach(params[:name])
+    @facilities = Facility.search_by_name(params[:name])
+    @query = params[:name]
+  end
+
 end
