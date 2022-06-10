@@ -1,3 +1,4 @@
+// Verified-card
 .cards {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -35,4 +36,17 @@
   position: relative;
   top: 115px;
   right: 15px;
+}
+
+// Facility-details
+.facility-details {
+  background-color: antiquewhite;
+  padding: 16px;
+  border-radius: 16px;
+  width: 95%;
+
+}
+
+.facility-details top {
+  display: flex;
 }

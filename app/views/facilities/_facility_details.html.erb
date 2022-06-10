@@ -5,7 +5,8 @@
     <h1><%= @facility.name %></h1>
   </div>
 
-  <div class="col-4">
+  <div class="col-4 nowrap">
+    <h6>102 reviews</h6>
   </div>
 </div>
 
@@ -23,11 +24,36 @@
 
 <%= link_to "Share your experience", "#" %>
 
-<div class="facility-details">
-  <div class="row row-one ">
-    <i class="fa-regular fa-clock"></i>
-    <div class="col-8">
-      <h4>Opening Today</h4>
+<div class="facility-details mt-3">
+  <div class="row top">
+    <div class="col-1">
+      <i class="fa-regular fa-clock"></i>
+    </div>
+    <%# opening hours %>
+    <div class="row">
+      <div class="col-10">
+        <h4>Opening Today</h4>
+      </div>
+      <div class="col-12">
+        <h6>08:00AM - 10:30pm</h6>
+      </div>
     </div>
   </div>
+
+  <div class="row mid ">
+    <i class="fa-solid fa-location-dot"></i>
+    <div class="col-8">
+      <h4>Address:</h4>
+      <h4><%= @facility.address %></h4>
+      <%= link_to "Tap to view map", "#" %>
+    </div>
+  </div>
+
+  <div class="row btm">
+    <div class="col-8">
+      <i class="fa-solid fa-utensils"></i>
+      <h4><%= @facility.price_range %>/pax</h4>
+    </div>
+  </div>
+
 </div>
