@@ -185,6 +185,14 @@ rating_types.each do |rating_type|
   RatingType.create!(name: rating_type)
 end
 
+# ------------------------------
+# rating-types categories seeds
+# ------------------------------
+
+
+
+
+
 # ---------------------
 # reviews seeds
 # ---------------------
