@@ -6,6 +6,10 @@ Facility.destroy_all
 puts 'Database Clean!'
 
 
+# ---------------------
+# Categories seeds
+# ---------------------
+
 puts 'Creating categories...'
 
 # file = URI.open(asset_path 'images/a0fxd7saxlav374ibgpfrt7ip416.jpg')
@@ -22,6 +26,10 @@ cat_park = Category.create!(name: "Parks")
 cat_restroom = Category.create!(name: "Restrooms")
 # cat_restroom.photo.attach(io: File.open("app/assets/images/restroom.jpeg"), filename: 'restroom.jpeg', content_type: 'image/jpg')
 
+
+# ---------------------
+# Facilities seeds
+# ---------------------
 
 puts 'Creating ...restaurants'
 
@@ -74,12 +82,23 @@ puts 'Creating ...restrooms'
     name: "#{Faker::Movies::HarryPotter.location} Restroom",
     address: Faker::Address.street_address,
     distance: rand(1..1000),
-    phone: '',
-    price_range: '',
+    # phone: Faker::PhoneNumber.phone_number,
+    # price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_restroom.id,
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
   )
+end
+
+# ---------------------
+# Cuisines seeds
+# ---------------------
+
+puts 'Creating ...cuisines'
+
+cuisines = %w(French Italian Japanese Korean Chinese Indian Malay)
+cuisines.each do |cuisine|
+  Cuisine.create!(name: cuisine)
 end
 
 puts "Seeding completed!"
