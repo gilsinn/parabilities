@@ -8,13 +8,14 @@
   <% end %>
 </div>
 <br>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top navbar-light">
   <div class="container-fluid">
-    <%= link_to "", class: "navbar-brand" do %>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search by Name" aria-label="Search">
-            <button class="btn btn-outline-light">Search</button>
-          </form>
-    <% end %>
+            <%= form_tag search_facilities_path, method: :get do %>
+                <%= text_field_tag :name,
+                        params[:name],
+                        class: "form-control",
+                          placeholder: "Search by Name"%>
+                <%= submit_tag "Search", class: "btn btn-primary" %>
+                   <% end %>
+  </div>
 
 <p><%= link_to "Back", root_path %></p>
