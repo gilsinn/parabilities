@@ -4,6 +4,16 @@
   grid-gap:16px;
 }
 
+.icons {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .verified-card {
   background-color: silver;
   color: black;
