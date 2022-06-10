@@ -9,6 +9,8 @@
     <%= f.button :submit %>
   <% end %>
 
+  <%= link_to "Review Now", new_facility_review_path(@facility)  %>
+
   <p><%= link_to "Back", category_path(@facility.category.name) %></p>
   <p><%= link_to "Home", root_path %></p>
 
