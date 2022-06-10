@@ -1,68 +1,24 @@
-<div class="verified-card border mb-3">
-  <%# <div class="row"> %>
-    <%# <div class="col-11 mx-auto"> %>
-      <%# <div class="row"> %>
-      <i class="fa-solid fa-wheelchair"></i>
-      <%# </div> %>
-      <%# description %>
-      <div class="flex-wrap">
-        <div class="row">
-          <div class="col-8">
-          <%# Facility Name %>
-            <li><%= link_to facility.name, facility_path(facility) %></li>
-            <div class="row justify-content-between">
-              <div class="col-8">
-                <%# distance away %>
-                <h4>300metres away</h4>
-                <%# Address %>
-                <li><h3><%= facility.address %></h3></li>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <%# Rating & Verified%>
-      <div class="row">
-        <div class="col-6">
-          <%# Rating - shaded star means the points %>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-        </div>
-        <div class="col-4">
-          <% if facility.verified_status == true %>
-            <h3>Verified</h3>
-            <% else %>
-            <h3>Unverified</h3>
-          <% end %>
-        </div>
-      </div>
-    <%# </div> %>
-  <%# </div> %>
-</div>
-  <div class="verified-card">
-    <div class="icons"><i class="fa-solid fa-wheelchair"></i></div>
-    <div class="row">
-      <div class="col-8 details">
-        <h2>facility.name</h2>
-        <p>300 metres away</p>
-        <p>facility.address</p>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-      </div>
-      <div class="col-4 status">
-        <div class="badge badge-verified">
-          <% if facility.verified_status == true %>
-            <h3>Verified</h3>
-            <% else %>
-            <h3>Unverified</h3>
-          <% end %>
-        </div>
+<div class="verified-card">
+  <div class="icons"><i class="fa-solid fa-wheelchair"></i></div>
+  <div class="row">
+    <div class="col-8 details">
+      <h2><%= facility.name %></h2>
+      <p>300 metres away</p>
+      <p><h3><%= facility.address %></h3></p>
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+    </div>
+    <div class="col-4 status">
+      <div class="badge badge-verified">
+        <% if facility.verified_status == true %>
+          <h3>Verified</h3>
+          <% else %>
+          <h3>Unverified</h3>
+        <% end %>
       </div>
     </div>
   </div>
+</div>
