@@ -1,60 +1,81 @@
+require 'faker'
 
 puts 'Cleaning database...'
 Category.destroy_all
 Facility.destroy_all
 puts 'Database Clean!'
 
-# puts 'Creating users...'
-# user1 = User.new(username: "batman",
-#                 password: "123456",
-#                 email: "john@123.com",
-#                 first_name: "John",
-#                 last_name: "Doe",
-#                 address: "888 This Street")
-# user1.save!
-
-# user2 = User.new(username: "wonderer",
-#                 password: "123456",
-#                 email: "jane@123.com",
-#                 first_name: "Jane",
-#                 last_name: "Smith",
-#                 address: "111 That Street")
-# user2.save!
-# users = User.all
 
 puts 'Creating categories...'
 
 # file = URI.open(asset_path 'images/a0fxd7saxlav374ibgpfrt7ip416.jpg')
 
-category1 = Category.new(name: "Restaurant")
+cat_restaurant = Category.create!(name: "Restaurants")
 # restaurant.photo.attach(io: File.open("app/assets/images/restaurant.jpeg"), filename: 'restaurant.jpeg', content_type: 'image/jpg')
-category1.save!
 
-category2 = Category.new(name: "Gym")
+cat_gym = Category.create!(name: "Gyms")
 # gym.photo.attach(io: File.open("app/assets/images/gym.jpeg"), filename: 'gym.jpeg', content_type: 'image/jpg')
-category2.save!
 
-category3 = Category.new(name: "Park")
+cat_park = Category.create!(name: "Parks")
 # park.photo.attach(io: File.open("app/assets/images/park.jpeg"), filename: 'park.jpeg', content_type: 'image/jpg')
-category3.save!
 
-category4 = Category.new(name: "Restroom")
+cat_restroom = Category.create!(name: "Restrooms")
 # restroom.photo.attach(io: File.open("app/assets/images/restroom.jpeg"), filename: 'restroom.jpeg', content_type: 'image/jpg')
-category4.save!
 
 
-puts 'Creating facilities...restaurants'
+puts 'Creating ...restaurants'
 
 10.times do
   Facility.create!(
-    name: Faker::Name.name,
-    address: Faker::Internet.email,
-    phone: Faker::,
+    name: Faker::Restaurant.name,
+    address: Faker::Address.street_address,
+    phone: Faker::PhoneNumber.phone_number,
     price_range: ['$', '$$', '$$$', '$$$$'].sample,
-    category: "Restaurants",
+    category_id: cat_restaurant.id,
     verified_status: true,
-    verified_date: Faker::
+    verified_date: Faker::Date.backward(days: 1000)
    )
+end
+
+puts 'Creating ...gyms'
+
+10.times do
+  Facility.create!(
+    name: "#{Faker::Games::Pokemon.move} Gym",
+    address: Faker::Address.street_address,
+    phone: Faker::PhoneNumber.phone_number,
+    price_range: ['$', '$$', '$$$', '$$$$'].sample,
+    category_id: cat_gym.id,
+    verified_status: true,
+    verified_date: Faker::Date.backward(days: 1000)
+   )
+end
+
+puts 'Creating ...parks'
+
+10.times do
+  Facility.create!(
+    name: "#{Faker::Fantasy::Tolkien.location} Park",
+    address: Faker::Address.street_address,
+    phone: Faker::PhoneNumber.phone_number,
+    price_range: ['$', '$$', '$$$', '$$$$'].sample,
+    category_id: cat_park.id,
+    verified_status: true,
+    verified_date: Faker::Date.backward(days: 1000)
+  )
+end
+
+puts 'Creating ...restrooms'
+10.times do
+  Facility.create!(
+    name: "#{Faker::Movies::HarryPotter.location} Restroom",
+    address: Faker::Address.street_address,
+    phone: '',
+    price_range: '',
+    category_id: cat_restroom.id,
+    verified_status: true,
+    verified_date: Faker::Date.backward(days: 1000)
+  )
 end
 
 puts "Seeding completed!"
