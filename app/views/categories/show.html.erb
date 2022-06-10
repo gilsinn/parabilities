@@ -1,0 +1,9 @@
+<h1><%= @category.name %></h1>
+<br>
+<div>
+  <% @facilities.each do |facility| %>
+    <li><%= link_to facility.name, facility_path(facility.id) %></li>
+  <% end %>
+</div>
+<br>
+<p><%= link_to "Back", root_path %></p>
