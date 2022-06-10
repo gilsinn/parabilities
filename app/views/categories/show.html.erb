@@ -1,6 +1,6 @@
 <h1><%= @category.name %></h1>
 <br>
-<div class="cards">
+<div class="cards container">
   <% @facilities.each do |facility| %>
     <%= link_to facility_path(facility) do %>
       <%= render "facilities/facility_card", facility: facility %>
