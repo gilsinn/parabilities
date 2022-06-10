@@ -25,7 +25,7 @@
 <%= link_to "Share your experience", "#" %>
 
 <div class="facility-details mt-3">
-  <div class="row top">
+  <div class="row top d-flex">
     <div class="col-1">
       <i class="fa-regular fa-clock"></i>
     </div>
@@ -40,19 +40,33 @@
     </div>
   </div>
 
-  <div class="row mid ">
-    <i class="fa-solid fa-location-dot"></i>
-    <div class="col-8">
-      <h4>Address:</h4>
-      <h4><%= @facility.address %></h4>
-      <%= link_to "Tap to view map", "#" %>
+  <div class="row mid d-flex mt-3">
+    <div class="col-1">
+      <i class="fa-solid fa-location-dot"></i>
+    </div>
+    <%# Address %>
+    <div class="row">
+      <div class="col-10">
+        <h4>Address:</h4>
+      </div>
+      <div class="col-12">
+        <h6><%= @facility.address %></h6>
+      </div>
+      <div class="col-12">
+        <%= link_to "Tap to view map", "#" %>
+      </div>
     </div>
   </div>
 
-  <div class="row btm">
-    <div class="col-8">
+    <div class="row btm d-flex mt-3">
+    <div class="col-1">
       <i class="fa-solid fa-utensils"></i>
-      <h4><%= @facility.price_range %>/pax</h4>
+    </div>
+    <%# Cuisine %>
+    <div class="row">
+      <div class="col-12">
+        <h6><%= @facility.price_range %>/pax . Modern . European</h6>
+      </div>
     </div>
   </div>
 
