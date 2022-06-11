@@ -1,0 +1,71 @@
+// Verified-card
+.cards {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap:16px;
+}
+
+.icons {
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.verified-card {
+  background-color: silver;
+  color: black;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.details {
+  display: inline-block;
+  margin: 0;
+  text-decoration: none;
+}
+
+.badge-verified {
+  color: white;
+  background-color: plum;
+  border-radius: 6px;
+  position: relative;
+  top: 115px;
+  right: 15px;
+}
+
+// Facility-details
+.facility-details {
+  background-color: antiquewhite;
+  padding: 16px;
+  border-radius: 16px;
+  width: 95%;
+
+}
+
+#review-count {
+  font-size: 6px;
+}
+
+
+// Review-card
+.review-card {
+  background-color: rgb(188, 187, 187);
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.username {
+  padding: 16px;
+  display: flex;
+}
+
+.user-profile {
+  background-color: rgb(208, 208, 208);
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}

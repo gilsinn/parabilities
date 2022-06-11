@@ -1,0 +1,73 @@
+<img src="https://source.unsplash.com/N_Y88TWmGwA" alt="facility-image" width="100%">
+<div class="row mt-2">
+
+  <div class="col-8 d-inline">
+    <h1><%= @facility.name %></h1>
+  </div>
+
+  <div class="col-4" id="review-count">
+    <h6>102 reviews</h6>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-6">
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+  </div>
+
+</div>
+
+<%= link_to "Share your experience", "#" %>
+
+<div class="facility-details my-3">
+  <div class="row top d-flex">
+    <div class="col-1">
+      <i class="fa-regular fa-clock"></i>
+    </div>
+    <%# opening hours %>
+    <div class="row">
+      <div class="col-10">
+        <h4>Opening Today</h4>
+      </div>
+      <div class="col-12">
+        <h6>08:00AM - 10:30pm</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mid d-flex mt-3">
+    <div class="col-1">
+      <i class="fa-solid fa-location-dot"></i>
+    </div>
+    <%# Address %>
+    <div class="row">
+      <div class="col-10">
+        <h4>Address:</h4>
+      </div>
+      <div class="col-12">
+        <h6><%= @facility.address %></h6>
+      </div>
+      <div class="col-12">
+        <%= link_to "Tap to view map", "#" %>
+      </div>
+    </div>
+  </div>
+
+    <div class="row btm d-flex mt-3">
+    <div class="col-1">
+      <i class="fa-solid fa-utensils"></i>
+    </div>
+    <%# Cuisine %>
+    <div class="row">
+      <div class="col-12">
+        <h6><%= @facility.price_range %>/pax . Modern . European</h6>
+      </div>
+    </div>
+  </div>
+
+</div>

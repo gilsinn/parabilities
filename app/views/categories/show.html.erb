@@ -1,9 +1,21 @@
 <h1><%= @category.name %></h1>
 <br>
-<div>
+<div class="cards container">
   <% @facilities.each do |facility| %>
-    <li><%= link_to facility.name, facility_path(facility.id) %></li>
+    <%= link_to facility_path(facility) do %>
+      <%= render "facilities/facility_card", facility: facility %>
+    <% end %>
   <% end %>
 </div>
 <br>
+  <div class="container-fluid">
+            <%= form_tag search_facilities_path, method: :get do %>
+                <%= text_field_tag :name,
+                        params[:name],
+                        class: "form-control",
+                          placeholder: "Search by Name"%>
+                <%= submit_tag "Search", class: "btn btn-primary" %>
+                   <% end %>
+  </div>
+
 <p><%= link_to "Back", root_path %></p>

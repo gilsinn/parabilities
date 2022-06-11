@@ -55,6 +55,7 @@ Bob = User.create!(
   )
 end
 
+
 # ---------------------
 # Categories seeds
 # ---------------------
@@ -286,8 +287,6 @@ users = User.all
     content: Faker::Lorem.sentence,
     user_id: users.sample.id,
     channel_id: 1
-  )
-end
 
 # ---------------------
 # comments seeds
@@ -302,7 +301,5 @@ reviews = Review.all
     comment: Faker::Lorem.sentence,
     user_id: users.sample.id,
     review_id: reviews.sample.id
-  )
-end
 
 puts "Seeding completed!"
