@@ -13,7 +13,6 @@ class ReviewsController < ApplicationController
     else
       render "facilities/show"
     end
-
   end
 
   def show
