@@ -1,4 +1,17 @@
-<h1><%= @facility.name %></h1>
-<br>
-<p><%= link_to "Back", category_path(@facility.category.name) %></p>
-<p><%= link_to "Home", root_path %></p>
+<div class="container">
+  <%= render "facilities/facility_details" %>
+  <%= render "facilities/facility_map" %>
+
+  <%= render "facilities/facility_review_card" %>
+
+
+  <% if user_signed_in? == true %>
+    <%= link_to "Add Review", new_facility_review_path(@facility) %>
+  <% else %>
+    <%= link_to "Review Now", new_user_registration_path %>
+  <% end %>
+
+  <p><%= link_to "Back", category_path(@facility.category.name) %></p>
+  <p><%= link_to "Home", root_path %></p>
+
+</div>
