@@ -1,4 +1,20 @@
-<h1><%= @facility.name %></h1>
-<br>
-<p><%= link_to "Back", category_path(@facility.category.name) %></p>
-<p><%= link_to "Home", root_path %></p>
+<div class="container">
+  <%= render "facilities/facility_details" %>
+  <%= render "facilities/facility_map" %>
+
+  <%= render "facilities/facility_review_card" %>
+
+
+  <% if user_signed_in? == true %>
+    <%= simple_form_for([ @facility, @review]) do |f| %>
+      <%= f.input :content, as: :text %>
+      <%= f.button :submit %>
+    <% end %>
+  <% else %>
+    <%= link_to "Review Now", new_user_registration_path %>
+  <% end %>
+
+  <p><%= link_to "Back", category_path(@facility.category.name) %></p>
+  <p><%= link_to "Home", root_path %></p>
+
+</div>
