@@ -6,10 +6,7 @@
 
 
   <% if user_signed_in? == true %>
-    <%= simple_form_for([ @facility, @review]) do |f| %>
-      <%= f.input :content, as: :text %>
-      <%= f.button :submit %>
-    <% end %>
+    <%= link_to "Add Review", new_facility_review_path(@facility) %>
   <% else %>
     <%= link_to "Review Now", new_user_registration_path %>
   <% end %>
