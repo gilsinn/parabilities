@@ -1,4 +1,14 @@
-<%= simple_form_for [ @review, @comment] do |f| %>
+<div id="review">
+  <% if @review.comments.blank? %>
+    <p>Be the first to leave a comment</p>
+  <% else %>
+  <%= @review.comments.each do |comment| %>
+    <p><%= comment.comment %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<%= simple_form_for([ @review, @comment], remote: true) do |f| %>
   <%= f.input :comment %>
-  <%= f.submit "Submit review", class:"btn btn-primary" %>
+  <%= f.submit "Submit Comment", class:"btn btn-primary" %>
 <% end %>

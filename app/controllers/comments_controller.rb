@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @review = Review.find(params[:review_id])
-    @comment = Comments.new(comment_params)
+    @comment = Comment.new(comment_params)
     @comment.review = @review
 
     if current_user
@@ -15,6 +15,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :user_id)
+    params.require(:comment).permit(:content)
   end
 end

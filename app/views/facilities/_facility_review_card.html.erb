@@ -26,7 +26,6 @@
 
   <div class="row review-comments">
     <div class="col-12 mt-2">
-      <h5>This place is fascinating</h5>
       <span>
         <h6>
         <%= @review.content %>
@@ -49,5 +48,7 @@
     </div>
 
   </div>
+
+  <%= render "comments/comment_card" %>
 
 </div>
