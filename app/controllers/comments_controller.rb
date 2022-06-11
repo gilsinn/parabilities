@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
     if current_user
       @comment.save
-      redirect_to facility_path(@review.facility_id)
+      redirect_to facility_path(@review.facility_id, anchor: "comment-#{@comment.id}")
     else
       redirect_to user_session_path, alerts: "You must be logged in to add a comment"
     end

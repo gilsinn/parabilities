@@ -3,7 +3,7 @@
     <p>Be the first to leave a comment</p>
   <% else %>
   <%= @review.comments.each do |comment| %>
-    <p><%= comment.comment %></p>
+    <p id="review-<%= comment.id %>"><%= comment.comment %></p>
     <% end %>
   <% end %>
 </div>
