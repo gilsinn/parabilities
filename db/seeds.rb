@@ -1,13 +1,25 @@
 require 'faker'
 
 puts 'Cleaning database...'
+User.destroy_all
 Category.destroy_all
+OpeningHour.destroy_all
 Facility.destroy_all
+Cuisine.destroy_all
+FacilityCuisine.destroy_all
+RatingType.destroy_all
+RatingTypeCategory.destroy_all
+Review.destroy_all
+ReviewRating.destroy_all
+Channel.destroy_all
+Message.destroy_all
+Comment.destroy_all
 puts 'Database Clean!'
 
 # ---------------------
 # users seeds
 # ---------------------
+puts 'Creating users...'
 
 Ann = User.create!(
   # firstname: "Ann",
@@ -46,7 +58,6 @@ end
 # ---------------------
 # Categories seeds
 # ---------------------
-
 puts 'Creating categories...'
 
 # file = URI.open(asset_path 'images/a0fxd7saxlav374ibgpfrt7ip416.jpg')
@@ -66,7 +77,6 @@ cat_restroom = Category.create!(name: "Restrooms")
 # ---------------------
 # opening hours seeds
 # ---------------------
-
 puts 'Creating opening hours...'
 
 days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat']
@@ -82,7 +92,6 @@ end
 # ---------------------
 # Facilities seeds
 # ---------------------
-
 opening_hours = OpeningHour.all
 
 puts 'Creating restaurants...'
@@ -114,7 +123,7 @@ puts 'Creating gyms...'
     opening_hour_id: opening_hours.sample.id,
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
-   )
+  )
 end
 
 puts 'Creating parks...'
@@ -151,7 +160,6 @@ end
 # ---------------------
 # Cuisines seeds
 # ---------------------
-
 puts 'Creating cuisines...'
 
 cuisines = %w[French Italian Japanese Korean Chinese Indian Malay]
@@ -162,7 +170,6 @@ end
 # ---------------------
 # facilities_cuisines seeds
 # ---------------------
-
 puts 'Creating restaurants cuisines...'
 
 restaurants = Facility.where(category_id: 1)
@@ -179,7 +186,6 @@ end
 # ---------------------
 # rating types seeds
 # ---------------------
-
 puts 'Creating rating types...'
 
 rating_types = %w[Wheelchair Staff Ambience Toilet]
@@ -190,7 +196,6 @@ end
 # ------------------------------
 # rating_types categories seeds
 # ------------------------------
-
 puts 'Creating categories rating types...'
 
 # categories = {1: "Restaurants", 2: "Gyms", 3: "Parks", 4: "Restrooms"}
@@ -230,7 +235,6 @@ end
 # ---------------------
 # reviews seeds
 # ---------------------
-
 puts 'Creating reviews...'
 
 users = User.all
@@ -248,7 +252,6 @@ end
 # ---------------------
 # review ratings seeds
 # ---------------------
-
 puts 'Creating review ratings...'
 
 reviews = Review.all
@@ -267,7 +270,6 @@ end
 # ---------------------
 # channels seeds
 # ---------------------
-
 puts 'Creating channel...'
 
 Channel.create!(name: "Community")
@@ -275,7 +277,6 @@ Channel.create!(name: "Community")
 # ---------------------
 # messages seeds
 # ---------------------
-
 puts 'Creating messages...'
 
 users = User.all
@@ -291,7 +292,6 @@ end
 # ---------------------
 # comments seeds
 # ---------------------
-
 puts 'Creating comments...'
 
 users = User.all
@@ -304,6 +304,5 @@ reviews = Review.all
     review_id: reviews.sample.id
   )
 end
-
 
 puts "Seeding completed!"
