@@ -1,5 +1,16 @@
 <h1>Share Your Experience</h1>
-<%= simple_form_for [ @facility, @review] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Submit review", class:"btn btn-primary" %>
-<% end %>
+
+
+<div class="container">
+
+  <div class="ratings-card">
+    <%= render "reviews/reviews_new_ratings_card.html.erb" %>
+    <%= simple_form_for [ @facility, @review] do |f| %>
+      <%= f.input :content, label: "Review", placeholder: "Any additional comments?" %>
+      <%= f.input :image, as: :file, label: "Upload Photo" %>
+      <%= f.submit "Submit review", class:"btn btn-primary" %>
+    <% end %>
+  </div>
+
+
+</div>
