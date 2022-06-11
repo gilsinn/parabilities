@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_10_040907) do
+ActiveRecord::Schema.define(version: 2022_06_10_170519) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +55,9 @@ ActiveRecord::Schema.define(version: 2022_06_10_040907) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "distance"
+    t.bigint "opening_hour_id", null: false
     t.index ["category_id"], name: "index_facilities_on_category_id"
+    t.index ["opening_hour_id"], name: "index_facilities_on_opening_hour_id"
   end
 
   create_table "facility_cuisines", force: :cascade do |t|
@@ -79,10 +82,8 @@ ActiveRecord::Schema.define(version: 2022_06_10_040907) do
   create_table "opening_hours", force: :cascade do |t|
     t.string "day"
     t.string "hours"
-    t.bigint "facility_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["facility_id"], name: "index_opening_hours_on_facility_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -145,11 +146,11 @@ ActiveRecord::Schema.define(version: 2022_06_10_040907) do
   add_foreign_key "comments", "reviews"
   add_foreign_key "comments", "users"
   add_foreign_key "facilities", "categories"
+  add_foreign_key "facilities", "opening_hours"
   add_foreign_key "facility_cuisines", "cuisines"
   add_foreign_key "facility_cuisines", "facilities"
   add_foreign_key "messages", "channels"
   add_foreign_key "messages", "users"
-  add_foreign_key "opening_hours", "facilities"
   add_foreign_key "rating_type_categories", "categories"
   add_foreign_key "rating_type_categories", "rating_types"
   add_foreign_key "review_ratings", "rating_types"
