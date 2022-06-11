@@ -9,7 +9,11 @@
     <%= f.button :submit %>
   <% end %>
 
-  <%= link_to "Review Now", new_facility_review_path(@facility)  %>
+  <% if user_signed_in? == true %>
+    <%= link_to "Review Now", new_facility_review_path(@facility)  %>
+  <% else %>
+    <%= link_to "Review Now", new_user_registration_path %>
+  <% end %>
 
   <p><%= link_to "Back", category_path(@facility.category.name) %></p>
   <p><%= link_to "Home", root_path %></p>
