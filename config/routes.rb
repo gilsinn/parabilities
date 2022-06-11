@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :reviews, only: [ :new, :create, :show ] do
+    resources :comments, only: [ :create, :show, :edit ]
+  end
+
 get "/community", to: "channels#community"
 
 end
