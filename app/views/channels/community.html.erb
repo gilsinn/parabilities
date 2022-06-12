@@ -5,8 +5,8 @@
     <%= @reviews.each do |review| %>
       <div id="review-<%= review.id %>">
         <small>
-          <strong><%= review.created_at.strftime("%a %b %e at %l:%M %p") %><%= review.user_id %></strong>
-          <i></i>
+          <strong><%= review.user_id %></strong>
+          <i><%= review.created_at.strftime("%a %b %e at %l:%M %p") %></i>
         </small>
         <p><%= review.content %></p>
       </div>
