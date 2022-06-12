@@ -6,7 +6,7 @@
   </div>
 
   <div class="col-4" id="review-count">
-    <h6>102 reviews</h6>
+    <h6><%= pluralize @facility.reviews.size,"review" %></h6>
   </div>
 </div>
 
