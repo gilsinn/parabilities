@@ -1,7 +1,7 @@
-<h3>User Reviews</h3>
+<h3 class="mb-3">User Reviews</h3>
 
 <% if @facility.reviews.blank? == true %>
-  <h5>Be the first to leave a review for <%= @facility.name %></h5>
+  <h6>Be the first to leave a review for <%= @facility.name %></h6>
 
 <% else %>
   <%= @facility.reviews.each do |review| %>
