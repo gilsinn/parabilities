@@ -12,6 +12,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def show
+    @review = Review.find(params[:id])
+    @comment = Comment.new
+  end
+
   private
 
   def comment_params
