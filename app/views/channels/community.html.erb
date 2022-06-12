@@ -1,3 +1,9 @@
 <div class="container channel">
   <h1>#<%= @channel.name %></h1>
+  <%= @messages.each do |message| %>
+    <div id="message-<%= message.id %>" >
+      <p><%= message.content %></p>
+
+    </div>
+  <% end %>
 </div>

@@ -1,6 +1,6 @@
 class ChannelsController < ApplicationController
   def community
     @channel = Channel.where(channel_id: 1)
-    @message = Message.new
+    @messages = Message.all
   end
 end
