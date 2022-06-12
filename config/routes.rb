@@ -17,5 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get "/community", to: "channels#community"
+  get "/community", to: "channels#community" do
+    resources :messages, only: :create
+  end
 end
