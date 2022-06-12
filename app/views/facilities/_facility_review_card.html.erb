@@ -16,6 +16,7 @@
 
           <div class="col-10 mt-2">
             <h4>John</h4>
+            <%# currently we do not have username in user model %>
             <% review.user.email %>
           </div>
         </div>
@@ -31,9 +32,7 @@
       <div class="row review-comments">
         <div class="col-12 mt-2">
           <span>
-            <h6>
-            <%= @review.content %>
-            </h6>
+            <h6><%= @review.content %></h6>
           </span>
         </div>
       </div>
@@ -55,8 +54,6 @@
 
       <%= render "comments/comment_card" %>
 
-      <% end %>
-
-    </div>
-
   <% end %>
+
+<% end %>
