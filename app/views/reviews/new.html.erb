@@ -4,7 +4,7 @@
 <div class="container">
 
   <div class="ratings-card">
-    <%= render "reviews/reviews_new_ratings_card.html.erb" %>
+    <%= render "reviews/reviews_new_rating_card.html.erb" %>
     <%= simple_form_for [ @facility, @review] do |f| %>
       <%= f.input :content, label: "Review", placeholder: "Any additional comments?" %>
       <%= f.input :image, as: :file, label: "Upload Photo" %>
