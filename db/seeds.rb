@@ -22,34 +22,34 @@ puts 'Database Clean!'
 puts 'Creating users...'
 
 Ann = User.create!(
-  # firstname: "Ann",
-  # lastname: "Baker",
-  # username: "ann",
+  firstname: "Ann",
+  lastname: "Baker",
+  username: "ann",
   email: "ann@abc.com",
   password: "123456"
 )
 
 Joe = User.create!(
-  # firstname: "Joe",
-  # lastname: "Smith",
-  # username: "joe",
+  firstname: "Joe",
+  lastname: "Smith",
+  username: "joe",
   email: "joe@abc.com",
   password: "123456"
 )
 
 Bob = User.create!(
-  # firstname: "Bob",
-  # lastname: "Miller",
-  # username: "bob",
+  firstname: "Bob",
+  lastname: "Miller",
+  username: "bob",
   email: "bob@abc.com",
   password: "123456"
 )
 
 10.times do
   User.create!(
-    # firstname: Faker::Name.first_name ,
-    # lastname: Faker::Name.last_name,
-    # username: "samesame",
+    firstname: Faker::Name.first_name,
+    lastname: Faker::Name.last_name,
+    username: "samesame",
     email: Faker::Internet.email,
     password: "888888"
   )

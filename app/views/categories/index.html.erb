@@ -1,9 +1,16 @@
 <h1>Categories</h1>
 
-<div>
-  <ol>
-    <%= @categories.each do |category| %>
-      <li><%= link_to category.name, category_path(category.name) %></li>
-    <% end %>
-  </ol>
+<div class="cards">
+  <% @categories.each do |category| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://)">
+      <%= link_to category.name, category_path(category.name) %>
+      <% end %>
+    </div>
+</div>
+<br>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://unsplash.com/photos/Zyx1bK9mqmA);">
+  <div class="container">
+    <h1><strong>Join Our Community!</strong></h1>
+    <%= link_to "Join Now!", community_path, class: "btn btn-flat" %>
+  </div>
 </div>
