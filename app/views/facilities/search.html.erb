@@ -4,20 +4,38 @@
   <a href="http://maps.google.com/maps?q=<%= @query%>">Google</a>
 <% else %>
   <% @facilities.each do |facility| %>
-    <div class="verified-card">
-      <div class="icons">⚙️</div>
-        <div class="row">
-          <div class="col-8 details">
-            <h2>Location name</h2>
-            <p>300 metres away</p>
-            <p>Address</p>
-            ⭐️⭐️⭐️⭐️⭐️
-          </div>
-          <div class="col-4 status">
-            <div class="badge badge-verified">Verified</div>
-          </div>
-        </div>
+        <div class="col-8 details">
+      <h2><%= facility.name %></h2>
+
+      <p><%= facility.distance  %> metres away</p>
+      <span><%= facility.address %></span>
+      <div>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+        <i class="fa-regular fa-star"></i>
+      </div>
+    </div>
+
+    <div class="col-4 status">
+      <div class="badge badge-verified">
+        <% if facility.verified_status == true %>
+          <h3>Verified</h3>
+          <% else %>
+          <h3 >Unverified</h3>
+        <% end %>
       </div>
     </div>
   <% end %>
 <% end %>
+  <div class="container-fluid">
+            <%= form_tag search_facilities_path, method: :get do %>
+                <%= text_field_tag :name,
+                        params[:name],
+                        class: "form-control",
+                          placeholder: "Search by Name"%>
+                <%= submit_tag "Search", class: "btn btn-primary" %>
+                   <% end %>
+  </div>
+<p><%= link_to "Home", root_path %></p>
