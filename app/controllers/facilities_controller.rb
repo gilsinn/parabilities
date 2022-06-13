@@ -1,5 +1,4 @@
 class FacilitiesController < ApplicationController
-
   def new
     @facility = Facility.new
   end
@@ -9,6 +8,8 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
+    @review = Review.find(params[:id])
+    @comment = Comment.new
   end
 
   def search
@@ -16,5 +17,4 @@ class FacilitiesController < ApplicationController
     @facilities = Facility.search_by_name(params[:name])
     @query = params[:name]
   end
-
 end

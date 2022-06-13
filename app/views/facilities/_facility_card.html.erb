@@ -1,31 +1,32 @@
+<% if facility.verified_status == true %>
+  <div class="verified-card">
+    <div class="icons"><i class="fa-solid fa-wheelchair"></i></div>
+    <div class="row">
 
-<div class="verified-card">
-  <div class="icons"><i class="fa-solid fa-wheelchair"></i></div>
-  <div class="row">
+      <div class="col-7 details">
+        <h2><%= facility.name %></h2>
 
-    <div class="col-8 details">
-      <h2><%= facility.name %></h2>
-
-      <p><%= facility.distance  %> metres away</p>
-      <span><%= facility.address %></span>
-      <div>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-        <i class="fa-regular fa-star"></i>
+        <p><%= facility.distance  %> metres away</p>
+        <span><%= facility.address %></span>
+        <div>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
       </div>
-    </div>
 
-    <div class="col-4 status">
-      <div class="badge badge-verified">
-        <% if facility.verified_status == true %>
-          <h3>Verified</h3>
-          <% else %>
-          <h3 >Unverified</h3>
-        <% end %>
+      <div class="col-5 status">
+        <div class="badge badge-verified">
+          <% if facility.verified_status == true %>
+            <h3>Verified</h3>
+            <% else %>
+            <h3 >Unverified</h3>
+          <% end %>
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
+<% end %>

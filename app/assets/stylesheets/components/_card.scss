@@ -1,3 +1,4 @@
+// Verified-card
 .cards {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -32,4 +33,54 @@
   color: white;
   background-color: plum;
   border-radius: 6px;
+  display: flex;
+  align-self: flex-end;
+}
+
+// Facility-details
+.facility-details {
+  background-color: antiquewhite;
+  padding: 16px;
+  border-radius: 16px;
+  width: 95%;
+
+}
+
+#review-count {
+  font-size: 6px;
+}
+
+
+// Review-card
+.review-card {
+  background-color: rgb(188, 187, 187);
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.username {
+  padding: 16px;
+  display: flex;
+}
+
+.user-profile {
+  background-color: rgb(208, 208, 208);
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+// Channel
+.channel {
+  background-color: rgb(220, 219, 218);
+  border-radius: 16px;
+  width: 90%;
+  padding: 8px;
+}
+
+.channel .review {
+  background-color: rgb(126, 126, 126);
+  border-radius: 16px;
+  row-gap: 16px;
+  margin-top: 16px;
+  padding: 8px;
 }
