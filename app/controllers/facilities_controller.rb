@@ -8,7 +8,8 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
-    @review = Review.new
+    @review = Review.find(params[:id])
+    @comment = Comment.new
   end
 
   def search

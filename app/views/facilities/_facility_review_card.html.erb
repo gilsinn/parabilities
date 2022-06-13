@@ -1,54 +1,59 @@
-<h3>User Reviews</h3>
+<h3 class="mb-3">User Reviews</h3>
 
-<div class="review-card">
+<% if @facility.reviews.blank? == true %>
+  <h6>Be the first to leave a review for <%= @facility.name %></h6>
 
-  <div class="user-profile d-flex">
+<% else %>
+  <%= @facility.reviews.each do |review| %>
+    <div class="review-card">
+      <div class="user-profile d-flex">
 
+        <div class="row username">
 
-    <div class="row username">
+          <div class="col-2">
+            <img src="https://source.unsplash.com/random" alt="avatar" class="avatar">
+          </div>
 
-      <div class="col-2">
-        <img src="https://source.unsplash.com/random" alt="avatar" class="avatar">
+          <div class="col-10 mt-2">
+            <h4>John</h4>
+            <%# currently we do not have username in user model %>
+            <% review.user.email %>
+          </div>
+        </div>
+
+        <div class="col-7">
+          <%= render "facilities/facility_rating" %>
+        </div>
+
       </div>
 
-      <div class="col-10 mt-2">
-        <h4>John</h4>
+      <img src="https://source.unsplash.com/SpuUH2QBc3A" alt="" width="100%">
+
+      <div class="row review-comments">
+        <div class="col-12 mt-2">
+          <span>
+            <h6><%= @review.content %></h6>
+          </span>
+        </div>
       </div>
-    </div>
 
-    <div class="col-7">
-      <%= render "facilities/facility_rating" %>
-    </div>
+      <div class="row">
+        <div class="col-4">
+          <i class="fa-regular fa-thumbs-up"> Like </i>
+        </div>
 
-  </div>
+        <div class="col-4">
+          <i class="fa-solid fa-share-nodes"> Share</i>
+        </div>
 
-  <img src="https://source.unsplash.com/SpuUH2QBc3A" alt="" width="100%">
+        <div class="col-4">
+          <i class="fa-regular fa-comment">Comment </i>
+        </div>
 
-  <div class="row review-comments">
-    <div class="col-12 mt-2">
-      <h5>This place is fascinating</h5>
-      <span>
-        <h6>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        </h6>
-      </span>
-    </div>
-  </div>
+      </div>
 
-  <div class="row">
-    <div class="col-4">
-      <i class="fa-regular fa-thumbs-up"> Like </i>
-    </div>
+      <%= render "comments/comment_card" %>
 
-    <div class="col-4">
-      <i class="fa-solid fa-share-nodes"> Share</i>
-    </div>
+  <% end %>
 
-    <div class="col-4">
-      <i class="fa-regular fa-comment">Comment </i>
-    </div>
-
-  </div>
-
-</div>
+<% end %>

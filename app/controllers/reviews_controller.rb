@@ -13,11 +13,11 @@ class ReviewsController < ApplicationController
     else
       render "facilities/show"
     end
-
   end
 
   def show
-
+    @review = Review.find(params[:id])
+    @comment = Comment.new
   end
 
   private
