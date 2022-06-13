@@ -45,7 +45,7 @@ Bob = User.create!(
   password: "123456"
 )
 
-10.times do
+30.times do
   User.create!(
     firstname: Faker::Name.first_name,
     lastname: Faker::Name.last_name,
