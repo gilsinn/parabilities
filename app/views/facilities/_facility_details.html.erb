@@ -32,10 +32,11 @@
     <%# opening hours %>
     <div class="row">
       <div class="col-10">
-        <h4>Opening Today</h4>
+        <%# <h4>Opening Today</h4> %>
       </div>
       <div class="col-12">
         <h6><%= @facility.opening_hour.hours %></h6>
+        <h6><%= @facility.opening_hour.day %></h6>
       </div>
     </div>
   </div>
@@ -53,7 +54,7 @@
         <h6><%= @facility.address %></h6>
       </div>
       <div class="col-12">
-        <%= link_to "Tap to view map", "#" %>
+        <%= link_to "Tap to view map", https://www.google.com/maps/place/FBG+-+Fat+Belly %>
       </div>
     </div>
   </div>
