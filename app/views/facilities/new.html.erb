@@ -1,0 +1,31 @@
+<div class="container addsneaker-card">
+  <div class= "d-flex align-items-center justify-content-center">
+    <div class= "row" justify-content-center form >
+      <div class="mb-3">
+      <%= simple_form_for [ @user, @facility ] do |f| %>
+          <%= f.input :name %>
+          <%= f.input :address %>
+          <%= f.input :phone %>
+          <%= f.input :image, as: :file %>
+          <%= f.submit "Submit Request", class:"btn btn-primary mx-auto" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div >
+    <% RatingType.all.each do |rating_type| %>
+      <ul class="rating">
+        <li><strong><%= rating_type.name %></strong></li>
+          <% (1..5).each do |i| %>
+            <li class="rating_stars fa-regular fa-star fa-2xl"
+              data-stars="<%= i %>" data-rating_type-id="<%= rating_type.id %>" id="<%= "#{rating_type.id}_#{i}" %>">
+            </li>
+          <% end %>
+      </ul>
+    <% end %>
+  </div>

@@ -4,6 +4,14 @@ class FacilitiesController < ApplicationController
   end
 
   def create
+    @facility = Facility.new(facility_params)
+    @user = User.find(params[:user_id])
+    @facility.user = @user
+    if @facility.save
+     redirect_to facility_path(@user, @facility)
+    else
+      render :new
+    end
   end
 
   def show
@@ -17,4 +25,11 @@ class FacilitiesController < ApplicationController
     @facilities = Facility.search_by_name(params[:name])
     @query = params[:name]
   end
+
+  private
+
+  def facility_params
+    params.require(:facility).permit(:name, :address, :content, :image)
+  end
+
 end
