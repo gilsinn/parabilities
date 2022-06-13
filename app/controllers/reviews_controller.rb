@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
 
   def new
+    @user = current_user
     @facility = Facility.find(params[:facility_id])
     @review = Review.new(user_id: current_user.id, facility_id: @facility.id)
     @rating_types = RatingType.all
