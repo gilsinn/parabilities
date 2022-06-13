@@ -3,7 +3,7 @@
 <div class="container channel">
 
   <div class="reviews">
-    <%= @reviews.each do |review| %>
+    <% @reviews.each do |review| %>
       <div id="review-<%= review.id %>" class="review">
         <small class="m-2 d-flex flex-row">
           <img src="https://source.unsplash.com/random-people" alt="user profile image" class="avatar">
