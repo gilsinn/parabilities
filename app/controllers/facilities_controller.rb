@@ -1,14 +1,16 @@
 class FacilitiesController < ApplicationController
   def new
     @facility = Facility.new
+    # @category = Category.find(params[:category_id])
   end
 
   def create
     @facility = Facility.new(facility_params)
-    @user = User.find(params[:user_id])
-    @facility.user = @user
+    # @category = Category.find(params[:category_id])
+    @facility.category = @category
     if @facility.save
-     redirect_to facility_path(@user, @facility)
+     redirect_to facility_path(@category, @facility)
+     puts "Thank You. Your Request Has Been Submitted."
     else
       render :new
     end
@@ -29,7 +31,7 @@ class FacilitiesController < ApplicationController
   private
 
   def facility_params
-    params.require(:facility).permit(:name, :address, :content, :image)
+    params.require(:facility).permit(:name, :address, :phone, :category_id, :image)
   end
 
 end

@@ -4,6 +4,8 @@ class Facility < ApplicationRecord
   has_many :facility_cuisines, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :users, through: :reviews
+  has_one_attached :image
+
 
   include PgSearch::Model
   pg_search_scope :search_by_name,

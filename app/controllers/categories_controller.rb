@@ -7,4 +7,5 @@ class CategoriesController < ApplicationController
     @category = Category.find_by(name: params[:id])
     @facilities = @category.facilities
   end
+
 end
