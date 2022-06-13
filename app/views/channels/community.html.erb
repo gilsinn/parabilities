@@ -1,6 +1,11 @@
+
+<div class="container channel"
+  data-controller="community-subscription"
+  data-community-subscription-community-id-value="<%= @channel.id %>">
+
   <h1 class="d-flex justify-content-center">#<%= @channel.name %></h1>
 
-<div class="container channel">
+<div class="messages" data-chatroom-subscription-target="messages">
 
   <div class="reviews">
     <% @reviews.each do |review| %>
