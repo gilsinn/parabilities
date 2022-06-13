@@ -33,9 +33,8 @@
   color: white;
   background-color: plum;
   border-radius: 6px;
-  position: relative;
-  top: 115px;
-  right: 15px;
+  display: flex;
+  align-self: flex-end;
 }
 
 // Facility-details
