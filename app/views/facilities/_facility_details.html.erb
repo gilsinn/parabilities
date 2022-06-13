@@ -6,7 +6,7 @@
   </div>
 
   <div class="col-4" id="review-count">
-    <h6>102 reviews</h6>
+    <h6><%= pluralize @facility.reviews.size,"review" %></h6>
   </div>
 </div>
 
@@ -35,7 +35,7 @@
         <h4>Opening Today</h4>
       </div>
       <div class="col-12">
-        <h6>08:00AM - 10:30pm</h6>
+        <h6><%= @facility.opening_hour.hours %></h6>
       </div>
     </div>
   </div>

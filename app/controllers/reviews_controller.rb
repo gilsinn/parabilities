@@ -15,14 +15,16 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
-
   end
 
   def show
     @review = Review.find(params[:id])
+
     @facility = Facility.find(@review.facility_id)
     @user = User.find(@review.user_id)
     @rating_types = RatingType.all
+
+    @comment = Comment.new
   end
 
   private
