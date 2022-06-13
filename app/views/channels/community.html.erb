@@ -9,7 +9,7 @@
           <img src="https://source.unsplash.com/random-people" alt="user profile image" class="avatar">
 
           <div class="d-flex flex-column mx-3">
-            <strong><%= review.user_id %></strong>
+            <strong><%= review.user.username %></strong>
             <i><%= review.created_at.strftime("%a %b %e at %l:%M %p") %></i>
           </div>
 
