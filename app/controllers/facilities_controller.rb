@@ -19,7 +19,10 @@ class FacilitiesController < ApplicationController
   def show
     @facility = Facility.find(params[:id])
     @reviews = Review.where(facility_id: @facility.id)
+    @review = Review.new
+    @comments = Comment.all
     @comment = Comment.new
+
   end
 
   def search
