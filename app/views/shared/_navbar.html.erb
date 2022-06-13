@@ -5,9 +5,13 @@
       <%= link_to "", root_path, class: "nav-link"  %>
     </i>
 
-    <i class="fa-solid fa-heart">
-      <%= link_to "#", user_favourites_path(current_user), class: "nav-link"  %>
-    </i>
+
+    <% if !current_user.nil? %>
+        <i class="fa-solid fa-heart">
+          <%= link_to "#", user_favourites_path(current_user), class: "nav-link"  %>
+        </i>
+    <% end %>
+
 
 
     <%# Community channel link %>
