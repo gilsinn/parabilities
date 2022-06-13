@@ -1,13 +1,13 @@
-<h2>Share Your Experience</h2>
-
+<h1>Share Your Experience</h1>
+<br>
 <div class="container col-12 mx-auto">
-  <h3><%= @facility.name %></h3>
+  <h2> <strong><%= @facility.name %></strong></h2>
 
-  <div >
+  <div class="row" >
     <% RatingType.all.each do |rating_type| %>
       <ul class="rating">
-        <li><strong><%= rating_type.name %></strong></li>
-          <% (1..5).each do |i| %>
+        <p><strong><%= rating_type.name %></strong></p>
+            <% (1..5).each do |i| %>
             <li class="rating_stars fa-regular fa-star fa-2xl"
               data-stars="<%= i %>" data-rating_type-id="<%= rating_type.id %>" id="<%= "#{rating_type.id}_#{i}" %>">
             </li>
@@ -25,7 +25,5 @@
       <%= f.submit "Submit review", class:"btn btn-primary mx-auto" %>
     <% end %>
   </div>
-
-
 
 </div>
