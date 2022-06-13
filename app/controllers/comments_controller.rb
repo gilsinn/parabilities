@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
     @review = Review.find(params[:review_id])
     @comment = Comment.new(comment_params)
     @comment.review = @review
-
     if current_user
       @comment.save
       redirect_to facility_path(@review.facility_id, anchor: "comment-#{@comment.id}")

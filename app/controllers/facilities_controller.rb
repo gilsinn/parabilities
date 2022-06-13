@@ -20,7 +20,7 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     @reviews = Review.where(facility_id: @facility.id)
     @review = Review.find_by(facility_id: @facility)
-    @comments = Comment.all
+    # @comments = Comment.all
     @comment = Comment.new
 
   end
@@ -36,5 +36,6 @@ class FacilitiesController < ApplicationController
   def facility_params
     params.require(:facility).permit(:name, :address, :phone, :category_id, :image)
   end
+
 
 end
