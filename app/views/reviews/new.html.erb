@@ -1,6 +1,6 @@
 <h2>Share Your Experience</h2>
 
-<div class="container col-8 mx-auto">
+<div class="container col-12 mx-auto">
   <h3><%= @facility.name %></h3>
 
   <div >
@@ -16,9 +16,9 @@
     <% end %>
   </div>
 
-  <div class="row">
+  <div class="row col-12" >
     <%= simple_form_for [@facility, @review] do |f| %>
-      <%= f.input :user_id, label: "user_id", value: current_user.id %>
+      <%= f.input :user_id, label: "user_id", value: @user.id %>
       <%= f.input :facility_id, label: "facility_id", value: @facility.id %>
       <%= f.input :content, label: "Review", placeholder: "Any additional comments?" %>
       <%= f.input :image, as: :file, label: "Upload Photo" %>

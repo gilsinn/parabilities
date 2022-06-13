@@ -8,7 +8,7 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
-    @review = Review.find(params[:id])
+    @reviews = Review.where(facility_id: @facility.id)
     @comment = Comment.new
   end
 
