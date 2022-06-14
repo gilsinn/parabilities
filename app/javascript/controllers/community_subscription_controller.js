@@ -3,7 +3,7 @@ import consumer from "../channels/consumer"
 
 export default class extends Controller {
   static values = { communityId: Number }
-  static targets = ["messages"]
+  static targets = ["messages", "input"]
 
   connect() {
     this.channel = consumer.subscriptions.create(
@@ -11,6 +11,8 @@ export default class extends Controller {
       { received: data => this.#insertMessageAndScrollDown(data) }
     )
     console.log(`Subscribe to the community with the id ${this.communityIdValue}.`)
+    window.scrollTo(0, document.body.scrollHeight)
+    console.log(this.inputTarget)
   }
 
   disconnect(){
@@ -25,7 +27,8 @@ export default class extends Controller {
 
   #insertMessageAndScrollDown(data) {
     this.messagesTarget.insertAdjacentHTML("beforeend", data)
-    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+    // this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+    window.scrollTo(0, document.body.scrollHeight)
   }
 
 }

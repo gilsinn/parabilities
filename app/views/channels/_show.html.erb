@@ -1,11 +1,14 @@
-  <%= simple_form_for [@channel, @message],
-    remote: true,
-    html: {data: {action: "ajax:success->community-subscription#resetForm"}, class: "d-flex" } do |f|
-  %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Message ##{@channel.name}",
-      wrapper_html: {class: "flex-grow-1"}
+  <div class="text-input">
+    <%= simple_form_for [@channel, @message],
+      remote: true,
+      html: {data: {action: "ajax:success->community-subscription#resetForm"}, class: "d-flex" } do |f|
     %>
-    <%= f.submit "Send", class: "btn btn-primary" %>
-  <% end %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Message ##{@channel.name}",
+        wrapper_html: {class: "flex-grow-1"},
+        input_html: {class: "input-height"}
+      %>
+      <%= f.submit "Send", class: "btn btn-primary", style:"height:32px;" %>
+    <% end %>
+  </div>
