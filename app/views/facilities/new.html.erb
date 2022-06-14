@@ -1,5 +1,4 @@
-<div class="container">
-  <div class= "d-flex align-items-center justify-content-center">
+<div class="content-wrapper facility-details">
     <div class= "row" justify-content-center form >
       <div class="my-3">
       <%= simple_form_for [ @category, @facility ] do |f| %>
@@ -8,9 +7,8 @@
           <%= f.input :phone %>
           <%= f.input :category, collection: Category.all  %>
           <%= f.input :photo, as: :file %>
-          <%= f.submit "Submit Request", class:"btn btn-primary mx-auto" %>
+          <%= f.submit "Submit Request", class:"btn-flat" %>
         <% end %>
       </div>
     </div>
-  </div>
 </div>
