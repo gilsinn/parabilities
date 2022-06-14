@@ -1,7 +1,6 @@
 <% if @facilities.empty? %>
   <h1>Sorry, <%= @query.capitalize %> could not be found</h1>
-  <p>Would you like to find it on google instead?</p>
-  <a href="http://maps.google.com/maps?q=<%= @query%>">Google</a>
+  <a class="btn btn-gradient" href= href="http://maps.google.com/maps?q=<%= @query%>">Search on Google?</a>
 <% else %>
 
   <% @facilities.each do |facility| %>
