@@ -246,16 +246,29 @@ body {
   }
 }
 
-
-.btn-flat {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: #1EDD88;
-  transition: background 0.3s ease;
+.banner {
+  background-size: cover;
+  background-position: center;
 }
 
-.btn-flat:hover {
-  background: #1BCB7F;
+.banner h1 {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-weight: bold;
+  background: linear-gradient(#DC851F, #DC851F);
+  transition: background 0.3s ease;
+  border: 1px solid #DC851F;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(#DC851F, #DC851F);
   color: white;
 }
