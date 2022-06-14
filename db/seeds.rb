@@ -137,6 +137,33 @@ puts 'Creating gyms...'
 #   )
 # end
 
+20.times do
+  gym = Facility.new(
+    name: "#{Faker::Games::Pokemon.move} Gym",
+    address: Faker::Address.street_address,
+    distance: rand(1..1000),
+    phone: Faker::PhoneNumber.phone_number_with_country_code,
+    price_range: ['$', '$$', '$$$', '$$$$'].sample,
+    category_id: cat_gym.id,
+    # opening_hour_id: opening_hours.sample.id,
+    verified_status: [true, false].sample,
+    verified_date: Faker::Date.backward(days: 1000)
+   )
+   gym.save!
+
+   5.times do
+    openinghour = OpeningHour.new(
+      day: "Closed on #{days.sample}",
+      hours: hours.sample
+    )
+    openinghour.facility = gym
+    openinghour.save!
+  end
+end
+
+
+
+
 puts 'Creating parks...'
 
 # 20.times do
@@ -153,6 +180,33 @@ puts 'Creating parks...'
 #   )
 # end
 
+20.times do
+  park = Facility.new(
+    name: "#{Faker::Fantasy::Tolkien.location} Park",
+    address: Faker::Address.street_address,
+    distance: rand(1..1000),
+    # phone: Faker::PhoneNumber.phone_number_with_country_code,
+    # price_range: ['$', '$$', '$$$', '$$$$'].sample,
+    category_id: cat_park.id,
+    # opening_hour_id: opening_hours.sample.id,
+    verified_status: [true, false].sample,
+    verified_date: Faker::Date.backward(days: 1000)
+   )
+   park.save!
+
+   5.times do
+    openinghour = OpeningHour.new(
+      day: "Closed on #{days.sample}",
+      hours: hours.sample
+    )
+    openinghour.facility = park
+    openinghour.save!
+  end
+end
+
+
+
+
 puts 'Creating restrooms...'
 # 20.times do
 #   Facility.create!(
@@ -167,6 +221,32 @@ puts 'Creating restrooms...'
 #     verified_date: Faker::Date.backward(days: 1000)
 #   )
 # end
+
+20.times do
+  restroom = Facility.new(
+    name: "#{Faker::Movies::HarryPotter.location} Restroom",
+    address: Faker::Address.street_address,
+    distance: rand(1..1000),
+    # phone: Faker::PhoneNumber.phone_number_with_country_code,
+    # price_range: ['$', '$$', '$$$', '$$$$'].sample,
+    category_id: cat_restroom.id,
+    # opening_hour_id: opening_hours.sample.id,
+    verified_status: [true, false].sample,
+    verified_date: Faker::Date.backward(days: 1000)
+   )
+   restroom.save!
+
+   5.times do
+    openinghour = OpeningHour.new(
+      day: "Closed on #{days.sample}",
+      hours: hours.sample
+    )
+    openinghour.facility = restroom
+    openinghour.save!
+  end
+end
+
+
 
 # ---------------------
 # Cuisines seeds

@@ -9,7 +9,7 @@ class FacilitiesController < ApplicationController
     @category = Category.find(params[:facility][:category].to_i)
     @facility.category = @category
     if @facility.save
-      redirect_to facility_path(@facility)
+      redirect_to root_path
     else
       render :new
     end
