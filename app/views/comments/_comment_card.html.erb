@@ -1,5 +1,5 @@
 <% @review.comments.each do |comment| %>
-  <p id="comment-<%= comment.id"><%= comment.comment</p>
+  <p id="comment-<%= comment.id %>"><%= comment.comment %></p>
 <% end %>
 
 <%= simple_form_for([@review, @comment], remote: true) do |f| %>
