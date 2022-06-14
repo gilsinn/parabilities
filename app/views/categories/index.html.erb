@@ -1,17 +1,28 @@
 <h1>Categories</h1>
 
+<div>
+  <ol>
+    <%= @categories.each do |category| %>
+      <li><%= link_to category.name, category_path(category.name) %></li>
+
+
 <div class="content-wrapper">
 
-  <div class="news-card">
-    <a href="#" class="news-card__card-link"></a>
-    <img src="https://www.pexels.com/photo/person-sitting-near-the-brown-wooden-barrel-table-3540/" alt="" class="news-card__image">
-    <div class="news-card__text-wrapper">
-      <h2 class="news-card__title">Restaurants</h2>
-      <div class="news-card__details-wrapper">
-        <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>3
+    <div class="news-card">
+      <a href="#" class="news-card__card-link"></a>
+      <img src="https://www.pexels.com/photo/person-sitting-near-the-brown-wooden-barrel-table-3540/" alt="" class="news-card__image">
+      <div class="news-card__text-wrapper">
+        <h2 class="news-card__title">Restaurants</h2>
+        <div class="news-card__details-wrapper">
+          <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>3
+        </div>
       </div>
     </div>
-  </div>
+    <% end %>
+  </ol>
+</div>
+
+
 
   <div class="news-card">
     <a href="#" class="news-card__card-link"></a>
