@@ -1,4 +1,4 @@
-<div class="container">
+<div class="user-review-card">
   <% @facility.reviews.each do |review| %>
 
     <div class="row user-details d-flex align-items-center">
@@ -41,12 +41,12 @@
     <%# image %>
     <div class="row d-flex image-spacing mb-3">
       <div class="col-6">
-        <img src="https://source.unsplash.com/Yr4n8O_3UPc" alt="meat" width="100%" height="150px" >
+        <%= cl_image_tag 'o7b693sl20e5206soaw3zwc0pt82', height: "100%", width: "150px" %>
       </div>
 
-        <div class="col-6">
-          <img src="https://source.unsplash.com/sc5sTPMrVfk" alt="burger" width="100%" height="150px">
-        </div>
+      <div class="col-6">
+         <%= cl_image_tag 'davide-cantelli-jpkfc5_d-DI-unsplash_f4abel', height: "100%", width: "150px" %>
+      </div>
 
 
     </div>
@@ -58,17 +58,20 @@
 
     <%# share,like and comment %>
 
-    <div class="row">
-            <div class="col-4">
-          <i class="fa-regular fa-thumbs-up"> Like </i>
+    <div class="row justify-content-center">
+        <div class="col-3">
+          <i class="fa-regular fa-thumbs-up"></i>
+          <h6>Like</h6>
         </div>
 
-        <div class="col-4">
-          <i class="fa-solid fa-share-nodes">Share</i>
+        <div class="col-3">
+          <i class="fa-solid fa-share-nodes"></i>
+          <h6>Share</h6>
         </div>
 
-        <div class="col-4">
-          <i class="fa-regular fa-comment">Comment </i>
+        <div class="col-3">
+          <i class="fa-regular fa-comment"></i>
+          <h6>Comment</h6>
         </div>
     </div>
 

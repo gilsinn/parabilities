@@ -70,26 +70,27 @@
 
 // user-review-card
 .user-review-card {
-  background: #0C1821;
+  background-color: #F5F5F5;
   border-radius: 16px;
   padding: 8px;
 
-}
 
-.user-review-card, .icon {
-  background-color: aliceblue;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-}
+  .icon {
+    background-color: #0C1821;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #F5F5F5;
+    opacity: 0.8;
+  }
 
-.user-review-card, .image-spacing {
-  align-content: space-between;
-  float: left;
+  .image-spacing {
+    align-content: space-between;
+  }
 }
 
 // Channel
