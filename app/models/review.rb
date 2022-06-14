@@ -6,5 +6,4 @@ class Review < ApplicationRecord
   has_many :rating_types, through: :review_ratings
 
   validates :content, :user_id, :facility_id, presence: true
-  # validates :review_ratings
 end

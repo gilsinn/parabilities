@@ -4,7 +4,7 @@
   <h6>Be the first to leave a review for <%= @facility.name %></h6>
 
 <% else %>
-  <%= @facility.reviews.each do |review| %>
+  <% @facility.reviews.each do |review| %>
     <div class="review-card">
       <div class="user-profile d-flex">
 
@@ -32,7 +32,7 @@
       <div class="row review-comments">
         <div class="col-12 mt-2">
           <span>
-            <h6><%= @review.content %></h6>
+            <h6><%= review.content %></h6>
           </span>
         </div>
       </div>
@@ -52,7 +52,7 @@
 
       </div>
 
-      <%= render "comments/comment_card" %>
+      <%# <%= render "comments/comment_card" %> %>
 
   <% end %>
 

@@ -45,11 +45,11 @@ Bob = User.create!(
   password: "123456"
 )
 
-10.times do
+30.times do
   User.create!(
     firstname: Faker::Name.first_name,
     lastname: Faker::Name.last_name,
-    username: "samesame",
+    username: Faker::Internet.username(specifier: 5..10),
     email: Faker::Internet.email,
     password: "888888"
   )

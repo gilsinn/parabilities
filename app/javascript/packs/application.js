@@ -15,11 +15,11 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 
-$(function() {
-  $('.rating_stars').click(function() {
-    var star = $(this);
-    var rating_type_id = $(this).attr('data-rating_type-id')
-    var stars = $(this).attr('data-stars');
+// $(function() {
+//   $('.rating_stars').click(function() {
+//     var star = $(this);
+//     var rating_type_id = $(this).attr('data-rating_type-id')
+//     var stars = $(this).attr('data-stars');
 
     for(i=1; i<=5, i++;) {
       if(i<= stars){
