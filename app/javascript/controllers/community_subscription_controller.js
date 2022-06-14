@@ -13,7 +13,13 @@ export default class extends Controller {
     console.log(`Subscribe to the community with the id ${this.communityIdValue}.`)
   }
 
+  disconnect(){
+    console.log("unsubscribed")
+    this.channel.unsubscribe()
+  }
+
   resetForm(event) {
+    console.log("reset")
     event.target.reset()
   }
 
