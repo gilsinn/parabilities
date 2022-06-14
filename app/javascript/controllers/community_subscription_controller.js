@@ -6,10 +6,10 @@ export default class extends Controller {
   static targets = ["messages"]
 
   connect() {
-    this.channel = consumer.subscriptions.create(
-      { channel: "CommunityChannel", id: this.communityIdValue },
-      { received: data => console.log(data) }
-    )
+    // this.channel = consumer.subscriptions.create(
+    //   { channel: "CommunityChannel", id: this.communityIdValue },
+    //   { received: data => console.log(data) }
+    // )
     console.log(`Subscribe to the community with the id ${this.communityIdValue}.`)
   }
 }
