@@ -11,7 +11,8 @@
     <%= link_to "Review Now", new_user_registration_path %>
   <% end %>
 
-  <p><%= link_to "Back", category_path(@facility.category.name) %></p>
+  <%# <p><%= link_to "Back", category_path(@facility.category.name) %></p>
+  <p><%= link_to "Back", request.referer.present? ? request.referer : default_path %></p>
   <p><%= link_to "Home", root_path %></p>
 
 </div>
