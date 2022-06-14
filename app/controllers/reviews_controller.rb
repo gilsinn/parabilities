@@ -4,9 +4,6 @@ class ReviewsController < ApplicationController
     @user = current_user
     @facility = Facility.find(params[:facility_id])
     @review = Review.new(user_id: current_user.id, facility_id: @facility.id)
-
-    @ratings = @facility.rating_types.map { |type| ReviewRating.new }
-
   end
 
   def create
@@ -14,7 +11,43 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.facility = @facility
     if @review.save
-      redirect_to facility_path(@facility)
+      review_rating_1 = ReviewRating.new(
+        {
+          rating: params[:Type1],
+          rating_type_id: params[:Rating1],
+          review_id: @review.id
+        }
+      )
+
+      review_rating_2 = ReviewRating.new(
+        {
+          rating: params[:Type2],
+          rating_type_id: params[:Rating2],
+          review_id: @review.id
+      }
+      )
+
+      review_rating_3 = ReviewRating.new(
+        {
+          rating: params[:Type3],
+          rating_type_id: params[:Rating3],
+          review_id: @review.id
+        }
+      )
+
+      review_rating_4 = ReviewRating.new(
+        {
+          rating: params[:Type4],
+          rating_type_id: params[:Rating4],
+          review_id: @review.id
+        }
+      )
+
+      if review_rating_1.save && review_rating_2.save && review_rating_3.save && review_rating_4.save
+        redirect_to facility_path(@facility)
+      else
+        render :new
+      end
     else
       render :new
     end
@@ -33,6 +66,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :image)
+    params.require(:review).permit(:content, :image, :user_id, :facility_id, :review_rating => [:rating, :rating_type_id])
   end
 end

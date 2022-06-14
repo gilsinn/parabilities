@@ -4,25 +4,27 @@
   <h2> <strong><%= @facility.name %></strong></h2>
 
 
-  <div class="row col-12" >
+  <div class="row col-12"  >
     <%= simple_form_for [@facility, @review] do |f| %>
-      <%= f.hidden_field :user_id, label: "user_id", value: @user.id %>
-      <%= f.hidden_field :facility_id, label: "facility_id", value: @facility.id %>
+      <%= f.hidden_field :user_id, label: "user_id", value: @review.user_id %>
+      <%= f.hidden_field :facility_id, label: "facility_id", value: @review.facility_id %>
       <div class="row" >
 
         <% @facility.rating_types.each do |rating_type| %>
-          <ul class="rating">
-            <p><strong><%= rating_type.name %></strong></p>
+            <div class="rating" data-controller="rating-star">
+              <p><strong><%= rating_type.name %></strong></p>
 
-            <% (1..5).each do |i| %>
-              <li class="rating_stars fa-regular fa-star fa-2xl"
-                data-stars="<%= i %>" data-rating_type-id="<%= rating_type.id %>" id="<%= "#{rating_type.id}_#{i}" %>">
-              </li>
-            <% end %>
+              <% (1..5).each do |i| %>
+                <span class="fa fa-star fa-2xl" data-action="click->rating-star#rate"
+                  data-stars="<%= i %>">
+                </span>
+              <% end %>
 
-          </ul>
+              <input type="hidden" name="<%= "Type" + rating_type.id.to_s %>" value="<%= rating_type.id %>" />
+              <input type="hidden" name="<%= "Rating" + rating_type.id.to_s %>" value="0" data-rating-star-target="input"/>
+
+            </div>
         <% end %>
-
       </div>
       <%= f.input :content, label: "Review", placeholder: "Any additional comments?" %>
       <%= f.input :image, as: :file, label: "Upload Photo" %>
