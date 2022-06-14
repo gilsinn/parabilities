@@ -27,14 +27,13 @@
   display: inline-block;
   margin: 0;
   text-decoration: none;
+  line-height: 1;
 }
 
 .badge-verified {
   color: white;
   background-color: plum;
   border-radius: 6px;
-  display: flex;
-  align-self: flex-end;
 }
 
 // Facility-details
