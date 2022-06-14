@@ -7,7 +7,11 @@ class MessagesController < ApplicationController
     @message.channel = @channel
     @message.user = current_user
     if @message.save
-      redirect_to community_path(anchor: "message-#{@message.id}")
+      CommunityChannel.broadcast_to(
+        @channel,
+        render_to_string(partial: "message", locals: {message: @message})
+      )
+      head :ok
     else
       render "channels/show"
     end
