@@ -1,6 +1,5 @@
-<% @facility.reviews.each do |review| %>
-
-  <div class="container" width="300px" height="600px">
+<div class="container">
+  <% @facility.reviews.each do |review| %>
 
     <div class="row user-details d-flex align-items-center">
       <%# profile image %>
@@ -60,7 +59,7 @@
     <%# share,like and comment %>
 
     <div class="row">
-             <div class="col-4">
+            <div class="col-4">
           <i class="fa-regular fa-thumbs-up"> Like </i>
         </div>
 
@@ -73,5 +72,5 @@
         </div>
     </div>
 
-  </div>
-<% end %>
+  <% end %>
+</div>
