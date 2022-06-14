@@ -8,14 +8,11 @@ class FacilitiesController < ApplicationController
     @facility = Facility.new(facility_params)
     @category = Category.find(params[:facility][:category].to_i)
     @facility.category = @category
-    raise
-    @facility.save
-    # if @facility.save
-    #   redirect_to facility_path(@facility)
-    #   window.alert("Thank You. Your Request Has Been Submitted.")
-    # else
-    #   render :new
-    # end
+    if @facility.save
+      redirect_to facility_path(@facility)
+    else
+      render :new
+    end
   end
 
   def show
