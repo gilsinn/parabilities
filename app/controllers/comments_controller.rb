@@ -3,9 +3,8 @@ class CommentsController < ApplicationController
     @review = Review.find(params[:review_id])
     @comment = Comment.new(comment_params)
     @comment.review = @review
-
-    if current_user
-      @comment.save
+    @comment.user = current_user
+    if @comment.save
       redirect_to facility_path(@review.facility_id, anchor: "comment-#{@comment.id}")
     else
       redirect_to user_session_path, alerts: "You must be logged in to add a comment"
@@ -20,6 +19,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:comment)
   end
 end
