@@ -10,8 +10,6 @@ export default class extends Controller {
     console.log(this.itemsTarget)
     console.log(this.formTarget)
   }
-}
-
   send(event) {
     event.preventDefault()
 
@@ -27,4 +25,4 @@ export default class extends Controller {
         }
         this.formTarget.outerHTML = data.form
       })
-}
+  }
