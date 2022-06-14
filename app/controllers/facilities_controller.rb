@@ -9,8 +9,8 @@ class FacilitiesController < ApplicationController
     # @category = Category.find(params[:category_id])
     @facility.category = @category
     if @facility.save
-     redirect_to facility_path(@category, @facility)
-     puts "Thank You. Your Request Has Been Submitted."
+      redirect_to facility_path(@category, @facility)
+      window.alert("Thank You. Your Request Has Been Submitted.")
     else
       render :new
     end
