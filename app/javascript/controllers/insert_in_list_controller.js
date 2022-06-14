@@ -5,11 +5,6 @@ export default class extends Controller {
   static targets = ["items", "form"]
   static values = { position: String }
 
-  connect() {
-    console.log(this.element)
-    console.log(this.itemsTarget)
-    console.log(this.formTarget)
-  }
   send(event) {
     event.preventDefault()
 

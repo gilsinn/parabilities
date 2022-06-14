@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         # redirect_to facility_path(@review.facility_id, anchor: "comment-#{@comment.id}")
-        format.html { redirect_to facility_path(@review.facility_id) }
+        format.html { redirect_to facility_path(@review.facility_id), anchor: "comment-#{@comment.id}" }
         format.json
 
       else
