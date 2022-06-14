@@ -1,9 +1,9 @@
 <% @facility.reviews.each do |review| %>
   <div class="review-card">
 
-    <div class="row user-details">
+    <div class="row user-details d-flex align-items-center">
       <%# profile image %>
-      <div class="col-2 my-2">
+      <div class="col-2 me-3">
         <img src="https://source.unsplash.com/random" alt="profile image" class="avatar">
       </div>
       <%# Username %>
@@ -12,8 +12,8 @@
       </div>
 
       <%# review count %>
-      <div class="col-3">
-        <%= pluralize @facility.reviews.size,"review" %>
+      <div class="col-5">
+        <h6>( <%= pluralize @facility.reviews.size,"review" %> )</h6>
       </div>
     </div>
 
