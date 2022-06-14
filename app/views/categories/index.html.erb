@@ -2,12 +2,10 @@
 
 <div class="content-wrapper">
 
-
-
     <ol>
 
       <%= @categories.each do |category| %>
-        <%= link_to category_path(category.id) do %>
+        <li><%= link_to category.name, category_path(category.name) %></li>
 
           <div class="news-card">
             <a href="#" class="news-card__card-link"></a>
@@ -19,11 +17,10 @@
               </div>
             </div>
           </div>
-        <% end %>
       <% end %>
 
     </ol>
-  </div>
+
 
 
 
