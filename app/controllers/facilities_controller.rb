@@ -18,7 +18,10 @@ class FacilitiesController < ApplicationController
   def show
     @facility = Facility.find(params[:id])
     @reviews = Review.where(facility_id: @facility.id)
+    @review = Review.find_by(facility_id: @facility)
+    # @comments = Comment.all
     @comment = Comment.new
+
   end
 
   def search
@@ -32,5 +35,6 @@ class FacilitiesController < ApplicationController
   def facility_params
     params.require(:facility).permit(:name, :address, :phone, :photo)
   end
+
 
 end
