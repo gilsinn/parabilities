@@ -2,16 +2,27 @@
 
 <div class="content-wrapper">
 
-  <div class="news-card">
-    <a href="#" class="news-card__card-link"></a>
-    <img src="https://www.pexels.com/photo/person-sitting-near-the-brown-wooden-barrel-table-3540/" alt="" class="news-card__image">
-    <div class="news-card__text-wrapper">
-      <h2 class="news-card__title">Restaurants</h2>
-      <div class="news-card__details-wrapper">
-        <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>3
-      </div>
-    </div>
-  </div>
+    <ol>
+
+      <%= @categories.each do |category| %>
+        <li><%= link_to category.name, category_path(category.name) %></li>
+
+          <div class="news-card">
+            <a href="#" class="news-card__card-link"></a>
+            <img src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+              <h2 class="news-card__title"><%= category.name %></h2>
+              <div class="news-card__details-wrapper">
+                <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>3
+              </div>
+            </div>
+          </div>
+      <% end %>
+
+    </ol>
+
+
+
 
   <div class="news-card">
     <a href="#" class="news-card__card-link"></a>
