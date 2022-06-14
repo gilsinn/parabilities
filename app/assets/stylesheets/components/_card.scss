@@ -69,14 +69,27 @@
 }
 
 // user-review-card
+.user-review-card {
+  background: #0C1821;
+  border-radius: 16px;
+  padding: 8px;
+
+}
+
 .user-review-card, .icon {
   background-color: aliceblue;
-  width: 32px;
-  height: 32px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2rem;
+}
+
+.user-review-card, .image-spacing {
+  align-content: space-between;
+  float: left;
 }
 
 // Channel
