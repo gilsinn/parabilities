@@ -28,5 +28,3 @@ import "bootstrap"
         $('#' + rating_type_id + '_' + i).removeClass('selected');
       }
     }
-  });
-});

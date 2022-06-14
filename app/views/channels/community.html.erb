@@ -5,7 +5,7 @@
 
   <h1 class="d-flex justify-content-center">#<%= @channel.name %></h1>
 
-  <div class="messages" data-chatroom-subscription-target="messages">
+  <div class="messages" data-community-subscription-target="messages">
 
     <% @channel.messages.each do |message| %>
       <%= render "messages/message", message: message %>
