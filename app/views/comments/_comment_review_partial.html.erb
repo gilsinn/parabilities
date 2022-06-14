@@ -1,0 +1,3 @@
+<% @review.comments.each do |comment| %>
+  <p id="comment-<%= comment.id %>"><%= comment.comment %></p>
+<% end %>
