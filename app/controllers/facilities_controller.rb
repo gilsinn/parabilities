@@ -6,14 +6,16 @@ class FacilitiesController < ApplicationController
 
   def create
     @facility = Facility.new(facility_params)
-    # @category = Category.find(params[:category_id])
+    @category = Category.find(params[:facility][:category].to_i)
     @facility.category = @category
-    if @facility.save
-      redirect_to facility_path(@category, @facility)
-      window.alert("Thank You. Your Request Has Been Submitted.")
-    else
-      render :new
-    end
+    raise
+    @facility.save
+    # if @facility.save
+    #   redirect_to facility_path(@facility)
+    #   window.alert("Thank You. Your Request Has Been Submitted.")
+    # else
+    #   render :new
+    # end
   end
 
   def show
@@ -31,7 +33,7 @@ class FacilitiesController < ApplicationController
   private
 
   def facility_params
-    params.require(:facility).permit(:name, :address, :phone, :category_id, :image)
+    params.require(:facility).permit(:name, :address, :phone, :photo)
   end
 
 end

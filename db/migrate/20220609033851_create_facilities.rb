@@ -7,7 +7,7 @@ class CreateFacilities < ActiveRecord::Migration[6.1]
       t.string :price_range
       t.boolean :verified_status
       t.date :verified_date
-      t.references :category, null: false, foreign_key: true
+      t.references :category, null: true, foreign_key: true
 
       t.timestamps
     end
