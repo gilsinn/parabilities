@@ -9,7 +9,7 @@ class FacilitiesController < ApplicationController
     @category = Category.find(params[:facility][:category].to_i)
     @facility.category = @category
     if @facility.save
-      redirect_to root_path
+      redirect_to root_path, notice:"Form Submitted, Thank You."
     else
       render :new
     end
