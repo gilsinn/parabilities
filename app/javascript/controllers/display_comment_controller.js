@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["comment", "form"];
 
   connect() {
-    console.log(displaying)
+    console.log("displaying")
   }
 
   displayForm() {
