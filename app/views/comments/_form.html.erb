@@ -3,8 +3,27 @@
                     insert_in_list_target: "form",
                     action: "submit->insert-in-list#send"
                   } do |f| %>
-<%= f.input :comment, as: :text %>
-<div class="d-flex justify-content-end">
-  <%= f.button :submit, class:"btn btn-gradient mb-4" %>
+
+
+<div class="comment-box">
+  <div class="row">
+    <div class="col-3">
+      <%= cl_image_tag 'nora-hutton-tCJ44OIqceU-unsplash_t5jy8f', class:"avatar-large", width: 100, height: 100, crop: :fill, gravity: :face %>
+    </div>
+
+    <div class="col-7">
+      <%= f.input :comment, as: :text, placeholder: "Leave your comment here", label: false, class: "border-0" %>
+
+    </div>
+
+    <div class="col-2">
+      <div class="d-flex justify-content-end">
+        <%= f.button :submit, 'POST' %>
+      </div>
+
+    </div>
+
+  </div>
 </div>
+
 <% end %>
