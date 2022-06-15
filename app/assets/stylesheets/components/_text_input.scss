@@ -1,6 +1,6 @@
 .text-input {
   // display: flex;
-  height: 32px;
+  height: 64px;
   width: 100vw;
   position:fixed;
   bottom: 48px;
@@ -8,5 +8,11 @@
 }
 
 .input-height {
-  height: 32px;
+  height: 64px;
+}
+
+// community chat box
+.community-chat-box {
+  background-color: white;
+  height: 64px;
 }
