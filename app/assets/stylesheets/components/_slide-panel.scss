@@ -13,8 +13,16 @@ h2 {
   z-index: 9999;
   transform: translateX(100%);
   transition: transform 300ms ease-in;
-  // &.open {
-  //   transform: translateX(0);
-  // }
+  padding-top: 2em;
+  margin-top: 2em;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  &.open {
+    transform: translateX(0);
+  }
+
+  .badge-rounded-pill{
+    font-size: 1.1em;
+  }
 
 }

@@ -1,4 +1,4 @@
-Test
+
 <% if @facilities.empty? %>
     <h1>Sorry, <%= @query.capitalize %> could not be found</h1>
 
@@ -38,7 +38,7 @@ Test
                         params[:name],
                         class: "form-control",
                           placeholder: "Search by Name"%>
-                <%= submit_tag "Search", class: "btn btn-primary" %>
+                <%= submit_tag "Search", class: "btn btn-gradient" %>
                    <% end %>
   </div>
 
