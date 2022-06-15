@@ -21,18 +21,18 @@
   color: black;
   padding: 16px;
   border-radius: 16px;
+  height: 100%;
 }
 
 .details {
-  display: inline-block;
-  margin: 0;
   text-decoration: none;
   line-height: 1;
+  color: white;
 }
 
 .badge-verified {
   color: white;
-  background-color: plum;
+  background-color: #c99608;
   border-radius: 6px;
 }
 
