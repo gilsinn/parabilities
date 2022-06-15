@@ -113,7 +113,7 @@ puts 'Creating restaurants...'
 
    5.times do
     openinghour = OpeningHour.new(
-      day: "Closed on #{days.sample}",
+      day: days.sample,
       hours: hours.sample
     )
     openinghour.facility = restaurant

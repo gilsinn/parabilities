@@ -7,10 +7,9 @@
         <%= f.input :name, label: 'Facility Name:' %>
         <%= f.input :address, label: 'Address:' %>
         <%= f.input :phone, label: 'Phone:' %>
-
         <%= f.input :category, collection: Category.all  %>
         <%= f.input :photo, as: :file, label: 'Attach Photo:' %>
-        <%= f.submit "Submit Request", class:"btn-gradient" %>
+        <%= f.submit "Submit Request", class:"btn-gradient", data: {confirm: "Are You Sure?" } %>
         <% end %>
       </div>
     </div>
