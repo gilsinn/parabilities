@@ -22,7 +22,7 @@
 
 </div>
 
-<%= link_to "Share your experience", "#" %>
+<%= link_to "Share your experience", "#", class: "btn btn-gradient" %>
 
 <div class="facility-details my-3">
   <div class="row top d-flex">
@@ -35,8 +35,8 @@
         <%# <h4>Opening Today</h4> %>
       </div>
       <div class="col-12">
-        <h6><%= @facility.opening_hour.hours %></h6>
-        <h6><%= @facility.opening_hour.day %></h6>
+        <h6><%= @facility.opening_hours %></h6>
+        <%# <h6><%= @facility.opening_hours.day %></h6> %>
       </div>
     </div>
   </div>

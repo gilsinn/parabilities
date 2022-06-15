@@ -1,26 +1,36 @@
+
+<div class="container channel"
+  data-controller="community-subscription"
+  data-community-subscription-community-id-value="<%= @channel.id %>">
+
   <h1 class="d-flex justify-content-center">#<%= @channel.name %></h1>
 
-<div class="container channel">
+  <div class="messages" data-community-subscription-target="messages">
 
-  <div class="reviews">
-    <% @reviews.each do |review| %>
-      <div id="review-<%= review.id %>" class="review">
-        <small class="m-2 d-flex flex-row">
-          <img src="https://source.unsplash.com/random-people" alt="user profile image" class="avatar">
-
-          <div class="d-flex flex-column mx-3">
-            <strong><%= review.user.username.capitalize %></strong>
-            <i><%= review.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-          </div>
-
-        </small>
-        <p><%= review.content %></p>
-      </div>
+    <% @channel.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
     <% end %>
 
+    <div class="reviews">
+      <% @reviews.each do |review| %>
+        <div id="review-<%= review.id %>" class="review">
+          <small class="m-2 d-flex flex-row">
+            <img src="https://source.unsplash.com/random-people" alt="user profile image" class="avatar">
+
+            <div class="d-flex flex-column mx-3">
+              <strong><%= review.user.username.capitalize %></strong>
+              <i><%= review.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+            </div>
+
+          </small>
+          <p><%= review.content %></p>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <div class="mt-3">
     <%= render "channels/show" %>
   </div>
+  <%# <div data-community-subscription-target="input">test</div> %>
 </div>

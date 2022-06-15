@@ -61,6 +61,7 @@ class ReviewsController < ApplicationController
     @rating_types = RatingType.all
 
     @comment = Comment.new
+
   end
 
   private
