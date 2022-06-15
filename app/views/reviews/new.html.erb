@@ -32,7 +32,10 @@
 
       <%= f.input :content, label: "Review", placeholder: "Any additional comments?" %>
       <%= f.input :photo, as: :file, label: "Upload Photo" %>
-      <%= f.submit "Submit review", class:"btn btn-gradient", data: { action: "click->review-form#submitForm" } %>
+
+
+      <%= f.submit "Submit review", class:"btn btn-gradient mx-auto", data: { action: "click->review-form#submitForm" } %>
+
     <% end %>
   </div>
 

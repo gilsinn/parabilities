@@ -8,7 +8,7 @@
   <div class="messages" data-community-subscription-target="messages">
 
     <% @channel.messages.each do |message| %>
-      <%= render "messages/message", message: message %>
+      <%= render "channels/message", message: message %>
     <% end %>
 
     <div class="reviews">

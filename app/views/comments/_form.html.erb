@@ -4,5 +4,7 @@
                     action: "submit->insert-in-list#send"
                   } do |f| %>
 <%= f.input :comment, as: :text %>
-<%= f.button :submit, class:"btn btn-gradient" %>
+<div class="d-flex justify-content-end">
+  <%= f.button :submit, class:"btn btn-gradient mb-4" %>
+</div>
 <% end %>
