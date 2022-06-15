@@ -37,23 +37,27 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-4">
-          <i class="fa-regular fa-thumbs-up"> Like </i>
+      <div class="comment-section" data-controller= "display-comment">
+
+        <div class="row">
+          <div class="col-4">
+            <i class="fa-regular fa-thumbs-up"> Like </i>
+          </div>
+
+          <div class="col-4">
+            <i class="fa-solid fa-share-nodes"> Share</i>
+          </div>
+
+          <div class="comment-button" data-display-comment-taget="comment">
+            <div class="col-4">
+              <i class="fa-regular fa-comment" data-action="click->displaycomment#displayForm">Comment <%= review.comments.count %></i>
+            </div>
+          </div>
+
         </div>
 
-        <div class="col-4">
-          <i class="fa-solid fa-share-nodes"> Share</i>
-        </div>
-
-        <div class="col-4">
-          <i class="fa-regular fa-comment">Comment <%= review.comments.count %></i>
-
-        </div>
-
+        <%= render "comments/comment_card", html:{ class: "d-none", data: {display_comment_target: "partial"}} %>
       </div>
-
-      <%= render "comments/comment_card" %>
 
   <% end %>
 
