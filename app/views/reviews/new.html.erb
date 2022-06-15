@@ -1,6 +1,8 @@
+<br>
+<div class="container col-12 mx-auto form">
 <h1>Share Your Experience</h1>
 <br>
-<div class="container col-12 mx-auto">
+
   <h2> <strong><%= @facility.name %></strong></h2>
 
 
@@ -30,7 +32,10 @@
 
       <%= f.input :content, label: "Review", placeholder: "Any additional comments?" %>
       <%= f.input :photo, as: :file, label: "Upload Photo" %>
+
+
       <%= f.submit "Submit review", class:"btn btn-gradient mx-auto", data: { action: "click->review-form#submitForm" } %>
+
     <% end %>
   </div>
 

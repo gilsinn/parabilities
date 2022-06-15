@@ -1,8 +1,9 @@
-<div class="my-3 form body content-wrapper">
+<br>
+<div class="container my-3 col-12 mx-auto form">
   <div class="">
-    <div class= "row">
-      <div class="my-3">
+    <div class= "">
           <h1>New Facility to Add</h1>
+      <div class= "row col-12">
           <%= simple_form_for [ @category, @facility ] do |f| %>
             <div class="form-inputs">
               <%= f.input :name, label: 'Facility Name:' %>
@@ -18,6 +19,8 @@
             </div>
          <% end %>
       </div>
+        <br>
+        <h6><em>Your Request will be verified by within 7 days</em></h6>
     </div>
   </div>
 </div>
