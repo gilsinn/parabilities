@@ -7,5 +7,4 @@ class Review < ApplicationRecord
   has_one_attached :photo
 
   validates :content, :user_id, :facility_id, presence: true
-  # validates :photo, attached: true
 end
