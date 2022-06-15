@@ -19,6 +19,7 @@ class MessagesController < ApplicationController
         render_to_string(partial: "channels/message", locals: {message: @message})
       )
       head :ok
+
     else
       render "channels/community"
     end
