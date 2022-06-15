@@ -48,15 +48,17 @@
             <i class="fa-solid fa-share-nodes"> Share</i>
           </div>
 
-          <div class="comment-button" data-display-comment-taget="comment">
-            <div class="col-4">
-              <i class="fa-regular fa-comment" data-action="click->displaycomment#displayForm">Comment <%= review.comments.count %></i>
+          <div class="comment-button" data-display-comment-target="comment">
+
+            <div class="col-4" data-action="click->displaycomment#displayForm">
+              <i class="fa-regular fa-comment">Comment <%= review.comments.count %></i>
             </div>
+
           </div>
 
         </div>
 
-        <%= render "comments/comment_card", html:{ class: "d-none", data: {display_comment_target: "partial"}} %>
+        <%= render "comments/comment_card", html:{ class: "d-none", data: { display_comment_target: "form"} } %>
       </div>
 
   <% end %>
