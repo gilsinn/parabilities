@@ -6,29 +6,27 @@
 
 
   <div class="row col-12 " data-controller="review-form" >
-
     <%= simple_form_for [@facility, @review] do |f| %>
       <%= f.hidden_field :user_id, label: "user_id", value: @review.user_id %>
       <%= f.hidden_field :facility_id, label: "facility_id", value: @review.facility_id %>
 
-
+      <div class="row">
 
         <% @facility.rating_types.each do |rating_type| %>
-          <h4><strong><%= rating_type.name %></strong></h4>
+          <div class="rating" data-controller="rating-star">
+           <h4><strong><%= rating_type.name %></strong></h4>
 
             <% (1..5).each do |i| %>
-              <div class="rating" data-controller="rating-star">
                 <span class="fa fa-star fa-2xl" data-action="click->rating-star#rate"
                   data-stars="<%= i %>">
                 </span>
-              </div>
+
             <% end %>
+            <input type="hidden" name="<%= "Type" + rating_type.id.to_s %>" value="<%= rating_type.id %>" />
+            <input type="hidden" class="rating-value" name="<%= "Rating" + rating_type.id.to_s %>" data-rating-star-target="input"/>
+            <div class="text-danger rating-value-error mt-3" style="display:none" >This field is required</div>
 
-
-
-          <input type="hidden" name="<%= "Type" + rating_type.id.to_s %>" value="<%= rating_type.id %>" />
-          <input type="hidden" class="rating-value" name="<%= "Rating" + rating_type.id.to_s %>" data-rating-star-target="input"/>
-          <div class="text-danger rating-value-error mt-3" style="display:none" >This field is required</div>
+          </div>
 
         <% end %>
 
