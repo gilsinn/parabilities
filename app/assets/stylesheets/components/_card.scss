@@ -108,6 +108,15 @@
 
 }
 
+// comment-review-card
+.comment-review-card {
+ margin-bottom: 16px;
+ .description {
+  background-color: #bbb;
+  border-radius: 16px;
+  width: 70%;
+ }
+}
 // Channel
 .channel {
   background-color: rgb(220, 219, 218);
