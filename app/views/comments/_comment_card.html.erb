@@ -1,5 +1,6 @@
 <div data-controller="insert-in-list" data-insert-in-list-position-value="afterbegin">
 
+<<<<<<< HEAD
   <div data-insert-in-list-target="items">
 
     <% @review.comments.each do |comment| %>
@@ -11,3 +12,9 @@
   <%= render 'comments/form', review: @review, comment: @comment %>
 
 <div>
+=======
+<%= simple_form_for([@review, @comment], remote: true) do |f| %>
+  <%= f.input :comment, as: :text %>
+  <%= f.submit "Submit Comment", class:"btn btn-gradient" %>
+<% end %>
+>>>>>>> 629d1a246cc0426be7983b6bd9b1cb4b1ede9526

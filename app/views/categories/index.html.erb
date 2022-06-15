@@ -1,66 +1,26 @@
-<h1>Categories</h1>
-
 <div class="content-wrapper">
 
-    <ol>
-
-      <%= @categories.each do |category| %>
-        <li><%= link_to category.name, category_path(category.name) %></li>
-
-          <div class="news-card">
-            <a href="#" class="news-card__card-link"></a>
-            <img src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
-            <div class="news-card__text-wrapper">
-              <h2 class="news-card__title"><%= category.name %></h2>
-              <div class="news-card__details-wrapper">
-                <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>3
-              </div>
-            </div>
-          </div>
-      <% end %>
-
-    </ol>
-
-
-
-
-  <div class="news-card">
-    <a href="#" class="news-card__card-link"></a>
-    <img src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
-    <div class="news-card__text-wrapper">
-      <h2 class="news-card__title">Restrooms</h2>
-      <div class="news-card__details-wrapper">
-        <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+<% @categories.each do |category| %>
+  <%= link_to  category_path(category.name) do %>
+    <div class="news-card">
+      <div href="#" class="news-card__card-link"></div>
+      <img src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
+      <div class="news-card__text-wrapper">
+        <h2 class="news-card__title"><%= category.name %></h2>
+        <div class="news-card__details-wrapper">
+          <div class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></div>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
+<% end %>
 
-  <div class="news-card">
-    <a href="#" class="news-card__card-link"></a>
-    <img src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="news-card__image">
-    <div class="news-card__text-wrapper">
-      <h2 class="news-card__title">Gyms</h2>
-      <div class="news-card__details-wrapper">
-        <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <a href="#" class="news-card__card-link"></a>
-    <img src="https://images.pexels.com/photos/248486/pexels-photo-248486.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
-    <div class="news-card__text-wrapper">
-      <h2 class="news-card__title">Parks</h2>
-      <div class="news-card__details-wrapper">
-        <a href="#" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
-      </div>
-    </div>
-  </div>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://unsplash.com/photos/Zyx1bK9mqmA);">
+<%= cl_image_tag "hannah-busing-Zyx1bK9mqmA-unsplash_irplaq", height: 300, width: 450, crop: :fill %>
   <div class="container">
     <h1><strong>Join Our Community!</strong></h1>
-    <%= link_to "Join Now!", community_path, class: "btn btn-flat" %>
+    <%= link_to "Join Now!", community_path, class: "btn btn-gradient" %>
   </div>
 </div>
-<%= link_to "+ Add Facility", new_facility_path %>
+<%= link_to "Request New Facility", new_facility_path, class:"btn btn-gradient" %>
