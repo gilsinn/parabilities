@@ -1,0 +1,88 @@
+<div class="user-review-card">
+  <% @facility.reviews.each do |review| %>
+
+    <div class="row user-details d-flex align-items-center p-3">
+      <%# profile image %>
+      <div class="col-2 me-3">
+        <%= cl_image_tag 'albert-dera-ILip77SbmOE-unsplash_yfzrit', class:"avatar-large", width: 100, height: 100, crop: :fill, gravity: :face %>
+      </div>
+      <%# Username %>
+      <div class="col-3">
+        <h3>John</h3>
+      </div>
+
+      <%# review count %>
+      <div class="col-5">
+        <h6>( <%= pluralize @facility.reviews.size,"review" %> )</h6>
+      </div>
+    </div>
+
+    <%# review icons %>
+    <div class="row d-flex justify-content-center my-3">
+
+      <div class="col-3 icon mx-3">
+        <i class="fa-solid fa-wheelchair-move"></i>
+        <h4 class="rating">4</h4>
+      </div>
+
+      <div class="col-3 icon mx-3">
+        <i class="fa-solid fa-mug-saucer"></i>
+        <h4 class="rating">4</h4>
+      </div>
+
+      <div class="col-3 icon mx-3">
+        <i class="fa-solid fa-clipboard-user"></i>
+        <h4 class="rating">4</h4>
+      </div>
+
+      <div class="col-3 icon mx-3">
+        <i class="fa-solid fa-toilet"></i>
+        <h4 class="rating">4</h4>
+      </div>
+
+    </div>
+
+    <%# image %>
+    <div class="row d-flex image-spacing mb-3">
+      <div class="col-6">
+        <%= cl_image_tag 'o7b693sl20e5206soaw3zwc0pt82', height: "150px", width: "170px" %>
+      </div>
+
+      <div class="col-6">
+         <%= cl_image_tag 'davide-cantelli-jpkfc5_d-DI-unsplash_f4abel', height: "150px", width: "100%" %>
+      </div>
+
+
+    </div>
+
+    <%# Review content %>
+    <div class="row mb-3 p-3">
+      <span><%= review.content %></span>
+    </div>
+
+    <%# share,like and comment %>
+
+    <div class="row justify-content-center">
+        <div class="col-3">
+          <i class="fa-regular fa-thumbs-up"></i>
+          <h6>Like</h6>
+        </div>
+
+
+        <div class="col-3">
+          <i class="fa-regular fa-comment"></i>
+          <h6>Comment</h6>
+        </div>
+
+        <div class="col-3">
+          <i class="fa-solid fa-share-nodes"></i>
+          <h6>Share</h6>
+        </div>
+    </div>
+
+  <%= render "comments/comment_card" %>
+  <% end %>
+
+
+
+</div>

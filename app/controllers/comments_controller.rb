@@ -4,10 +4,18 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.review = @review
     @comment.user = current_user
-    if @comment.save
-      redirect_to facility_path(@review.facility_id, anchor: "comment-#{@comment.id}")
-    else
-      redirect_to user_session_path, alerts: "You must be logged in to add a comment"
+
+    respond_to do |format|
+      if @comment.save
+        # redirect_to facility_path(@review.facility_id, anchor: "comment-#{@comment.id}")
+        format.html { redirect_to facility_path(@review.facility_id), anchor: "comment-#{@comment.id}" }
+        format.json
+
+      else
+        # redirect_to user_session_path, alerts: "You must be logged in to add a comment"
+        format.html { render "facilties/show" }
+        format.json
+      end
     end
   end
 

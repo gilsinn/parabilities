@@ -66,6 +66,48 @@
   border-top-left-radius: 16px;
 }
 
+// user-review-card
+.user-review-card {
+  background-color: #F5F5F5;
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 2px 2px #ebebeb;
+
+
+  .icon {
+    background-color: #0C1821;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #F5F5F5;
+    opacity: 0.8;
+    position: relative;
+      .rating {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #DC851F;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -4px;
+        right: -8px;
+      }
+  }
+
+  .image-spacing {
+    display: inline;
+    margin: 0;
+    float: none;
+  }
+
+}
+
 // Channel
 .channel {
   background-color: rgb(220, 219, 218);
