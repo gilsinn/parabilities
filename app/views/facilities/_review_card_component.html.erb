@@ -8,7 +8,7 @@
       </div>
       <%# Username %>
       <div class="col-3">
-        <h3>John</h3>
+        <h3><%= review.user.username %></h3>
       </div>
 
       <%# review count %>
@@ -80,6 +80,7 @@
         </div>
     </div>
 
+  <h2 class="my-4">Comments</h2>
   <%= render "comments/comment_card" %>
   <% end %>
 
