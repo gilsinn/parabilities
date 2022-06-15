@@ -35,8 +35,11 @@
         <%# <h4>Opening Today</h4> %>
       </div>
       <div class="col-12">
-        <%# <h6><%= @facility.opening_hours %></h6> %>
-        <%# <h6><%= @facility.opening_hours.day %></h6> %>
+
+        <% @facility.opening_hours.each do |opening| %>
+          <h6><%= "#{opening.day} #{opening.hours}" %></h6>
+        <% end %>
+
       </div>
     </div>
   </div>
