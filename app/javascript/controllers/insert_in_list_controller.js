@@ -21,3 +21,4 @@ export default class extends Controller {
         this.formTarget.outerHTML = data.form
       })
   }
+}
