@@ -12,11 +12,10 @@ class MessagesController < ApplicationController
     @users = User.all
     @reviews = Review.all
 
-
     if @message.save
       CommunityChannel.broadcast_to(
         @channel,
-        render_to_string(partial: "channels/message", locals: {message: @message})
+        render_to_string(partial: "channels/message", locals: { message: @message })
       )
       head :ok
 

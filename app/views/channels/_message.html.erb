@@ -10,12 +10,15 @@
     <div class="col-9 message-description p-3 mb-1 w-75">
 
       <%# Review comments %>
-      <h4><p><%= message.content %></p></h4>
+      <small>
+        <span>
+          <h5><%= message.content[0..40] %></h5>
+
+        </span>
+      </small>
     </div>
 
       <%# Time sent ago %>
-      <% timecreated = message.created_at.strftime("%a %b %e at %l:%M %p") %>
+      <% timecreated = message.created_at %>
       <i class="d-flex justify-content-end"><%= time_ago_in_words(timecreated) %> ago</i>
-  </div>
-
 </div>

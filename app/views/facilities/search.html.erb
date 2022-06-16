@@ -11,29 +11,8 @@
 
     <% else %>
       <% @facilities.each do |facility| %>
-        <div class="col-8 details">
-        <h2><%= link_to facility.name, facility_path(facility) %></h2>
-          <p><%= facility.distance  %> metres away</p>
-          <span><%= facility.address %></span>
-          <div>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </div>
-      </div>
-
-      <div class="col-4 status">
-        <div class="badge badge-verified">
-          <% if facility.verified_status == true %>
-            <h3>Verified</h3>
-            <% else %>
-            <h3 >Unverified</h3>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+        <%= render "facilities/search_card" %>
+      <% end %>
   <% end %>
     <div class="container-fluid my-3">
               <%= form_tag search_facilities_path, method: :get do %>
