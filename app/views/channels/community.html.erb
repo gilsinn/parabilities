@@ -13,18 +13,8 @@
 
     <div class="reviews">
       <% @reviews.each do |review| %>
-        <div id="review-<%= review.id %>" class="review">
-          <small class="m-2 d-flex flex-row">
-            <img src="https://source.unsplash.com/random-people" alt="user profile image" class="avatar">
+        <%= render "channels/review", review: review %>
 
-            <div class="d-flex flex-column mx-3">
-              <strong><%= review.user.username.capitalize %></strong>
-              <i><%= review.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-            </div>
-
-          </small>
-          <p><%= review.content %></p>
-        </div>
       <% end %>
     </div>
 
