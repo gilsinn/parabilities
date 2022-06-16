@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
+$body-font: "Roboto Mono", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
@@ -21,4 +21,12 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
   position: relative;
   left:90%;
   top: -24px;
+}
+
+body {
+  font-family: $body-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headers-font;
 }
