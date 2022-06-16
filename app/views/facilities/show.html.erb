@@ -6,11 +6,10 @@
   <% if user_signed_in? == true %>
     <%= link_to "Add Review", new_facility_review_path(@facility), class: "btn btn-gradient" %>
   <% else %>
-    <%= link_to "Review Now", new_user_session_path %>
+    <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient justify-content-center" %>
   <% end %>
 
-
-  <p><%= link_to "Back", request.referer.present? ? request.referer : default_path, class: "btn btn-gradient" %></p>
+  <p><%= link_to "Back", request.referer.present? ? request.referer : category_path(@facility.category.name), class: "btn btn-gradient" %></p>
 
   <p><%= link_to "Home", root_path, class: "btn btn-gradient" %></p>
 
