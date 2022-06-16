@@ -7,15 +7,48 @@
   color: rgb(255, 255, 255);
 }
 
-.form2 {
-  margin-top: 3;
-  margin-left: 3;
-  // background-color: rgb(42, 41, 40);
-  padding: 16px;
-  border-radius: 16px;
-  width: 95%;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
+// Star ratings form
+
+.review-form {
+  color: white;
+}
+
+.rating {
+  margin: auto 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.rating_stars {
+  width: 16px;
+  height: 16px;
+  display: block;
+  float: left;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.fa-star {
+  color: rgba(112, 111, 111, 0.856);
+}
+
+.fa-star:hover {
+  color: #e2334c;
+}
+
+.fa-star.selected {
+  color: #c99608;
+
+  .form2 {
+    margin-top: 3;
+    margin-left: 3;
+    // background-color: rgb(42, 41, 40);
+    padding: 16px;
+    border-radius: 16px;
+    width: 95%;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
 
 a {
@@ -25,4 +58,5 @@ a {
 
 a:hover {
   text-decoration: underline;
+
 }
