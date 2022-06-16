@@ -21,10 +21,10 @@ import "bootstrap";
 //     var rating_type_id = $(this).attr('data-rating_type-id')
 //     var stars = $(this).attr('data-stars');
 
-for (i = 1; i <= 5, i++; ) {
-  if (i <= stars) {
-    $("#" + rating_type_id + "_" + i).addClass("selected");
-  } else {
-    $("#" + rating_type_id + "_" + i).removeClass("selected");
-  }
-}
+// for (i = 1; i <= 5, i++; ) {
+//   if (i <= stars) {
+//     $("#" + rating_type_id + "_" + i).addClass("selected");
+//   } else {
+//     $("#" + rating_type_id + "_" + i).removeClass("selected");
+//   }
+// }
