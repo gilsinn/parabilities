@@ -5,9 +5,13 @@
   <%= render "facilities/facility_review_card" %>
 
   <% if user_signed_in? == true %>
-    <%= link_to "Add Review", new_facility_review_path(@facility), class: "btn btn-gradient" %>
+    <%= link_to "Add Review", new_facility_review_path(@facility), class: "btn btn-gradient my-3" %>
   <% else %>
+<<<<<<< HEAD
     <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient" %>
+=======
+    <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient my-3" %>
+>>>>>>> 7cbdaa3277aa874131a96fb9da476ea6df47e94d
   <% end %>
 
 
