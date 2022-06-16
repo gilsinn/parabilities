@@ -7,15 +7,24 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap'); // font-family: 'Space Mono', monospace;
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"); // font-family: 'Space Mono', monospace;
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "mapbox-gl/dist/mapbox-gl";
 
-body{
+body {
   padding-bottom: 48px;
-  background-color: rgb(1, 21, 21);
+  background-color: #f2e9e4;
+}
+
+body {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
 }
 
 h1{
