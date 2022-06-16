@@ -8,7 +8,6 @@ export default class extends Controller {
   }
 
   displayForm() {
-    this.commentTarget.classList.add("d-none")
     this.formTarget.classList.remove("d-none")
   }
 }
