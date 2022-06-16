@@ -1,6 +1,7 @@
 <div class="container">
   <%= render "facilities/facility_details" %>
   <%#= render "facilities/facility_map" %>
+  <%= render "facilities/facility_review_card" %>
   <%= render "facilities/review_card_component" %>
 
   <% if user_signed_in? == true %>
@@ -8,10 +9,5 @@
   <% else %>
     <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient my-3" %>
   <% end %>
-
-  <p><%= link_to "Back", request.referer.present? ? request.referer : category_path(@facility.category), class: "btn btn-gradient" %></p>
-
-
-  <p><%= link_to "Home", root_path, class: "btn btn-gradient" %></p>
 
 </div>
