@@ -12,7 +12,7 @@
       <%# Review comments %>
       <small>
         <span>
-          <h5><%= message.content[0..40] %></h5>
+          <h5><%= message.content[0..35] %></h5>
 
         </span>
       </small>
@@ -20,5 +20,5 @@
 
       <%# Time sent ago %>
       <% timecreated = message.created_at %>
-      <i class="d-flex justify-content-end"><%= time_ago_in_words(timecreated) %> ago</i>
+      <i class="d-flex justify-content-end"><%= time_ago_in_words(timecreated).gsub('about','') + ' ago' %></i>
 </div>
