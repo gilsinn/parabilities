@@ -11,7 +11,4 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-body{
-  padding-bottom: 48px;
-}
+@import "mapbox-gl/dist/mapbox-gl";
