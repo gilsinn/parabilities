@@ -10,8 +10,13 @@
     <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient" %>
   <% end %>
 
+<<<<<<< HEAD
 
   <p><%= link_to "Back", request.referer.present? ? request.referer : category_path(@facility.category), class: "btn btn-gradient" %></p>
+=======
+  <p><%= link_to "Back", request.referer.present? ? request.referer : default_path, class: "btn btn-gradient" %></p>
+>>>>>>> fc766e79754178eb584d24a640edefa9d22ae079
+
 
   <p><%= link_to "Home", root_path, class: "btn btn-gradient" %></p>
 

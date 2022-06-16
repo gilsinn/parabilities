@@ -5,28 +5,16 @@
 
   <h1 class="d-flex justify-content-center">#<%= @channel.name %></h1>
 
+  <%# message %>
   <div class="messages" data-community-subscription-target="messages">
-
-    <% @channel.messages.each do |message| %>
-      <%= render "channels/message", message: message %>
+    <% @combined_content.each do |content| %>
+      <% if content.class == Message %>
+        <%= render "channels/message", message: content %>
+      <% elsif content.class == Review %>
+        <%= render "channels/review", review: content %>
+      <% end %>
     <% end %>
 
-    <div class="reviews">
-      <% @reviews.each do |review| %>
-        <div id="review-<%= review.id %>" class="review">
-          <small class="m-2 d-flex flex-row">
-            <img src="https://source.unsplash.com/random-people" alt="user profile image" class="avatar">
-
-            <div class="d-flex flex-column mx-3">
-              <strong><%= review.user.username.capitalize %></strong>
-              <i><%= review.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-            </div>
-
-          </small>
-          <p><%= review.content %></p>
-        </div>
-      <% end %>
-    </div>
     <%# text input box %>
     <div class="mt-3">
       <%= render "channels/show" %>
@@ -36,3 +24,7 @@
 
   <%# <div data-community-subscription-target="input">test</div> %>
 </div>
+
+<%# Push message array and review array into new array %>
+
+  <%# Iterate over the combined content, and for each, render the appropiate partial %>

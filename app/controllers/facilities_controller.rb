@@ -22,6 +22,7 @@ class FacilitiesController < ApplicationController
     # @comments = Comment.all
     @comment = Comment.new
 
+    @markers = @facility.latitude.nil? ? [{ lat: 28.10803865, lng: -15.444108135254993 }] : [{ lat: @facility.geocode[0], lng:@facility.geocode[1] }]
   end
 
   def search
