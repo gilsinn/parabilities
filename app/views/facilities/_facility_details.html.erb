@@ -21,7 +21,14 @@
   </ul>
 </div>
 
-<%= link_to "Share your experience", new_facility_review_path(@facility), class: "btn btn-gradient" %>
+<div>
+  <% if user_signed_in? == true %>
+    <%= link_to "Share your experience", new_facility_review_path(@facility), class: "btn btn-gradient" %>
+  <% else %>
+    <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient" %>
+  <% end %>
+</div>
+
 <div class="facility-details my-3">
   <div class="row top d-flex">
     <div class="col-1">

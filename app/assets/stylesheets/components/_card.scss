@@ -47,11 +47,11 @@
 
 // Facility-details
 .facility-name h1 {
-  color: white;
+  color: black;
 }
 
 .facility-name h6 {
-  color: white;
+  color: black;
 }
 
 .facility-details {
@@ -60,6 +60,12 @@
   border-radius: 16px;
   width: 95%;
   margin: 16px auto;
+}
+
+.facility-details a {
+ font-family: "Space-Mono";
+ color: rgb(230, 65, 175);
+
 }
 
 .facility-name h1 {
