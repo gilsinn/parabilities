@@ -11,6 +11,9 @@
     <% end %>
   </div>
 
-    <p><%= link_to "Back", request.referer.present? ? request.referer : category_path(@facility.category.name), class: "btn btn-gradient" %></p>
+
+  <p><%= link_to "Back", request.referer.present? ? request.referer : category_path(@facility.category), class: "btn btn-gradient" %></p>
+
+  <%# <p><%= link_to "Home", root_path, class: "btn btn-gradient" %></p> %>
 
 </div>
