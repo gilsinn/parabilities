@@ -8,10 +8,10 @@
   </div>
 
   <div class="d-flex justify-content-between">
-    <%= link_to "@Facility.name"  %>
+    <%= link_to "@#{review.facility.name}", facility_path(review.facility)  %>
     <%# Time sent ago %>
     <% timecreated = review.created_at.strftime("%a %b %e at %l:%M %p") %>
-    <i><%= time_ago_in_words(timecreated) %> ago</i>
+    <i><%= time_ago_in_words(timecreated) %></i>
   </div>
 
   <img src="https://source.unsplash.com/mNefYU7uRbk" alt="food image" width= "100%">

@@ -9,22 +9,17 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"); // font-family: 'Space Mono', monospace;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap'); // font-family: 'Space Mono', monospace;
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "mapbox-gl/dist/mapbox-gl";
 
-body {
+body{
   padding-bottom: 48px;
-  background-color: #f2e9e4;
+  background-color: rgb(1, 21, 21);
 }
 
-<<<<<<< HEAD
 h1{
-=======
-h1 {
->>>>>>> 4b16e7dda9c494393e014faa6d9144721258361f
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
