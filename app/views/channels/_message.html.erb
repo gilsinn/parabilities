@@ -9,20 +9,13 @@
     <%# Description %>
     <div class="col-9 message-description p-3 mb-1">
 
-      <%# username %>
-      <div class="">
-        <h3><%= message.user.username.capitalize %></h3>
-      </div>
       <%# Review comments %>
-      <div class=" mt-3">
-        <h4><p><%= message.content %></p></h4>
-      </div>
-      <%# Time sent ago %>
-      <div class="d-flex justify-content-end">
-        <% timecreated = message.created_at.strftime("%a %b %e at %l:%M %p") %>
-        <i><%= time_ago_in_words(timecreated) %> ago</i>
-      </div>
+      <h4><p><%= message.content %></p></h4>
     </div>
+
+      <%# Time sent ago %>
+      <% timecreated = message.created_at.strftime("%a %b %e at %l:%M %p") %>
+      <i class="d-flex justify-content-end"><%= time_ago_in_words(timecreated) %> ago</i>
   </div>
 
 </div>

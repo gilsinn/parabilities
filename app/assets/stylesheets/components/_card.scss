@@ -133,6 +133,18 @@
   padding: 8px;
 }
 
+// community message card
+.community-message-card {
+  margin-bottom: 16px;
+  .message-description {
+    background-color: #bbb;
+    border-radius: 24px;
+    height: 80px;
+    width: 255px;
+    font-size: 12px;
+  }
+}
+
 //category card
 
 @use postcss-mixins;
