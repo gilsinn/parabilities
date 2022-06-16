@@ -9,5 +9,4 @@ class ChannelsController < ApplicationController
     @users = User.all
     @reviews = Review.all
   end
-
 end

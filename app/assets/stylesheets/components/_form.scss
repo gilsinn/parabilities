@@ -1,4 +1,5 @@
 .form {
+  margin-top: 3;
   background-color: rgb(42, 41, 40);
   padding: 16px;
   border-radius: 16px;
@@ -38,4 +39,24 @@
 
 .fa-star.selected {
   color: #c99608;
+
+  .form2 {
+    margin-top: 3;
+    margin-left: 3;
+    // background-color: rgb(42, 41, 40);
+    padding: 16px;
+    border-radius: 16px;
+    width: 95%;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+
 }

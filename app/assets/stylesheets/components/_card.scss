@@ -21,19 +21,20 @@
   color: black;
   padding: 16px;
   border-radius: 16px;
+  height: 100%;
 }
 
 .details {
-  display: inline-block;
-  margin: 0;
   text-decoration: none;
   line-height: 1;
+  color: white;
 }
 
 .badge-verified {
   color: white;
-  background-color: plum;
+  background-color: #c99608;
   border-radius: 6px;
+  text-align: bottom;
 }
 
 // Facility-details
@@ -66,6 +67,56 @@
   border-top-left-radius: 16px;
 }
 
+// user-review-card
+.user-review-card {
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 2px 2px #ebebeb;
+
+  .icon {
+    background-color: #0c1821;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #f5f5f5;
+    opacity: 0.8;
+    position: relative;
+    .rating {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #dc851f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -4px;
+      right: -8px;
+    }
+  }
+
+  .image-spacing {
+    display: inline;
+    margin: 0;
+    float: none;
+  }
+}
+
+// comment-review-card
+.comment-review-card {
+  margin-bottom: 16px;
+  .description {
+    background-color: #bbb;
+    border-radius: 16px;
+    width: 70%;
+    height: 12%;
+  }
+}
 // Channel
 .channel {
   background-color: rgb(220, 219, 218);
@@ -259,15 +310,21 @@ body {
 
 .btn-gradient {
   color: white;
-  padding: 8px 24px;
+  padding: 4px 12px;
   border-radius: 20px;
   font-weight: bold;
   background: linear-gradient(#dc851f, #dc851f);
   transition: background 0.3s ease;
   border: 1px solid #dc851f;
+  margin: 8;
 }
 
 .btn-gradient:hover {
   background: linear-gradient(#dc851f, #dc851f);
   color: white;
+}
+
+#center {
+  text-align: center;
+  padding-bottom: 8px;
 }

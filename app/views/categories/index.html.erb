@@ -16,9 +16,9 @@
 <% end %>
 
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://unsplash.com/photos/Zyx1bK9mqmA);">
-<%= cl_image_tag "hannah-busing-Zyx1bK9mqmA-unsplash_irplaq", height: 300, width: 450, crop: :fill %>
-  <div class="container">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://unsplash.com/photos/Zyx1bK9mqmA), content-wrapper,">
+  <%= cl_image_tag "hannah-busing-Zyx1bK9mqmA-unsplash_irplaq", height: 300, width: 400, crop: :fill %>
+  <div class="container" id= "center">
     <h1><strong>Join Our Community!</strong></h1>
     <%= link_to "Join Now!", community_path, class: "btn btn-gradient" %>
   </div>
