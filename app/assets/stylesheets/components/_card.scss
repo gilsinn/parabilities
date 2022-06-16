@@ -159,13 +159,16 @@
 // community message card
 .community-message-card {
   margin-bottom: 16px;
-  font-family: 'Roboto Mono';
   .message-description {
-    background-color: #bbb;
+    background-color: #F2E9E4;
     border-radius: 24px;
-    height: 80px;
+    height: 60px;
     width: 255px;
     font-size: 12px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    box-shadow: 1px 1px rgba(243, 233, 228, 0.5);
   }
 }
 
@@ -175,7 +178,7 @@
   padding: 16px;
   margin-bottom: 16px;
   border-radius: 16px;
-  font-family: 'Roboto Mono', monospace;
+  box-shadow: 1px 1px rgba(201, 173, 167, 0.5);
 }
 //category card
 
