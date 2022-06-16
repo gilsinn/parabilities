@@ -1,29 +1,20 @@
 <img src="https://source.unsplash.com/N_Y88TWmGwA" alt="facility-image" width="100%">
 <div class="row mt-2">
-
-  <div class="col-8 d-inline">
+  <div class="facility-name col-8 d-inline">
     <h1><%= @facility.name %></h1>
-  </div>
-
-  <div class="col-4" id="review-count">
     <h6><%= pluralize @facility.reviews.size,"review" %></h6>
   </div>
 </div>
-
 <div class="row">
-
   <div class="col-6">
-    <i class="fa-regular fa-star"></i>
+    <i class="fa fa-star fa-2xl"></i>
     <i class="fa-regular fa-star"></i>
     <i class="fa-regular fa-star"></i>
     <i class="fa-regular fa-star"></i>
     <i class="fa-regular fa-star"></i>
   </div>
-
 </div>
-
-<%= link_to "Share your experience", "#" %>
-
+<%= link_to "Share your experience", new_facility_review_path(@facility), class: "btn btn-gradient" %>
 <div class="facility-details my-3">
   <div class="row top d-flex">
     <div class="col-1">
@@ -32,14 +23,15 @@
     <%# opening hours %>
     <div class="row">
       <div class="col-10">
-        <h4>Opening Today</h4>
+        <%# <h4>Opening Today</h4> %>
       </div>
       <div class="col-12">
-        <%# <h6><%= @facility.opening_hour.hours %></h6> %>
+        <% @facility.opening_hours.each do |opening| %>
+          <h6><%= "#{opening.day} #{opening.hours}" %></h6>
+        <% end %>
       </div>
     </div>
   </div>
-
   <div class="row mid d-flex mt-3">
     <div class="col-1">
       <i class="fa-solid fa-location-dot"></i>
@@ -53,11 +45,10 @@
         <h6><%= @facility.address %></h6>
       </div>
       <div class="col-12">
-        <%= link_to "Tap to view map", "#" %>
+        <%= link_to "Tap to view map", "http://maps.google.com/maps?q=" %>
       </div>
     </div>
   </div>
-
     <div class="row btm d-flex mt-3">
     <div class="col-1">
       <i class="fa-solid fa-utensils"></i>
@@ -69,9 +60,3 @@
       </div>
     </div>
   </div>
-  <div style="width: 100%; height: 600px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>
