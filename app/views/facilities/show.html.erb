@@ -10,7 +10,7 @@
   <% end %>
 
 
-  <p><%= link_to "Back", request.referer.present? ? request.referer : default_path, class: "btn btn-gradient" %></p>
+  <p><%= link_to "Back", request.referer.present? ? request.referer : category_path(@facility.category), class: "btn btn-gradient" %></p>
 
   <p><%= link_to "Home", root_path, class: "btn btn-gradient" %></p>
 
