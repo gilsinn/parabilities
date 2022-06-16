@@ -24,9 +24,17 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 }
 
 body {
+<<<<<<< HEAD
   font-family: $body-font;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $headers-font;
+=======
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1,h2,h3,h4 {
+  font-family: 'Quicksand', sans-serif;
+>>>>>>> 4b16e7dda9c494393e014faa6d9144721258361f
 }
