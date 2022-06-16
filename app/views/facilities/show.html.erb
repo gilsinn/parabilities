@@ -3,14 +3,18 @@
   <%= render "facilities/facility_map" %>
   <%= render "facilities/review_card_component" %>
 
-  <% if user_signed_in? == true %>
-    <%= link_to "Add Review", new_facility_review_path(@facility), class: "btn btn-gradient" %>
-  <% else %>
-    <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient justify-content-center" %>
-  <% end %>
+  <div class="col-12 d-flex justify-content-center">
+    <% if user_signed_in? == true %>
+      <%= link_to "Share your experience", new_facility_review_path(@facility), class: "btn btn-gradient" %>
+    <% else %>
+      <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient justify-content-center" %>
+    <% end %>
+  </div>
 
-  <p><%= link_to "Back", request.referer.present? ? request.referer : category_path(@facility.category.name), class: "btn btn-gradient" %></p>
+    <p><%= link_to "Back", request.referer.present? ? request.referer : category_path(@facility.category.name), class: "btn btn-gradient" %></p>
 
-  <p><%= link_to "Home", root_path, class: "btn btn-gradient" %></p>
+    <%# <p><%= link_to "Home", root_path, class: "btn btn-gradient" %></p> %>
+
+
 
 </div>

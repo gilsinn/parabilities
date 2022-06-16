@@ -37,7 +37,9 @@
       <div class="review-content-photo">
         <%= f.input :content, label: "Review", placeholder: "Any additional comments?" %>
         <%= f.input :photo, as: :file, label: "Upload Photo" %>
-        <p><%= f.submit "Submit review", class:"btn btn-gradient mx-auto", data: { action: "click->review-form#submitForm" } %></p>
+        <div class="d-flex justifty-content-center">
+          <%= f.submit "Submit", class:"btn btn-gradient mx-auto", data: { action: "click->review-form#submitForm" } %>
+        </div>
       </div>
 
 
