@@ -35,17 +35,21 @@
 .dropup-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: #F2E9E4;
   min-width: 160px;
   bottom: 50px;
   z-index: 1;
+
 }
 
 .dropup-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 12px;
   text-decoration: none;
   display: block;
+  position: relative;
+  right: 60px;
+  background-color: #F2E9E4;
 }
 
 .dropup-content a:hover {background-color: #ccc}
