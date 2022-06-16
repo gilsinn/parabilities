@@ -8,7 +8,7 @@
       </div>
       <%# Username %>
       <div class="col-3">
-        <h3><%= review.user.username %></h3>
+        <h2><%= review.user.username.capitalize %></h2>
       </div>
 
       <%# review count %>
@@ -56,8 +56,8 @@
     </div>
 
     <%# Review content %>
-    <div class="row mb-3 p-3">
-      <span><%= review.content %></span>
+    <div class="row mb-1 p-3">
+      <span><h5> <%= review.content %></h5></span>
     </div>
 
     <%# share,like and comment %>
@@ -83,7 +83,7 @@
 
 
     <div class="comment-wrapper d-none" data-display-comment-target="form">
-      <h2 class="my-4">Comments</h2>
+      <h2 class="my-3">Comments</h2>
       <%= render "comments/comment_card" %>
     </div>
 

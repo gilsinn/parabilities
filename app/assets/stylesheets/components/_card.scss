@@ -81,9 +81,12 @@
   border-radius: 16px;
   padding: 8px;
   box-shadow: 1px 1px #F2E9E4;
+  margin-bottom: 24px;
+  width: 95%;
+
 
   .icon {
-    background-color: #0c1821;
+    background-color: #22223B;
     width: 54px;
     height: 54px;
     border-radius: 50%;
@@ -124,6 +127,13 @@
     width: 70%;
     height: 12%;
   }
+}
+
+.comment-wrapper {
+  background-color: #F2E9E4;
+  border-radius: 16px;
+  padding: 8px;
+  margin-top: 16px;
 }
 // Channel
 .channel {
