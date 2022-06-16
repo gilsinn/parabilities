@@ -1,13 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
 
-    <i class="fa-solid fa-house icon">
+    <i class="fa-solid fa-house">
       <%= link_to "", root_path, class: "nav-link"  %>
     </i>
 
 
     <% if !current_user.nil? %>
-        <i class="fa-solid fa-heart icon">
+        <i class="fa-solid fa-heart">
           <%= link_to "", user_favourites_path(current_user), class: "nav-link"  %>
         </i>
     <% end %>
@@ -15,7 +15,7 @@
 
 
     <%# Community channel link %>
-    <i class="fa-solid fa-house-chimney-user icon">
+    <i class="fa-solid fa-house-chimney-user">
       <%= link_to "", community_path, class: "nav-link"  %>
     </i>
 
