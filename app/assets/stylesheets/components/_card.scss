@@ -34,6 +34,7 @@
   color: white;
   background-color: #c99608;
   border-radius: 6px;
+  text-align: bottom;
 }
 
 // Facility-details
@@ -108,13 +109,13 @@
 
 // comment-review-card
 .comment-review-card {
- margin-bottom: 16px;
- .description {
-  background-color: #bbb;
-  border-radius: 16px;
-  width: 70%;
-  height: 12%;
- }
+  margin-bottom: 16px;
+  .description {
+    background-color: #bbb;
+    border-radius: 16px;
+    width: 70%;
+    height: 12%;
+  }
 }
 // Channel
 .channel {
@@ -340,4 +341,9 @@ body {
 .btn-gradient:hover {
   background: linear-gradient(#dc851f, #dc851f);
   color: white;
+}
+
+#center {
+  text-align: center;
+  padding-bottom: 8px;
 }
