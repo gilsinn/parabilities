@@ -8,6 +8,7 @@ export default class extends Controller {
   connect() {
     this.channel = consumer.subscriptions.create(
       { channel: "CommunityChannel", id: this.communityIdValue },
+      {received: data => this.messagesTarget.insertAdjacentHTML("beforeend", data)},
       { received: data => this.#insertMessageAndScrollDown(data) }
     )
     console.log(`Subscribe to the community with the id ${this.communityIdValue}.`)
