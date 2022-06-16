@@ -5,19 +5,21 @@
       <%= link_to "", root_path, class: "nav-link"  %>
     </i>
 
+    <i class="fa-solid fa-heart">
+      <%= link_to "", user_favourites_path(current_user), class: "nav-link"  %>
+    </i>
 
-    <% if !current_user.nil? %>
-        <i class="fa-solid fa-heart">
-          <%= link_to "", user_favourites_path(current_user), class: "nav-link"  %>
-        </i>
-    <% end %>
-
-
-
-    <%# Community channel link %>
     <i class="fa-solid fa-house-chimney-user">
       <%= link_to "", community_path, class: "nav-link"  %>
     </i>
+
+    <% if user_signed_in? %>
+      <%= cl_image_tag 'albert-dera-ILip77SbmOE-unsplash_yfzrit', class:"avatar", width: 100, height: 100, crop: :fill, gravity: :face %>
+    <% else %>
+      <li class="nav-item">
+        <i class="fa-solid fa-user"><%= link_to "", new_user_session_path, class: "nav-link" %></i>
+      </li>
+    <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span><i class="fa-solid fa-user"></i></span>
@@ -35,8 +37,8 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item icon">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <li class="nav-item">
+            <i class="fa-solid fa-user"><%= link_to "Login", new_user_session_path, class: "nav-link" %></i>
           </li>
         <% end %>
       </ul>
