@@ -1,37 +1,21 @@
 <img src="https://source.unsplash.com/N_Y88TWmGwA" alt="facility-image" width="100%">
 <div class="row mt-2">
-<<<<<<< HEAD
-
-=======
->>>>>>> 4b16e7dda9c494393e014faa6d9144721258361f
   <div class="facility-name col-8 d-inline">
     <h1><%= @facility.name %></h1>
     <h6><%= pluralize @facility.reviews.size,"review" %></h6>
   </div>
-
 </div>
-<div class="row">
-<<<<<<< HEAD
 
-  <div class="col-9">
-    <i class="fa-regular fa-star fa-2xl"></i>
-    <i class="fa-regular fa-star fa-2xl"></i>
-    <i class="fa-regular fa-star fa-2xl"></i>
-    <i class="fa-regular fa-star fa-2xl"></i>
-    <i class="fa-regular fa-star fa-2xl"></i>
-
-    <%# <i class="fa-regular fa-star"></i>
-=======
-  <div class="col-6">
-    <i class="fa fa-star fa-2xl"></i>
-    <i class="fa-regular fa-star"></i>
->>>>>>> 4b16e7dda9c494393e014faa6d9144721258361f
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i> %>
-  </div>
+<div class="row five-stars">
+  <ul class="col-9">
+    <li class="fa-regular fa-star fa-2xl"></li>
+    <li class="fa-regular fa-star fa-2xl"></li>
+    <li class="fa-regular fa-star fa-2xl"></li>
+    <li class="fa-regular fa-star fa-2xl"></li>
+    <li class="fa-regular fa-star fa-2xl"></li>
+  </ul>
 </div>
+
 <%= link_to "Share your experience", new_facility_review_path(@facility), class: "btn btn-gradient" %>
 <div class="facility-details my-3">
   <div class="row top d-flex">
