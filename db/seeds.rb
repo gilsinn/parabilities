@@ -340,6 +340,8 @@ facilities = Facility.all
   )
 end
 
+# Class: Faker::Quote.yoda
+
 # ---------------------
 # review ratings seeds
 # ---------------------
