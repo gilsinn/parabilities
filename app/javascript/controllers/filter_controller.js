@@ -11,5 +11,7 @@ export default class extends Controller {
     this.wrapperTarget.classList.toggle("open")
   }
 
+  badge(){}
+
 
 }

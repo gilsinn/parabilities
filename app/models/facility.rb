@@ -21,4 +21,11 @@ class Facility < ApplicationRecord
     using: {
     tsearch: { prefix: true }
     }
+
+  def background_photo_url
+    case facility.category.name
+    when "Restaurants"
+      asset_path("restaurants_bg.png")
+    end
+  end
 end

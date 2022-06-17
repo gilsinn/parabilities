@@ -4,7 +4,18 @@
       <%= link_to  category_path(category.name) do %>
         <div class="news-card">
           <div href="#" class="news-card__card-link"></div>
-          <img src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image">
+          <%# <img src="https://images.pexels.com/photos/631954/pexels-photo-631954.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="" class="news-card__image"> %>
+          <% case category.name %>
+          <% when "Restaurants" %>
+          <%= cl_image_tag("jason-leung-poI7DelFiVA-unsplash_evroiu", width:'100%', style: "margin-top: -150px") %>
+          <% when "Gyms" %>
+          <%= cl_image_tag("samuel-girven-fqMu99l8sqo-unsplash_kndgsb", width:'100%', style: "margin-top: -150px") %>
+          <% when "Parks" %>
+          <%= cl_image_tag("jonathan-formento-2Osf8c0BpsQ-unsplash_byltfv", width:'100%', style: "margin-top: -150px") %>
+          <% when "Restrooms" %>
+          <%= cl_image_tag("kenny-eliason-MtUktx8qwnk-unsplash_zc9nib", width:'100%', style: "margin-top: -150px") %>
+          <% end %>
+
           <div class="news-card__text-wrapper">
             <h2 class="news-card__title"><%= category.name %></h2>
             <div class="news-card__details-wrapper">
