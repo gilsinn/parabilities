@@ -5,6 +5,10 @@ export default class extends Controller {
   static targets = ["items", "form"]
   static values = { position: String }
 
+  connect(){
+    console.log("insert_in_list stimulus connected")
+  }
+
   send(event) {
     event.preventDefault()
 
@@ -16,6 +20,7 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data) => {
         if (data.inserted_item) {
+          console.log(data.inserted_item)
           this.itemsTarget.insertAdjacentHTML(this.positionValue, data.inserted_item)
         }
         this.formTarget.outerHTML = data.form
