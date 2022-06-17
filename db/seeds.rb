@@ -110,6 +110,28 @@ restaurant = Facility.new(
  )
  restaurant.save!
 
+ 5.times do
+  openinghour = OpeningHour.new(
+    day: days.sample,
+    hours: hours.sample
+  )
+  openinghour.facility = restaurant
+  openinghour.save!
+end
+
+ restaurant = Facility.new(
+  name: "Boomz Burger",
+  address: "111 Somerset Road",
+  distance: rand(1..1000),
+  phone: Faker::PhoneNumber.phone_number_with_country_code,
+  price_range: ['$', '$$', '$$$', '$$$$'].sample,
+  category_id: cat_restaurant.id,
+  # opening_hour_id: opening_hours.sample.id,
+  verified_status: [true, false].sample,
+  verified_date: Faker::Date.backward(days: 1000)
+ )
+ restaurant.save!
+
 5.times do
   openinghour = OpeningHour.new(
     day: days.sample,
