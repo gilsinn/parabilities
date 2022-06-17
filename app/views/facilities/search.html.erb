@@ -4,8 +4,8 @@
 
   <% if @facilities.empty? %>
     <h1>Sorry, "<%= @query.capitalize %>" could not be found &#x1F615;</h1>
-    <%= cl_image_tag("searchgoogle_enyipo", width:'100%', style: "margin-top: -50px") %>
     <br>
+    <%= cl_image_tag("searchgoogle_enyipo", width:'100%') %>
     <%= link_to "http://maps.google.com/maps?q=#{@query}", target: :_blank do %>
       <div class="btn btn-gradient">Search on Google?</div>
     <% end %></h2>
