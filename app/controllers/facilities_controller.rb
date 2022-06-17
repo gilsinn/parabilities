@@ -35,6 +35,7 @@ class FacilitiesController < ApplicationController
     end
 
     @average_rating = count != 0 ? sum.fdiv(count).round : 0
+
   end
 
   def search
