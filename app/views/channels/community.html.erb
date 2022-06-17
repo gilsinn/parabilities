@@ -11,7 +11,13 @@
     <div class="content" data-community-subscription-target="messages">
       <% @combined_content.each do |content| %>
         <% if content.class == Message %>
-          <%= render "channels/message", message: content %>
+
+          <% if content.user_id == current_user %>
+            <%= render "channels/message", message: content %>
+          <% else %>
+            <%= render "channels/message_left", message: content %>
+          <% end %>
+
         <% elsif content.class == Review %>
           <%= render "channels/review", review: content %>
         <% end %>
