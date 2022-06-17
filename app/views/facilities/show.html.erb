@@ -18,5 +18,5 @@
   <% if user_signed_in? == true %>
     <%= link_to "Add Review", new_facility_review_path(@facility), class: "btn btn-gradient my-3" %>
   <% else %>
-    <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient my-3" %>
+    <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient" %>
   <% end %>
