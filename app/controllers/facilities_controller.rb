@@ -34,8 +34,7 @@ class FacilitiesController < ApplicationController
       end
     end
 
-    @average_rating = sum.fdiv(count).round()
-
+    @average_rating = count != 0 ? sum.fdiv(count).round : 0
 
 
 
