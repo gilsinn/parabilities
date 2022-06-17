@@ -4,8 +4,8 @@
 
 
   <% if @facilities.empty? %>
-    <h1>Sorry, <%= @query.capitalize %> could not be found</h1>
-
+    <h1>Sorry, <%= @query.capitalize %> could not be found &#x1F615;</h1>
+    <br>
     <%= link_to "http://maps.google.com/maps?q=#{@query}" do %>
       <div class="btn btn-gradient">Search on Google?</div>
     <% end %>
@@ -45,6 +45,11 @@
 
 
 <div class="container-fluid">
+<br>
+<br>
+<br>
+<br>
+  <h3>Would you like to make another search?</h3>
   <%= form_tag search_facilities_path, method: :get do %>
     <%= text_field_tag :name,
     params[:name],
