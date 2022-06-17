@@ -1,5 +1,4 @@
-<div id="message-<%= message.id %>" class="message">
-
+<div id="message-<%= message.id %>" class="message form-zindex">
 
   <div class="row community-message-card">
     <%# Avatar %>
@@ -18,7 +17,7 @@
       </small>
     </div>
 
-      <%# Time sent ago %>
-      <% timecreated = message.created_at %>
-      <i class="d-flex justify-content-end"><%= time_ago_in_words(timecreated).gsub('about','') + ' ago' %></i>
+    <%# Time sent ago %>
+    <% timecreated = message.created_at %>
+    <i class="d-flex justify-content-end"><%= time_ago_in_words(timecreated).gsub('about','') + ' ago' %></i>
 </div>
