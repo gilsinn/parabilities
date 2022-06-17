@@ -10,7 +10,7 @@
 // Star ratings form
 
 .review-form {
-  color: white;
+  color: black;
 }
 
 .rating {
@@ -53,10 +53,13 @@
 }
 
 a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
+  font-family:'Quicksand', sans-serif;;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #22223B;
+  font-weight: 900;
 }
