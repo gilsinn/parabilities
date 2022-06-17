@@ -97,6 +97,28 @@ hours = ['24hrs', '10am-10pm', '7am-2pm']
 
 puts 'Creating restaurants...'
 
+restaurant = Facility.new(
+  name: "Amazing Seafood",
+  address: "20 Collyer Quay",
+  distance: rand(1..1000),
+  phone: Faker::PhoneNumber.phone_number_with_country_code,
+  price_range: ['$', '$$', '$$$', '$$$$'].sample,
+  category_id: cat_restaurant.id,
+  # opening_hour_id: opening_hours.sample.id,
+  verified_status: [true, false].sample,
+  verified_date: Faker::Date.backward(days: 1000)
+ )
+ restaurant.save!
+
+5.times do
+  openinghour = OpeningHour.new(
+    day: days.sample,
+    hours: hours.sample
+  )
+  openinghour.facility = restaurant
+  openinghour.save!
+end
+
 20.times do
   restaurant = Facility.new(
     name: Faker::Restaurant.name,
@@ -111,7 +133,7 @@ puts 'Creating restaurants...'
    )
    restaurant.save!
 
-   5.times do
+  5.times do
     openinghour = OpeningHour.new(
       day: days.sample,
       hours: hours.sample
