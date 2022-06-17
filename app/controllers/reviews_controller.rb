@@ -13,42 +13,49 @@ class ReviewsController < ApplicationController
     if @review.save
       review_rating_1 = ReviewRating.new(
         {
-          rating: params[:Type1],
-          rating_type_id: params[:Rating1],
+          rating: params[:Rating1],
+          rating_type_id: params[:Type1],
           review_id: @review.id
         }
       )
 
       review_rating_2 = ReviewRating.new(
         {
-          rating: params[:Type2],
-          rating_type_id: params[:Rating2],
+          rating: params[:Rating2],
+          rating_type_id: params[:Type2],
           review_id: @review.id
       }
       )
 
       review_rating_3 = ReviewRating.new(
         {
-          rating: params[:Type3],
-          rating_type_id: params[:Rating3],
+          rating: params[:Rating3],
+          rating_type_id: params[:Type3],
           review_id: @review.id
         }
       )
 
       review_rating_4 = ReviewRating.new(
         {
-          rating: params[:Type4],
-          rating_type_id: params[:Rating4],
+          rating: params[:Rating4],
+          rating_type_id: params[:Type4],
           review_id: @review.id
         }
       )
 
+      # review_rating_1.save!
+      # review_rating_2.save!
+      # review_rating_3.save!
+      # review_rating_4.save!
+
       if review_rating_1.save && review_rating_2.save && review_rating_3.save && review_rating_4.save
         redirect_to facility_path(@facility)
       else
+        raise
         render :new
       end
     else
+      raise
       render :new
     end
   end
