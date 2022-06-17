@@ -1,4 +1,4 @@
-<div class="container user-bg">
+<div class="container">
   <%= render "facilities/facility_details" %>
   <%= render "facilities/facility_map" %>
 
@@ -14,7 +14,7 @@
   <% end %>
 
   <% if user_signed_in? %>
-    <%= link_to "Add Review", new_facility_review_path(@facility), class: "btn btn-gradient my-3" %>
+    <%= link_to "Share your experience", new_facility_review_path(@facility), class: "btn btn-gradient my-3" %>
   <% else %>
     <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient" %>
   <% end %>
