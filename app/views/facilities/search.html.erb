@@ -4,14 +4,14 @@
 
 
   <% if @facilities.empty? %>
-    <h1>Sorry, <%= @query.capitalize %> could not be found</h1>
-
+    <h1>Sorry, <%= @query.capitalize %> could not be found &#x1F615;</h1>
+    <br>
     <%= link_to "http://maps.google.com/maps?q=#{@query}" do %>
       <div class="btn btn-gradient">Search on Google?</div>
     <% end %>
 
   <% else %>
-      <h1>This is what we've found in our database...</h1>
+      <h1>Here's what we've found...</h1>
 
     <% @facilities.each do |facility| %>
       <div class="verified-card my-3", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/N_Y88TWmGwA')">
@@ -45,6 +45,11 @@
 
 
 <div class="container-fluid">
+<br>
+<br>
+<br>
+<br>
+  <h4>Would you like to make another search?</h4>
   <%= form_tag search_facilities_path, method: :get do %>
     <%= text_field_tag :name,
     params[:name],
@@ -55,6 +60,5 @@
 </div>
 
 <div class="mx-3">
-  <p><%= link_to "Back", request.referer.present? ? request.referer : root_path, class:"btn btn-gradient mt-3" %></p>
-  <p><%= link_to "Home", root_path, class:"btn btn-gradient" %></p>
+  <p><%= link_to "Back", request.referer.present? ? request.referer : root_path, class:"btn btn-gradient mt-3" %> <%= link_to "Home", root_path, class:"btn btn-gradient mx-3 mt-3" %></p>
 </div>
