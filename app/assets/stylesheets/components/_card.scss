@@ -46,12 +46,36 @@
 }
 
 // Facility-details
+.facility-name h1 {
+  color: black;
+}
+
+.facility-name h6 {
+  color: black;
+}
+
 .facility-details {
   background-color: #c9ada7;
   padding: 16px;
   border-radius: 16px;
   width: 95%;
+  margin: 16px auto;
 }
+
+.facility-details a {
+ font-family: "Space-Mono";
+ color: rgb(230, 65, 175);
+
+}
+
+.facility-name h1 {
+  font-weight: bold;
+}
+
+.five-stars {
+  margin: 16px, 0px, 16px;
+}
+
 
 #review-count {
   font-size: 6px;
@@ -80,10 +104,13 @@
   background-color: #c9ada7;
   border-radius: 16px;
   padding: 8px;
-  box-shadow: 2px 2px #ebebeb;
+  box-shadow: 1px 1px #c9ada7cc;
+  margin-bottom: 24px;
+  width: 95%;
+
 
   .icon {
-    background-color: #0c1821;
+    background-color: #22223B;
     width: 54px;
     height: 54px;
     border-radius: 50%;
@@ -124,6 +151,13 @@
     width: 70%;
     height: 12%;
   }
+}
+
+.comment-wrapper {
+  background-color: #F2E9E4;
+  border-radius: 16px;
+  padding: 8px;
+  margin-top: 16px;
 }
 // Channel
 .channel {

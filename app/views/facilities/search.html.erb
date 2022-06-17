@@ -1,3 +1,5 @@
+<br>
+
 <div class="container my-3 form">
 
 
@@ -10,21 +12,49 @@
       <% end %>
 
     <% else %>
+      <h1>This is what we've found in our database...</h1>
       <% @facilities.each do |facility| %>
-        <%= render "facilities/search_card" %>
+
       <% end %>
+
+      <div class="verified-card my-3", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/N_Y88TWmGwA')">
+
+        <div class="col-8 details">
+          <h2><%= link_to facility.name, facility_path(facility) %></h2>
+            <p><%= facility.distance  %> metres away</p>
+            <span><%= facility.address %></span>
+            <div>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+          </div>
+        </div>
+
+        <div class="col-4 status">
+          <div class="badge badge-verified">
+            <% if facility.verified_status == true %>
+              <h3>Verified</h3>
+              <% else %>
+              <h3 >Unverified</h3>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-    <div class="container-fluid my-3">
+    <div class="container-fluid">
               <%= form_tag search_facilities_path, method: :get do %>
                   <%= text_field_tag :name,
                           params[:name],
                           class: "form-control",
                             placeholder: "Search by Name"%>
-                  <%= submit_tag "Search", class: "btn btn-gradient my-3" %>
+                  <%= submit_tag "Search", class: "btn btn-gradient mt-3" %>
                     <% end %>
     </div>
-    <div class="mx-2">
-      <p><%= link_to "Back", request.referer.present? ? request.referer : default_path, class:"btn btn-gradient" %></p>
+    <div class="mx-3">
+      <p><%= link_to "Back", request.referer.present? ? request.referer : default_path, class:"btn btn-gradient mt-3" %></p>
       <p><%= link_to "Home", root_path, class:"btn btn-gradient" %></p>
     </div>
 

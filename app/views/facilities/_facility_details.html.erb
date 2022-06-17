@@ -4,17 +4,31 @@
     <h1><%= @facility.name %></h1>
     <h6><%= pluralize @facility.reviews.size,"review" %></h6>
   </div>
+
+    <%# <div id="review-count">
+    <%# <div class="col-4" id="review-count"> %>
+      <%# <h6><%= pluralize @facility.reviews.size,"review" %></h6>
+    <%# </div> %>
 </div>
-<div class="row">
-  <div class="col-6">
-    <i class="fa fa-star fa-2xl"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-  </div>
+
+<div class="row five-stars">
+  <ul class="col-9">
+    <li class="fa-regular fa-star fa-2xl"></li>
+    <li class="fa-regular fa-star fa-2xl"></li>
+    <li class="fa-regular fa-star fa-2xl"></li>
+    <li class="fa-regular fa-star fa-2xl"></li>
+    <li class="fa-regular fa-star fa-2xl"></li>
+  </ul>
 </div>
-<%= link_to "Share your experience", new_facility_review_path(@facility), class: "btn btn-gradient" %>
+
+<div>
+  <% if user_signed_in? == true %>
+    <%= link_to "Share your experience", new_facility_review_path(@facility), class: "btn btn-gradient" %>
+  <% else %>
+    <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient" %>
+  <% end %>
+</div>
+
 <div class="facility-details my-3">
   <div class="row top d-flex">
     <div class="col-1">

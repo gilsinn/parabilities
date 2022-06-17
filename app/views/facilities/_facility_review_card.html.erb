@@ -1,3 +1,4 @@
+
 <h3 class="mb-3">User Reviews</h3>
 
 <% if @facility.reviews.blank? == true %>
@@ -37,7 +38,7 @@
         </div>
       </div>
 
-      <div class="comment-section" data-controller= "display-comment">
+      <div class="comment-section" data-controller="review_form">
         <div class="row">
           <div class="col-4">
             <i class="fa-regular fa-thumbs-up"> Like </i>
