@@ -1,13 +1,13 @@
 <div data-controller="insert-in-list" data-insert-in-list-position-value="afterbegin">
 
-  <div data-insert-in-list-target="items">
+  <div data-insert-in-list-target="items" >
 
     <% @review.comments.each do |comment| %>
       <%= render 'reviews/comment', comment: comment %>
     <% end %>
 
-  </div>
 
   <%= render 'comments/form', review: @review, comment: @comment %>
+  </div>
 
 <div>

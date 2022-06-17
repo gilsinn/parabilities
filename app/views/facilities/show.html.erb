@@ -1,17 +1,22 @@
 <div class="container">
   <%= render "facilities/facility_details" %>
-  <%= render "facilities/facility_map" %>
+  <%#= render "facilities/facility_map" %>
+
+<h3 class="mb-3">User Reviews</h3>
+
+<% if @facility.reviews.blank? == true %>
+  <h6>Be the first to leave a review for <%= @facility.name %></h6>
+
+<% else %>
   <%= render "facilities/review_card_component" %>
+
+<% end %>
+
+
+</div>
 
   <% if user_signed_in? == true %>
     <%= link_to "Add Review", new_facility_review_path(@facility), class: "btn btn-gradient my-3" %>
   <% else %>
     <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient" %>
   <% end %>
-
-  <p><%= link_to "Back", request.referer.present? ? request.referer : default_path, class: "btn btn-gradient" %></p>
-
-
-  <p><%= link_to "Home", root_path, class: "btn btn-gradient" %></p>
-
-</div>
