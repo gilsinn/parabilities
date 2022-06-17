@@ -27,49 +27,29 @@
   <% end %>
 </div>
 
-<div class="facility-details my-3">
-  <div class="row top d-flex">
-    <div class="col-1">
-      <i class="fa-regular fa-clock"></i>
-    </div>
-    <%# opening hours %>
-    <div class="row">
-      <div class="col-10">
-        <%# <h4>Opening Today</h4> %>
-      </div>
-      <div class="col-12">
-        <% @facility.opening_hours.each do |opening| %>
-          <h6><%= "#{opening.day} #{opening.hours}" %></h6>
-        <% end %>
-      </div>
+<div class="facility-details">
+
+  <div class="opening-hours d-flex">
+    <i class="fa-regular fa-clock"></i>
+    <div class="d-line ms-4">
+      <h5>Opening Today</h5>
+      <%= @facility.opening_hours.sample.hours %>
     </div>
   </div>
-  <div class="row mid d-flex mt-3">
-    <div class="col-1">
-      <i class="fa-solid fa-location-dot"></i>
-    </div>
-    <%# Address %>
-    <div class="row">
-      <div class="col-10">
-        <h4>Address:</h4>
-      </div>
-      <div class="col-12">
-        <h6><%= @facility.address %></h6>
-      </div>
-      <div class="col-12">
-        <%= link_to "Tap to view map", "http://maps.google.com/maps?q=" %>
-      </div>
+
+  <div class="address d-flex mt-2">
+    <i class="fa-solid fa-location-dot"></i>
+    <div class="d-line ms-4 ">
+      <h5>Address</h5>
+      <h6><%= @facility.address %></h6>
+      <%= link_to "Tap to view map", "http://maps.google.com/maps?q=" %>
     </div>
   </div>
-  <div class="row btm d-flex mt-3">
-    <div class="col-1">
-      <i class="fa-solid fa-utensils"></i>
-    </div>
-    <%# Cuisine %>
-    <div class="row">
-      <div class="col-12">
-        <h6><%= @facility.price_range %>/pax . Modern . European</h6>
-      </div>
+
+  <div class="type d-flex mt-2">
+    <i class="fa-solid fa-utensils"></i>
+    <div class="d-line ms-4">
+      <h6><%= @facility.price_range %>/pax . Modern . European</h6>
     </div>
   </div>
 </div>
