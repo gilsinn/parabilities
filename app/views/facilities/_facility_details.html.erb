@@ -8,11 +8,14 @@
 
 <div class="row five-stars">
   <ul class="col-9">
-    <li class="fa-regular fa-star fa-2xl"></li>
-    <li class="fa-regular fa-star fa-2xl"></li>
-    <li class="fa-regular fa-star fa-2xl"></li>
-    <li class="fa-regular fa-star fa-2xl"></li>
-    <li class="fa-regular fa-star fa-2xl"></li>
+  <% (1..5).each do |i| %>
+    <% if i <= @average_rating %>
+        <li class="fa fa-star fa-2xl selected"></li>
+    <% else %>
+        <li class="fa fa-star fa-2xl"></li>
+    <% end %>
+  <% end %>
+
   </ul>
 </div>
 

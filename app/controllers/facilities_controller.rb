@@ -23,6 +23,22 @@ class FacilitiesController < ApplicationController
     @comment = Comment.new
 
     @markers = @facility.latitude.nil? ? [{ lat: 28.10803865, lng: -15.444108135254993 }] : [{ lat: @facility.geocode[0], lng:@facility.geocode[1] }]
+
+    sum = 0
+    count = 0
+
+    @reviews.each do |review|
+      @review.review_ratings.each do |review_rating|
+        sum += review_rating.rating
+        count += 1
+      end
+    end
+
+    @average_rating = sum.fdiv(count).round()
+
+
+
+
   end
 
   def search
