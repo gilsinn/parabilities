@@ -46,12 +46,36 @@
 }
 
 // Facility-details
+.facility-name h1 {
+  color: black;
+}
+
+.facility-name h6 {
+  color: black;
+}
+
 .facility-details {
   background-color: #c9ada7;
   padding: 16px;
   border-radius: 16px;
   width: 95%;
+  margin: 16px auto;
 }
+
+.facility-details a {
+ font-family: "Space-Mono";
+ color: rgb(230, 65, 175);
+
+}
+
+.facility-name h1 {
+  font-weight: bold;
+}
+
+.five-stars {
+  margin: 16px, 0px, 16px;
+}
+
 
 #review-count {
   font-size: 6px;
