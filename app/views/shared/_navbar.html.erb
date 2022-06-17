@@ -1,47 +1,32 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-test">
   <div class="container-fluid">
 
-    <i class="fa-solid fa-house icon">
+    <i class="fa-solid fa-house">
       <%= link_to "", root_path, class: "nav-link"  %>
     </i>
 
+    <i class="fa-solid fa-heart">
+      <%= link_to "", root_path, class: "nav-link"  %>
+    </i>
 
-    <% if !current_user.nil? %>
-        <i class="fa-solid fa-heart icon">
-          <%= link_to "", user_favourites_path(current_user), class: "nav-link"  %>
-        </i>
-    <% end %>
-
-
-
-    <%# Community channel link %>
-    <i class="fa-solid fa-house-chimney-user icon">
+    <i class="fa-solid fa-house-chimney-user">
       <%= link_to "", community_path, class: "nav-link"  %>
     </i>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span><i class="fa-solid fa-user"></i></span>
-    </button>
+    <i class="fa-solid fa-circle-left">
+      <%= link_to "", request.referer.present? ? request.referer : category_path(@facility.category), class: "nav-link"%>
+    </i>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item icon">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-
+    <% if user_signed_in? %>
+      <div class="dropup">
+        <%= cl_image_tag 'albert-dera-ILip77SbmOE-unsplash_yfzrit', class:"avatar mb-3", width: 100, height: 100, crop: :fill, gravity: :face %>
+        <div class="dropup-content">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </div>
+    <% else %>
+      <i class="fa-solid fa-user"><%= link_to "", new_user_session_path, class: "nav-link" %></i>
+    <% end %>
 
   </div>
 </div>
