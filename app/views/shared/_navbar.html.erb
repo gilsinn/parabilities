@@ -14,7 +14,7 @@
     </i>
 
     <i class="fa-solid fa-circle-left">
-      <%= link_to "", request.referer.present? ? request.referer : category_path(@facility.category), class: "nav-link"%>
+      <%= link_to "", request.referer.present? ? request.referer : root_path, class: "nav-link"%>
     </i>
 
     <% if user_signed_in? %>
