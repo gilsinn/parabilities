@@ -15,25 +15,24 @@
       </div>
 
       <div class="row d-flex justify-content-center my-3">
-
         <div class="col-3 icon mx-3">
           <i class="fa-solid fa-wheelchair-move"></i>
-          <h4 class="rating">4</h4>
+          <h4 class="rating"><%= review.review_ratings[0] ? review.review_ratings[0].rating : "" %></h4>
         </div>
 
         <div class="col-3 icon mx-3">
           <i class="fa-solid fa-mug-saucer"></i>
-          <h4 class="rating">4</h4>
+          <h4 class="rating"><%= review.review_ratings[2] ? review.review_ratings[2].rating : ""  %></h4>
         </div>
 
         <div class="col-3 icon mx-3">
           <i class="fa-solid fa-clipboard-user"></i>
-          <h4 class="rating">4</h4>
+          <h4 class="rating"><%=  review.review_ratings[1] ? review.review_ratings[1].rating : ""  %></h4>
         </div>
 
         <div class="col-3 icon mx-3">
           <i class="fa-solid fa-toilet"></i>
-          <h4 class="rating">4</h4>
+          <h4 class="rating"><%=  review.review_ratings[3] ? review.review_ratings[3].rating : ""  %></h4>
         </div>
 
       </div>
