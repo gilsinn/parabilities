@@ -8,6 +8,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"); // font-family: 'Space Mono', monospace;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap'); // font-family: 'Quicksand', sans-serif;
 
 // Your CSS partials
 @import "components/index";
@@ -28,5 +29,6 @@ body::-webkit-scrollbar {
 }
 
 h1{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: #22223B;
+  font-family: 'Quicksand', sans-serif;
 }
