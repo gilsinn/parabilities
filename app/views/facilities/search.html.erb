@@ -6,9 +6,17 @@
   <% if @facilities.empty? %>
     <h1>Sorry, <%= @query.capitalize %> could not be found &#x1F615;</h1>
     <br>
-    <%= link_to "http://maps.google.com/maps?q=#{@query}" do %>
+
+    <div class="news-card">
+      <div href="#" class="newscard__card-link"></div>
+      <img src="https://images.unsplash.com/photo-1548345680-f5475ea5df84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2946&q=80" alt="" class="news-card__image">
+
+      <div class="news-card__text-wrapper">
+        <h2 class="news-card__title"><%= link_to "http://maps.google.com/maps?q=#{@query}" do %>
       <div class="btn btn-gradient">Search on Google?</div>
-    <% end %>
+    <% end %></h2>
+      </div>
+    </div>
 
   <% else %>
       <h1>Here's what we've found...</h1>
