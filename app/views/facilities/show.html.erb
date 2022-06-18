@@ -1,9 +1,13 @@
 <div class="facility-page">
   <%= render "facilities/facility_details" %>
+
+  <hr class="solid">
+
   <%= render "facilities/facility_map" %>
 
+  <hr class="solid">
 
-  <h3 class="mb-3">
+  <h3 class="ms-3 my-3">
     User Reviews ( <%= pluralize @facility.reviews.size,"review" %> )
   </h3>
 
