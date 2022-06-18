@@ -2,7 +2,7 @@
   <div class="icons"><i class="fa-solid fa-wheelchair"></i></div>
   <div class="row">
 
-      <div class="col-7 details">
+      <div class="col-8 details">
         <h2><%= facility.name %></h2>
 
         <p><%= facility.distance  %> metres away</p>
@@ -10,8 +10,8 @@
 
         <div>
 
-          <div class="row five-stars">
-            <ul class="col-9">
+          <div class="row five-stars mt-3">
+            <ul class="col-12">
             <% (1..5).each do |i| %>
               <% if i <= @average_rating[@facility.id] %>
                   <li class="fa fa-star fa-2xl selected"></li>
@@ -37,9 +37,3 @@
 
   </div>
 </div>
-
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
