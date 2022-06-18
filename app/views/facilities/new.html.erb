@@ -5,7 +5,7 @@
           <h1>New Facility Request</h1>
       <div class= "row col-12">
           <%= simple_form_for [ @category, @facility ] do |f| %>
-            <div class="form-inputs review-form">
+            <div class="form-inputs">
               <%= f.input :name, label: 'Facility Name:' %>
               <%= f.input :address, label: 'Address:' %>
               <%= f.input :phone, label: 'Phone:' %>
@@ -14,13 +14,13 @@
               <%= f.input :photo, as: :file, label: 'Upload Photo' %>
             </div>
 
-            <div class="form-actions">
-              <%= f.submit "Submit Request", class:"btn-gradient" %>
+            <div class="form-actions d-flex justifty-content-center">
+              <%= f.submit "Submit Request", class:"btn-gradient mx-auto" %>
             </div>
          <% end %>
       </div>
         <br>
-        <h6><em>Your Request will be verified within 7 days</em></h6>
+        <h6 class="italic">Your Request will be verified within 7 days</h6>
     </div>
   </div>
 </div>

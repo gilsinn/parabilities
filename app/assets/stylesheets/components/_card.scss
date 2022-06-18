@@ -390,9 +390,9 @@ $card-height-mobile: 12rem;
   border-radius: 20px;
   font-weight: bold;
   background: linear-gradient(#4a4e69, #4a4e69);
-  transition: background 0.3s ease;
   border: 1px solid #4a4e69;
   margin: 8;
+  font-family: "Quicksand", sans-serif;
 }
 
 .btn-gradient:hover {
@@ -411,12 +411,22 @@ $card-height-mobile: 12rem;
   border-radius: 20px;
   font-weight: bold;
   background: linear-gradient(#aba688, #aba688);
-  transition: background 0.3s ease;
   border: 1px solid #aba688;
   margin: 8;
+  font-family: "Quicksand", sans-serif;
 }
 
 .btn-back:hover {
   background: linear-gradient(#69654a, #69654a);
   color: white;
+}
+
+.bold {
+  font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+}
+
+.italic {
+  font-weight: italic;
+  font-family: "Quicksand", sans-serif;
 }

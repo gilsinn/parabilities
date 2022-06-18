@@ -1,6 +1,6 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 
 // Define fonts for body and headers
 $body-font: "Roboto Mono", "Helvetica", "sans-serif";
@@ -19,14 +19,30 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 // fontawesome icons
 .navigate {
   position: relative;
-  left:90%;
+  left: 90%;
   top: -24px;
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
-h1,h2,h3,h4 {
-  font-family: 'Quicksand', sans-serif;
+h1 {
+  font-family: "Quicksand", sans-serif;
+}
+
+h2 {
+  font-family: "Quicksand", sans-serif;
+}
+
+h3 {
+  font-family: "Quicksand", sans-serif;
+}
+
+h4 {
+  font-family: "Quicksand", sans-serif;
+}
+
+p {
+  font-family: "Quicksand", sans-serif;
 }

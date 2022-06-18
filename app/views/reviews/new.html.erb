@@ -4,7 +4,7 @@
   <div class="review-form col-12 mx-auto">
 
     <h1>Share Your Experience</h1>
-    <h2><strong><%= @facility.name %></strong></h2>
+    <h2 class="bold"><%= @facility.name %></h2>
 
 
     <div class="row col-12 " data-controller="review-form" >
@@ -16,7 +16,7 @@
 
           <% @facility.rating_types.each do |rating_type| %>
             <div class="rating" data-controller="rating-star">
-            <h4><strong><%= rating_type.name %></strong></h4>
+            <h4><%= rating_type.name %></h4>
 
               <% (1..5).each do |i| %>
                   <span class="fa fa-star fa-2xl" data-action="click->rating-star#rate"
