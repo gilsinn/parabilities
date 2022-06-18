@@ -94,9 +94,10 @@ hours = ['24hrs', '10am-10pm', '7am-2pm']
 # ---------------------
 # Facilities seeds
 # ---------------------
-# opening_hours = OpeningHour.all
 
-puts 'Creating restaurants...'
+puts 'Creating 2 fix restaurants with 2 reviews each....'
+
+# ------------- Restaurant 1 ------------
 
 restaurant = Facility.new(
   name: "Amazing Seafood",
@@ -109,8 +110,8 @@ restaurant = Facility.new(
   verified_status: true,
   verified_date: Time.now
  )
- restaurant.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
- file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+#  restaurant.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
  restaurant.save!
 
  5.times do
@@ -122,7 +123,27 @@ restaurant = Facility.new(
   openinghour.save!
   end
 
- restaurant = Facility.new(
+  users = User.all
+
+review = Review.create!(
+  datetime: Faker::Time.backward(days: 180, format: :short),
+  content: 'Excellent chili crab and very friendly staff service',
+  user_id: users.sample.id,
+  facility_id: restaurant.id
+)
+review.save!
+
+review = Review.create!(
+  datetime: Faker::Time.backward(days: 180, format: :short),
+  content: 'very good but stop trying the constant upselling!',
+  user_id: users.sample.id,
+  facility_id: restaurant.id
+)
+review.save!
+
+# ------ Restaurant 2 -----------
+
+restaurant = Facility.new(
   name: "Boomz Burger",
   address: "111 Somerset Road",
   distance: 550,
@@ -132,9 +153,10 @@ restaurant = Facility.new(
   # opening_hour_id: opening_hours.sample.id,
   verified_status: true,
   verified_date: Time.now
- )
- restaurant.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
- restaurant.save!
+)
+#  restaurant.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+restaurant.save!
 
 5.times do
   openinghour = OpeningHour.new(
@@ -145,8 +167,25 @@ restaurant = Facility.new(
   openinghour.save!
 end
 
-# ------------------------------------
-20.times do
+review = Review.create!(
+  datetime: Faker::Time.backward(days: 180, format: :short),
+  content: 'Grilled to medium-rare, the beef was juicy, though it could do with just a touch more salt',
+  user_id: users.sample.id,
+  facility_id: restaurant.id
+)
+review.save!
+
+review = Review.create!(
+  datetime: Faker::Time.backward(days: 180, format: :short),
+  content: 'Portions are huge, patties are juicy and big on flavour',
+  user_id: users.sample.id,
+  facility_id: restaurant.id
+)
+review.save!
+
+puts 'Creating restaurants...'
+
+10.times do
   restaurant = Facility.new(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
@@ -170,21 +209,9 @@ end
   end
 end
 
-puts 'Creating gyms...'
+puts 'Creating 2 fix gyms with 1 review each....'
 
-# 20.times do
-#   Facility.create!(
-#     name: "#{Faker::Games::Pokemon.move} Gym",
-#     address: Faker::Address.street_address,
-#     distance: rand(1..1000),
-#     phone: Faker::PhoneNumber.phone_number,
-#     price_range: ['$', '$$', '$$$', '$$$$'].sample,
-#     category_id: cat_gym.id,
-#     # opening_hour_id: opening_hours.sample.id,
-#     verified_status: [true, false].sample,
-#     verified_date: Faker::Date.backward(days: 1000)
-#   )
-# end
+# ----- Gym 1 --------
 
 gym = Facility.new(
   name: "Apollo Gym",
@@ -197,44 +224,67 @@ gym = Facility.new(
   verified_status: true,
   verified_date: Time.now
  )
- gym.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
- file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+#  gym.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
  gym.save!
 
- 5.times do
+5.times do
   openinghour = OpeningHour.new(
     day: days.sample,
     hours: hours.sample
   )
-  openinghour.facility = restaurant
+  openinghour.facility = gym
   openinghour.save!
-  end
+end
 
-  gym = Facility.new(
-    name: "Titans Gym",
-    address: "252 North Bridge Rd",
-    distance: 2750,
-    phone: Faker::PhoneNumber.phone_number_with_country_code,
-    price_range: '$$$',
-    category_id: cat_gym.id,
-    # opening_hour_id: opening_hours.sample.id,
-    verified_status: true,
-    verified_date: Time.now
-   )
-   gym.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-   file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
-   gym.save!
+review = Review.create!(
+  datetime: Faker::Time.backward(days: 180, format: :short),
+  content: ' Love this newly-launched fitness playground. Freelance personal trainers paid by the hour
+  with no commission to the gym',
+  user_id: 12,
+  facility_id: gym.id
+)
+review.save!
 
-   5.times do
-    openinghour = OpeningHour.new(
-      day: days.sample,
-      hours: hours.sample
-    )
-    openinghour.facility = restaurant
-    openinghour.save!
-    end
+# ------ Gym 2 --------
 
-20.times do
+gym = Facility.new(
+  name: "Titans Gym",
+  address: "10 Raeburn Park",
+  distance: 2750,
+  phone: Faker::PhoneNumber.phone_number_with_country_code,
+  price_range: '$$$',
+  category_id: cat_gym.id,
+  # opening_hour_id: opening_hours.sample.id,
+  verified_status: true,
+  verified_date: Time.now
+  )
+#  gym.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+#  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+  gym.save!
+
+5.times do
+openinghour = OpeningHour.new(
+  day: days.sample,
+  hours: hours.sample
+)
+openinghour.facility = restaurant
+openinghour.save!
+end
+
+review = Review.create!(
+  datetime: Faker::Time.backward(days: 180, format: :short),
+  content: "An inclusive community that welcomes all body types and goals.
+  It’s easy to fall in love with fitness here!",
+  user_id: 20,
+  facility_id: gym.id
+)
+review.save!
+
+
+puts 'Creating gyms...'
+
+10.times do
   gym = Facility.new(
     name: "#{Faker::Games::Pokemon.move} Gym",
     address: Faker::Address.street_address,
@@ -259,8 +309,6 @@ gym = Facility.new(
 end
 
 
-
-
 puts 'Creating parks...'
 
 # 20.times do
@@ -277,7 +325,7 @@ puts 'Creating parks...'
 #   )
 # end
 
-20.times do
+10.times do
   park = Facility.new(
     name: "#{Faker::Fantasy::Tolkien.location} Park",
     address: Faker::Address.street_address,
@@ -319,7 +367,7 @@ puts 'Creating restrooms...'
 #   )
 # end
 
-20.times do
+10.times do
   restroom = Facility.new(
     name: "#{Faker::Movies::HarryPotter.location} Restroom",
     address: Faker::Address.street_address,

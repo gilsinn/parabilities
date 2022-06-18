@@ -28,7 +28,7 @@ class FacilitiesController < ApplicationController
     count = 0
 
     @reviews.each do |review|
-      @review.review_ratings.each do |review_rating|
+      review.review_ratings.each do |review_rating|
         sum += review_rating.rating
         count += 1
       end
