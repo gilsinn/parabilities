@@ -2,7 +2,7 @@
 
 <div class="facility-details-container p-3">
   <div class="d-flex justify-content-between align-items-center">
-    <h1><%= @facility.name %></h1>
+    <h1 class="fs-1"><%= @facility.name %></h1>
     <h6><%= pluralize @facility.reviews.size,"review" %></h6>
   </div>
 
@@ -20,27 +20,27 @@
 
   <div class="facility-details">
 
-    <div class="opening-hours d-flex">
+    <div class="opening-hours d-flex p-2">
       <i class="fa-regular fa-clock mt-1"></i>
       <div class="d-line ms-4">
-        <h3>Opening Today</h3>
-        <%= @facility.opening_hours.sample.hours %>
+        <h3 class="fs-3">Opening Today</h3>
+        <h6 class="fs-5"><%= @facility.opening_hours.sample.hours %></h6>
       </div>
     </div>
 
-    <div class="address d-flex mt-2">
+    <div class="address d-flex mt-2 p-2">
       <i class="fa-solid fa-location-dot mt-2"></i>
       <div class="d-line ms-4 ">
-        <h3>Address</h3>
-        <h6><%= @facility.address %></h6>
+        <h3 class="fs-3">Address</h3>
+        <h6 class="fs-5"><%= @facility.address %></h6>
         <%= link_to "Tap to view map", "http://maps.google.com/maps?q=" %>
       </div>
     </div>
 
-    <div class="type d-flex mt-2">
+    <div class="type d-flex mt-2 p-2">
       <i class="fa-solid fa-utensils"></i>
       <div class="d-line ms-4">
-        <h6><%= @facility.price_range %>/pax . Modern . European</h6>
+        <h6 class="fs-5"><%= @facility.price_range %>/pax . Modern . European</h6>
       </div>
     </div>
   </div>
