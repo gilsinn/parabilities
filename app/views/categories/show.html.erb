@@ -1,12 +1,24 @@
-<img src="https://source.unsplash.com/random/?restaurants" alt="restaurants" width="100%" height="250px" object-fit="contain">
-<div class="container-fluid mt-3 mx-auto">
+<img src="https://source.unsplash.com/random/?restaurants" alt="restaurants" width="100%" height="250px" object-fit="cover">
+
+<div class="d-flex justify-content-start search-position">
   <%= form_tag search_facilities_path, method: :get do %>
-    <%= text_field_tag :name,
-              params[:name],
-                class: "form-control",
-              placeholder: "Search by Name"%>
-              <%= submit_tag "Search", class: "btn btn-gradient my-3" %>
-            <% end %>
+
+    <div class="row align-items-center ">
+      <div class="col-10">
+        <%= text_field_tag :name,
+                  params[:name],
+                    class: "form-control rounded-pill ms-4",
+                  placeholder: "Search by Name"%>
+
+      </div>
+
+      <div class="col-2">
+        <%= submit_tag "Search", class: "my-3 btn btn-gradient ms-2" %>
+      </div>
+
+    </div>
+
+  <% end %>
   <%# <%= render "facilities/filter_modal"%>
 </div>
 
