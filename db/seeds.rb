@@ -1,4 +1,5 @@
 require 'faker'
+require "open-uri"
 
 puts 'Cleaning database...'
 User.destroy_all
@@ -100,14 +101,15 @@ puts 'Creating restaurants...'
 restaurant = Facility.new(
   name: "Amazing Seafood",
   address: "20 Collyer Quay",
-  distance: rand(1..1000),
+  distance: 800,
   phone: Faker::PhoneNumber.phone_number_with_country_code,
-  price_range: ['$', '$$', '$$$', '$$$$'].sample,
+  price_range: '$$$',
   category_id: cat_restaurant.id,
   # opening_hour_id: opening_hours.sample.id,
-  verified_status: [true, false].sample,
-  verified_date: Faker::Date.backward(days: 1000)
+  verified_status: true,
+  verified_date: Time.now
  )
+ restaurant.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
  restaurant.save!
 
  5.times do
@@ -122,14 +124,15 @@ end
  restaurant = Facility.new(
   name: "Boomz Burger",
   address: "111 Somerset Road",
-  distance: rand(1..1000),
+  distance: 550,
   phone: Faker::PhoneNumber.phone_number_with_country_code,
-  price_range: ['$', '$$', '$$$', '$$$$'].sample,
+  price_range: '$$',
   category_id: cat_restaurant.id,
   # opening_hour_id: opening_hours.sample.id,
-  verified_status: [true, false].sample,
-  verified_date: Faker::Date.backward(days: 1000)
+  verified_status: true,
+  verified_date: Time.now
  )
+ restaurant.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
  restaurant.save!
 
 5.times do
@@ -141,6 +144,7 @@ end
   openinghour.save!
 end
 
+# ------------------------------------
 20.times do
   restaurant = Facility.new(
     name: Faker::Restaurant.name,
