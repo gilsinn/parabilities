@@ -23,7 +23,7 @@
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position:center;
+  background-position: center;
 }
 
 .all-card {
@@ -65,9 +65,8 @@
 }
 
 .facility-details a {
- font-family: "Space-Mono";
- color: rgb(230, 65, 175);
-
+  font-family: "Space-Mono";
+  color: rgb(230, 65, 175);
 }
 
 .facility-name h1 {
@@ -77,7 +76,6 @@
 .five-stars {
   margin: 16px, 0px, 16px;
 }
-
 
 #review-count {
   font-size: 6px;
@@ -110,9 +108,8 @@
   margin-bottom: 24px;
   width: 95%;
 
-
   .icon {
-    background-color: #22223B;
+    background-color: #22223b;
     width: 54px;
     height: 54px;
     border-radius: 50%;
@@ -156,7 +153,7 @@
 }
 
 .comment-wrapper {
-  background-color: #F2E9E4;
+  background-color: #f2e9e4;
   border-radius: 16px;
   padding: 8px;
   margin-top: 16px;
@@ -180,17 +177,16 @@
 
 // community page
 .community {
-  background-color: rgba(220, 219, 218,0.3);
+  background-color: rgba(220, 219, 218, 0.3);
   border-radius: 16px;
   width: 90%;
   padding: 24px;
   padding-bottom: 64px;
-
 }
 
 .community-name {
   color: white;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 // community message card
 .community-message-card {
@@ -211,7 +207,7 @@
 
 // community-review-card
 .community-review-card {
-  background-color: rgba(154, 140, 152,0.6);
+  background-color: rgba(154, 140, 152, 0.6);
   backdrop-filter: blur(15px);
   padding: 16px;
   margin-bottom: 16px;
@@ -407,4 +403,20 @@ $card-height-mobile: 12rem;
 #center {
   text-align: center;
   padding-bottom: 8px;
+}
+
+.btn-back {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  background: linear-gradient(#aba688, #aba688);
+  transition: background 0.3s ease;
+  border: 1px solid #aba688;
+  margin: 8;
+}
+
+.btn-back:hover {
+  background: linear-gradient(#69654a, #69654a);
+  color: white;
 }
