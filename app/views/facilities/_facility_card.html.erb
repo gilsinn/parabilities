@@ -1,39 +1,39 @@
 <div class="verified-card", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/featured/?<%= facility.category.name%>/400x300/<%= rand()%>');">
   <div class="icons"><i class="fa-solid fa-wheelchair"></i></div>
-  <div class="row">
+    <div class="row">
 
-      <div class="col-8 details">
-        <h2><%= facility.name %></h2>
+        <div class="col-8 details textwhite-shadow">
+          <h2><%= facility.name %></h2>
 
-        <p><%= facility.distance  %> metres away</p>
-        <span><%= facility.address %></span>
+          <p><%= facility.distance  %> metres away</p>
+          <span><%= facility.address %></span>
 
-        <div>
+          <div>
 
-          <div class="row five-stars mt-3">
-            <ul class="col-12">
-            <% (1..5).each do |i| %>
-              <% if i <= @average_rating[@facility.id] %>
-                  <li class="fa fa-star fa-2xl selected"></li>
-              <% else %>
-                  <li class="fa fa-star fa-2xl"></li>
-              <% end %>
+            <div class="row five-stars mt-3">
+              <ul class="col-12">
+                <% (1..5).each do |i| %>
+                  <% if i <= @average_rating[@facility.id] %>
+                      <li class="fa fa-star fa-2xl selected"></li>
+                  <% else %>
+                      <li class="fa fa-star fa-2xl"></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="d-flex align-item-end justify-content-end">
+        <div class="status">
+          <div class="badge badge-verified">
+            <% if facility.verified_status == true %>
+              <h3>Verified</h3>
             <% end %>
+          </div>
         </div>
       </div>
 
-        </ul>
-      </div>
-
-    <div class="d-flex align-item-end justify-content-end">
-      <div class="status">
-        <div class="badge badge-verified">
-          <% if facility.verified_status == true %>
-            <h3>Verified</h3>
-          <% end %>
-        </div>
-      </div>
     </div>
-
-  </div>
 </div>
