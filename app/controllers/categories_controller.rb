@@ -11,6 +11,18 @@ class CategoriesController < ApplicationController
     if @category.name == "Restaurants"
       @cuisines = Cuisine.all
     end
+
+    sum = 0
+    count = 0
+
+    @reviews.each do |review|
+      @review.review_ratings.each do |review_rating|
+        sum += review_rating.rating
+        count += 1
+      end
+    end
+
+    @average_rating = count != 0 ? sum.fdiv(count).round : 0
   end
 
 end
