@@ -432,13 +432,14 @@ $card-height-mobile: 12rem;
 
 .btn-gradient {
   color: white;
-  padding: 8px 12px;
-  border-radius: 20px;
+  padding: 8px 24px;
+  border-radius: 24px;
   font-weight: bold;
   background: linear-gradient(#4a4e69, #4a4e69);
   transition: background 0.3s ease;
   border: 1px solid #4a4e69;
   margin: 8;
+  font-size: 18px;
 }
 
 .btn-gradient:hover {
