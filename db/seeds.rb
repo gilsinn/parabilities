@@ -82,7 +82,7 @@ cat_restroom = Category.create!(name: "Restrooms")
 puts 'Creating opening hours...'
 
 days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat']
-hours = ['10am-10pm', '12pm-11pm', 'Closed']
+hours = ['10am-10pm', '12pm-11pm']
 
 # 5.times do
 #   OpeningHour.create!(
@@ -124,7 +124,7 @@ days.each do |day|
 end
 
 
-review = Review.create!(
+review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Excellent chili crab and very friendly staff service',
   user_id: 8,
@@ -132,7 +132,7 @@ review = Review.create!(
 )
 review.save!
 
-review = Review.create!(
+review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'very good but stop trying the constant upselling!',
   user_id: 18,
@@ -166,7 +166,7 @@ days.each do |day|
   openinghour.save!
 end
 
-review = Review.create!(
+review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Grilled to medium-rare, the beef was juicy, though it could do with just a touch more salt',
   user_id: 3,
@@ -174,7 +174,7 @@ review = Review.create!(
 )
 review.save!
 
-review = Review.create!(
+review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Portions are huge, patties are juicy and big on flavour',
   user_id: 22,
@@ -182,7 +182,7 @@ review = Review.create!(
 )
 review.save!
 
-puts 'Creating restaurants...'
+puts 'Creating restaurants with reviews...'
 
 10.times do
   restaurant = Facility.new(
@@ -198,14 +198,24 @@ puts 'Creating restaurants...'
    )
    restaurant.save!
 
-  5.times do
+  days.each do |day|
     openinghour = OpeningHour.new(
-      day: days.sample,
+      day: day,
       hours: hours.sample
     )
     openinghour.facility = restaurant
     openinghour.save!
   end
+
+  users = User.all
+  review = Review.new(
+    datetime: Faker::Time.backward(days: 180, format: :short),
+    content: Faker::Restaurant.review,
+    user_id: users.sample.id,
+    facility_id: restaurant.id
+  )
+  review.facility = restaurant
+  review.save!
 end
 
 puts 'Creating 2 fix gyms with 1 review each....'
@@ -236,7 +246,7 @@ gym = Facility.new(
   openinghour.save!
 end
 
-review = Review.create!(
+review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: ' Love this newly-launched fitness playground. Freelance personal trainers paid by the hour
   with no commission to the gym',
@@ -271,7 +281,7 @@ days.each do |day|
   openinghour.save!
 end
 
-review = Review.create!(
+review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: "An inclusive community that welcomes all body types and goals.
   It’s easy to fall in love with fitness here!",
@@ -281,7 +291,7 @@ review = Review.create!(
 review.save!
 
 
-puts 'Creating gyms...'
+puts 'Creating gyms with reviews...'
 
 10.times do
   gym = Facility.new(
@@ -305,24 +315,19 @@ puts 'Creating gyms...'
     openinghour.facility = gym
     openinghour.save!
   end
+
+  users = User.all
+  review = Review.new(
+    datetime: Faker::Time.backward(days: 180, format: :short),
+    content: Faker::TvShows::GameOfThrones.quote,
+    user_id: users.sample.id,
+    facility_id: gym.id
+  )
+  review.save!
 end
 
 
-puts 'Creating parks...'
-
-# 20.times do
-#   Facility.create!(
-#     name: "#{Faker::Fantasy::Tolkien.location} Park",
-#     address: Faker::Address.street_address,
-#     distance: rand(1..1000),
-#     phone: Faker::PhoneNumber.phone_number,
-#     price_range: ['$', '$$', '$$$', '$$$$'].sample,
-#     category_id: cat_park.id,
-#     # opening_hour_id: opening_hours.sample.id,
-#     verified_status: [true, false].sample,
-#     verified_date: Faker::Date.backward(days: 1000)
-#   )
-# end
+puts 'Creating parks with reviews...'
 
 10.times do
   park = Facility.new(
@@ -333,7 +338,7 @@ puts 'Creating parks...'
     # price_range: ['$', '$$', '$$$', '$$$$'].sample,
     category_id: cat_park.id,
     # opening_hour_id: opening_hours.sample.id,
-    verified_status: [true, false].sample,
+    verified_status: true,
     verified_date: Faker::Date.backward(days: 1000)
    )
    park.save!
@@ -344,6 +349,15 @@ puts 'Creating parks...'
     )
   openinghour.facility = park
   openinghour.save!
+
+  users = User.all
+  review = Review.new(
+    datetime: Faker::Time.backward(days: 180, format: :short),
+    content: Faker::Quotes::Shakespeare.as_you_like_it_quote,
+    user_id: users.sample.id,
+    facility_id: park.id
+  )
+  review.save!
 
 end
 
@@ -467,21 +481,20 @@ end
 # ---------------------
 # reviews seeds
 # ---------------------
-puts 'Creating reviews...'
+# puts 'Creating reviews...'
 
-users = User.all
-facilities = Facility.all
+# users = User.all
+# facilities = Facility.all
 
-20.times do
-  Review.create!(
-    datetime: Faker::Time.backward(days: 180, format: :short),
-    content: Faker::Restaurant.review,
-    user_id: users.sample.id,
-    facility_id: facilities.sample.id
-  )
-end
+# 20.times do
+#   Review.create!(
+#     datetime: Faker::Time.backward(days: 180, format: :short),
+#     content: Faker::TvShows::GameOfThrones.quote,
+#     user_id: users.sample.id,
+#     facility_id: facilities.sample.id
+#   )
+# end
 
-# Class: Faker::Quote.yoda
 
 # ---------------------
 # review ratings seeds
