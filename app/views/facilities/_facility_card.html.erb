@@ -7,13 +7,22 @@
 
         <p><%= facility.distance  %> metres away</p>
         <span><%= facility.address %></span>
+
         <div>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
-          <i class="fa-regular fa-star"></i>
+
+          <div class="row five-stars">
+            <ul class="col-9">
+            <% (1..5).each do |i| %>
+              <% if i <= @average_rating %>
+                  <li class="fa fa-star fa-2xl selected"></li>
+              <% else %>
+                  <li class="fa fa-star fa-2xl"></li>
+              <% end %>
+            <% end %>
         </div>
+      </div>
+
+        </ul>
       </div>
 
     <div class="d-flex align-item-end justify-content-end">
@@ -28,3 +37,9 @@
 
   </div>
 </div>
+
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+          <i class="fa-regular fa-star"></i>

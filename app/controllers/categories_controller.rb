@@ -12,6 +12,10 @@ class CategoriesController < ApplicationController
       @cuisines = Cuisine.all
     end
 
+    @facility = @category.facilities.find_by(params[:facility_id])
+
+    @reviews = @facility.reviews
+
     sum = 0
     count = 0
 
