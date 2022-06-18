@@ -110,6 +110,7 @@ restaurant = Facility.new(
   verified_date: Time.now
  )
  restaurant.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+ file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
  restaurant.save!
 
  5.times do
@@ -119,7 +120,7 @@ restaurant = Facility.new(
   )
   openinghour.facility = restaurant
   openinghour.save!
-end
+  end
 
  restaurant = Facility.new(
   name: "Boomz Burger",
@@ -184,6 +185,54 @@ puts 'Creating gyms...'
 #     verified_date: Faker::Date.backward(days: 1000)
 #   )
 # end
+
+gym = Facility.new(
+  name: "Apollo Gym",
+  address: "252 North Bridge Rd",
+  distance: 2750,
+  phone: Faker::PhoneNumber.phone_number_with_country_code,
+  price_range: '$$$',
+  category_id: cat_gym.id,
+  # opening_hour_id: opening_hours.sample.id,
+  verified_status: true,
+  verified_date: Time.now
+ )
+ gym.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+ file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+ gym.save!
+
+ 5.times do
+  openinghour = OpeningHour.new(
+    day: days.sample,
+    hours: hours.sample
+  )
+  openinghour.facility = restaurant
+  openinghour.save!
+  end
+
+  gym = Facility.new(
+    name: "Titans Gym",
+    address: "252 North Bridge Rd",
+    distance: 2750,
+    phone: Faker::PhoneNumber.phone_number_with_country_code,
+    price_range: '$$$',
+    category_id: cat_gym.id,
+    # opening_hour_id: opening_hours.sample.id,
+    verified_status: true,
+    verified_date: Time.now
+   )
+   gym.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+   file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+   gym.save!
+
+   5.times do
+    openinghour = OpeningHour.new(
+      day: days.sample,
+      hours: hours.sample
+    )
+    openinghour.facility = restaurant
+    openinghour.save!
+    end
 
 20.times do
   gym = Facility.new(
