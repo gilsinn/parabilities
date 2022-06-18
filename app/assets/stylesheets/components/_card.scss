@@ -154,10 +154,11 @@
 .comment-review-card {
   margin-bottom: 16px;
   .description {
-    background-color: #f4f4f4;
+    background-color: #C9ADA7;
+    backdrop-filter: blur(15px);
     border-radius: 16px;
     width: 70%;
-    height: 12%;
+    height: 80px;
   }
 }
 
