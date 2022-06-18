@@ -85,6 +85,26 @@
   font-size: 6px;
 }
 
+.a-map {
+  color: #F2E9E4 !important;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  transition: opacity 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  background: linear-gradient(#C9ADA7, #C9ADA7);
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.a-map:hover {
+  text-decoration: underline;
+  color: #22223b;
+  font-weight: 900;
+}
+
 // Review-card
 .review-card {
   background-color: rgb(188, 187, 187);

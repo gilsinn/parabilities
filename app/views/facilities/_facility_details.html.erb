@@ -6,16 +6,20 @@
     <h6><%= pluralize @facility.reviews.size,"review" %></h6>
   </div>
 
-  <div class="row five-stars mt-3">
-    <ul class="col-9">
-      <% (1..5).each do |i| %>
-        <% if i <= @average_rating %>
-            <li class="fa fa-star fa-2xl selected"></li>
-        <% else %>
-            <li class="fa fa-star fa-2xl"></li>
+  <div class="d-flex align-items-center justify-content-between">
+
+    <div class="row five-stars mt-3">
+      <ul>
+        <% (1..5).each do |i| %>
+          <% if i <= @average_rating %>
+              <li class="fa fa-star fa-2xl selected"></li>
+          <% else %>
+              <li class="fa fa-star fa-2xl"></li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
+    <small class="a-map"><%= link_to "Map", "http://maps.google.com/maps?q=" %></small>
   </div>
 
   <div class="facility-details">
@@ -33,7 +37,6 @@
       <div class="d-line ms-4 ">
         <h3 class="fs-3">Address</h3>
         <h6 class="fs-5"><%= @facility.address %></h6>
-        <%= link_to "Tap to view map", "http://maps.google.com/maps?q=" %>
       </div>
     </div>
 
@@ -46,7 +49,7 @@
   </div>
 
 
-  <div class="d-flex justify-content-center my-4">
+  <div class="d-flex justify-content-center my-5">
     <% if user_signed_in? == true %>
       <%= link_to "Share your experience", new_facility_review_path(@facility), class: "btn btn-gradient" %>
     <% else %>
