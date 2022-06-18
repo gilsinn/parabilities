@@ -113,29 +113,34 @@
 
   .icon {
     background-color: #22223B;
-    width: 54px;
-    height: 54px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    color: #f5f5f5;
+    font-size: 1.3rem;
+    color: #C9ADA7;
     opacity: 0.8;
     position: relative;
     .rating {
       width: 24px;
       height: 24px;
       border-radius: 50%;
-      background-color: #dc851f;
+      background-color: #4A4E69;
+      box-shadow: 1px 1px #c9ada7cc;
       display: flex;
       justify-content: center;
       align-items: center;
       position: absolute;
       top: -4px;
       right: -8px;
+      color: #C9ADA7;
+      font-size: 16px;
     }
+
   }
+
 
   .image-spacing {
     display: inline;
