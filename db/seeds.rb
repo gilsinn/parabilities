@@ -82,7 +82,7 @@ cat_restroom = Category.create!(name: "Restrooms")
 puts 'Creating opening hours...'
 
 days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat']
-hours = ['24hrs', '10am-10pm', '7am-2pm']
+hours = ['10am-10pm', '12pm-11pm', 'Closed']
 
 # 5.times do
 #   OpeningHour.create!(
@@ -114,21 +114,20 @@ restaurant = Facility.new(
 #  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
  restaurant.save!
 
- 5.times do
+days.each do |day|
   openinghour = OpeningHour.new(
-    day: days.sample,
+    day: day,
     hours: hours.sample
   )
   openinghour.facility = restaurant
   openinghour.save!
-  end
+end
 
-  users = User.all
 
 review = Review.create!(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Excellent chili crab and very friendly staff service',
-  user_id: users.sample.id,
+  user_id: 8,
   facility_id: restaurant.id
 )
 review.save!
@@ -136,7 +135,7 @@ review.save!
 review = Review.create!(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'very good but stop trying the constant upselling!',
-  user_id: users.sample.id,
+  user_id: 18,
   facility_id: restaurant.id
 )
 review.save!
@@ -158,9 +157,9 @@ restaurant = Facility.new(
 #  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
 restaurant.save!
 
-5.times do
+days.each do |day|
   openinghour = OpeningHour.new(
-    day: days.sample,
+    day: day,
     hours: hours.sample
   )
   openinghour.facility = restaurant
@@ -170,7 +169,7 @@ end
 review = Review.create!(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Grilled to medium-rare, the beef was juicy, though it could do with just a touch more salt',
-  user_id: users.sample.id,
+  user_id: 3,
   facility_id: restaurant.id
 )
 review.save!
@@ -178,7 +177,7 @@ review.save!
 review = Review.create!(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Portions are huge, patties are juicy and big on flavour',
-  user_id: users.sample.id,
+  user_id: 22,
   facility_id: restaurant.id
 )
 review.save!
@@ -228,9 +227,9 @@ gym = Facility.new(
 #  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
  gym.save!
 
-5.times do
+ days.each do |day|
   openinghour = OpeningHour.new(
-    day: days.sample,
+    day: day,
     hours: hours.sample
   )
   openinghour.facility = gym
@@ -263,13 +262,13 @@ gym = Facility.new(
 #  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
   gym.save!
 
-5.times do
-openinghour = OpeningHour.new(
-  day: days.sample,
-  hours: hours.sample
-)
-openinghour.facility = restaurant
-openinghour.save!
+days.each do |day|
+  openinghour = OpeningHour.new(
+    day: day,
+    hours: hours.sample
+  )
+  openinghour.facility = gym
+  openinghour.save!
 end
 
 review = Review.create!(
@@ -295,12 +294,12 @@ puts 'Creating gyms...'
     # opening_hour_id: opening_hours.sample.id,
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
-   )
+    )
    gym.save!
 
-   5.times do
+  days.each do |day|
     openinghour = OpeningHour.new(
-      day: "Closed on #{days.sample}",
+      day: day,
       hours: hours.sample
     )
     openinghour.facility = gym
@@ -339,17 +338,14 @@ puts 'Creating parks...'
    )
    park.save!
 
-   5.times do
-    openinghour = OpeningHour.new(
-      day: "Closed on #{days.sample}",
-      hours: hours.sample
+  openinghour = OpeningHour.new(
+    day: 'Mon - Sun',
+    hours: '24hrs'
     )
-    openinghour.facility = park
-    openinghour.save!
-  end
+  openinghour.facility = park
+  openinghour.save!
+
 end
-
-
 
 
 puts 'Creating restrooms...'
@@ -379,11 +375,11 @@ puts 'Creating restrooms...'
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
    )
-   restroom.save!
+  restroom.save!
 
-   5.times do
+  days.each do |day|
     openinghour = OpeningHour.new(
-      day: "Closed on #{days.sample}",
+      day: day,
       hours: hours.sample
     )
     openinghour.facility = restroom

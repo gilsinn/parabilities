@@ -19,6 +19,7 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     @reviews = Review.where(facility_id: @facility.id)
     @review = Review.find_by(facility_id: @facility)
+    @openinghours = @facility.opening_hours
     # @comments = Comment.all
     @comment = Comment.new
 
