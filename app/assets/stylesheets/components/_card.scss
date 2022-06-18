@@ -238,7 +238,7 @@ $card-height-mobile: 12rem;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans";
+  font-family: "Quicksand", sans-serif;
 }
 
 .content-wrapper {
@@ -427,6 +427,10 @@ $card-height-mobile: 12rem;
 }
 
 .italic {
-  font-weight: italic;
+  font-style: italic;
+  font-family: "Quicksand", sans-serif;
+}
+
+.quicksand {
   font-family: "Quicksand", sans-serif;
 }
