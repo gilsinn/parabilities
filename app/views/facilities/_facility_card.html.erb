@@ -1,8 +1,8 @@
 <div class="verified-card", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/featured/?<%= facility.category.name%>/400x300/<%= rand()%>');">
-  <div class="icons"><i class="fa-solid fa-wheelchair"></i></div>
-    <div class="row">
+  <div class="icons"><i class="fa-solid fa-wheelchair fs-4"></i></div>
+    <div class="d-flex">
 
-        <div class="col-8 details textwhite-shadow">
+        <div class="details textwhite-shadow">
           <h2><%= facility.name %></h2>
 
           <p><%= facility.distance  %> metres away</p>
@@ -11,7 +11,7 @@
           <div>
 
             <div class="row five-stars mt-3">
-              <ul class="col-12">
+              <ul>
                 <% (1..5).each do |i| %>
                   <% if i <= @average_rating[@facility.id] %>
                       <li class="fa fa-star fa-2xl selected"></li>

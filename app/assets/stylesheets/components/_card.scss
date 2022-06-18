@@ -7,17 +7,15 @@
 
 .icons {
   background-color: white;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
 }
 
 .verified-card {
-  color: black;
   padding: 16px;
   border-radius: 16px;
   height: 100%;
@@ -43,8 +41,9 @@
 .badge-verified {
   color: white;
   background-color: #4a4e69;
-  border-radius: 6px;
-  text-align: bottom;
+  border-radius: 24px;
+  padding: 8px;
+
 }
 
 // Facility-details
