@@ -43,6 +43,11 @@ class ReviewsController < ApplicationController
         }
       )
 
+      # review_rating_1.save!
+      # review_rating_2.save!
+      # review_rating_3.save!
+      # review_rating_4.save!
+
       if review_rating_1.save && review_rating_2.save && review_rating_3.save && review_rating_4.save
         redirect_to facility_path(@facility)
       else

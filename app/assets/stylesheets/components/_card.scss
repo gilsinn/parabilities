@@ -22,8 +22,8 @@
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position:center;
 
+  background-position:center;
 }
 
 .all-card {
@@ -50,11 +50,11 @@
 
 // Facility-details
 .facility-name h1 {
-  color: black;
+  color: #22223B;
 }
 
 .facility-name h6 {
-  color: black;
+  color: #22223B;
 }
 
 .facility-details {
@@ -63,11 +63,13 @@
   border-radius: 16px;
   width: 95%;
   margin: 16px auto;
+  color: #F2E9E4;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .facility-details a {
- font-family: "Space-Mono";
- color: rgb(230, 65, 175);
+ font-family: "Quicksand", sans-serif;
+ color: #F2E9E4;
 
 }
 
@@ -79,9 +81,28 @@
   margin: 16px, 0px, 16px;
 }
 
-
 #review-count {
   font-size: 6px;
+}
+
+.a-map {
+  color: #F2E9E4 !important;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  transition: opacity 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  background: linear-gradient(#C9ADA7, #C9ADA7);
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.a-map:hover {
+  text-decoration: underline;
+  color: #22223b;
+  font-weight: 900;
 }
 
 // Review-card
@@ -104,39 +125,45 @@
 
 // user-review-card
 .user-review-card {
-  background-color: #c9ada7;
+  background-color: rgba(201, 173, 167, 0.7);
+  backdrop-filter: blur(15px);
   border-radius: 16px;
   padding: 8px;
   box-shadow: 1px 1px #c9ada7cc;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   width: 95%;
-
 
   .icon {
     background-color: #22223B;
-    width: 54px;
-    height: 54px;
+    width: 36px;
+    height: 36px;
+
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    color: #f5f5f5;
+    font-size: 1.3rem;
+    color: #C9ADA7;
     opacity: 0.8;
     position: relative;
     .rating {
       width: 24px;
       height: 24px;
       border-radius: 50%;
-      background-color: #dc851f;
+      background-color: #4A4E69;
+      box-shadow: 1px 1px #c9ada7cc;
       display: flex;
       justify-content: center;
       align-items: center;
       position: absolute;
       top: -4px;
       right: -8px;
+      color: #C9ADA7;
+      font-size: 16px;
     }
+
   }
+
 
   .image-spacing {
     display: inline;
@@ -149,18 +176,19 @@
 .comment-review-card {
   margin-bottom: 16px;
   .description {
-    background-color: #f4f4f4;
+    background-color: rgba(201, 173, 167, 0.7);
+    backdrop-filter: blur(15px);
     border-radius: 16px;
     width: 70%;
-    height: 12%;
+    height: 80px;
   }
 }
 
 .comment-wrapper {
-  background-color: #F2E9E4;
+  background-color: #f2e9e4;
   border-radius: 16px;
-  padding: 8px;
-  margin-top: 16px;
+  padding: 16px;
+  margin-bottom: 8px;
 }
 // Channel
 .channel {
@@ -179,20 +207,28 @@
   padding: 8px;
 }
 
+.content {
+  background-color: rgba(220, 219, 218,0.4);
+  border-radius: 16px;
+  padding: 10px;
+
+}
+
 // community page
 .community {
-  background-color: rgba(220, 219, 218,0.3);
+  background-color: rgba(220, 219, 218, 0.3);
   border-radius: 16px;
   width: 90%;
   padding: 24px;
   padding-bottom: 64px;
-
 }
 
 .community-name {
-  color: #22223B;
+
+  color: rgb(243, 233, 228,);
+  text-shadow: 2px 1px #000000;
   font-weight: bold;
-  background-color: rgba(242, 233, 228, 0.8);
+  background-color: rgba(34, 34, 59, 0.8);
   backdrop-filter: blur(15px);
   z-index: 2;
   position: fixed;
@@ -203,18 +239,20 @@
 // community message card
 .community-message-card {
   margin-bottom: 16px;
-  .message-description {
-    background-color: rgba(201, 173, 167, 0.8);
-    backdrop-filter: blur(15px);
-    border-radius: 24px;
-    height: 60px;
-    width: 280px;
-    font-size: 12px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    box-shadow: 1px 1px rgba(243, 233, 228, 0.5);
-  }
+}
+
+.message-description {
+  background-color: rgba(201, 173, 167, 0.8);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  height: 60px;
+  width: 280px;
+  font-size: 12px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 1px 1px rgba(243, 233, 228, 0.5);
+  z-index: -1;
 }
 
 .message-description-left {
@@ -232,9 +270,9 @@
 
 // community-review-card
 .community-review-card {
-  background-color: rgba(154, 140, 152,0.6);
+  background-color: rgba(154, 140, 152, 0.6);
   backdrop-filter: blur(15px);
-  padding: 16px;
+  padding: 24px;
   margin-bottom: 16px;
   border-radius: 16px;
   box-shadow: 1px 1px rgba(201, 173, 167, 0.5);
@@ -263,7 +301,8 @@ $card-height-mobile: 12rem;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Quick Sand" "Open Sans";
+  font-family: "Quicksand", "Sans-serif";
+
 }
 
 .content-wrapper {
@@ -411,13 +450,14 @@ $card-height-mobile: 12rem;
 
 .btn-gradient {
   color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
+  padding: 8px 24px;
+  border-radius: 24px;
   font-weight: bold;
   background: linear-gradient(#4a4e69, #4a4e69);
-  transition: background 0.3s ease;
   border: 1px solid #4a4e69;
   margin: 8;
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif;
 }
 
 .btn-gradient:hover {
@@ -428,4 +468,35 @@ $card-height-mobile: 12rem;
 #center {
   text-align: center;
   padding-bottom: 8px;
+}
+
+
+.btn-back {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  background: linear-gradient(#aba688, #aba688);
+  border: 1px solid #aba688;
+  margin: 8;
+  font-family: "Quicksand", sans-serif;
+}
+
+.btn-back:hover {
+  background: linear-gradient(#69654a, #69654a);
+  color: white;
+}
+
+.bold {
+  font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+}
+
+.italic {
+  font-style: italic;
+  font-family: "Quicksand", sans-serif;
+}
+
+.quicksand {
+  font-family: "Quicksand", sans-serif;
 }
