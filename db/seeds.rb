@@ -22,6 +22,7 @@ puts 'Database Clean!'
 # ---------------------
 puts 'Creating users...'
 
+file = URI.open('https://source.unsplash.com/mEZ3PoFGs_k')
 Ann = User.create!(
   firstname: "Ann",
   lastname: "Baker",
@@ -30,6 +31,10 @@ Ann = User.create!(
   password: "123456"
 )
 
+user.photo.attach(io: file, filename: 'Joe.png', content_type: 'image/png')
+user.save!
+
+file = URI.open('https://source.unsplash.com/ZHvM3XIOHoE')
 Joe = User.create!(
   firstname: "Joe",
   lastname: "Smith",
@@ -37,6 +42,9 @@ Joe = User.create!(
   email: "joe@abc.com",
   password: "123456"
 )
+
+user.photo.attach(io: file, filename: 'Joe.png', content_type: 'image/png')
+user.save!
 
 Bob = User.create!(
   firstname: "Bob",
