@@ -487,6 +487,23 @@ $card-height-mobile: 12rem;
   color: white;
 }
 
+.btn-back-long {
+  color: white;
+  padding: 6px 36px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(#aba688, #aba688);
+  border: 1px solid #aba688;
+  margin: 8;
+  font-family: "Quicksand", sans-serif;
+}
+
+.btn-back-long:hover {
+  background: linear-gradient(#69654a, #69654a);
+  color: white;
+}
+
 .bold {
   font-weight: bold;
   font-family: "Quicksand", sans-serif;
