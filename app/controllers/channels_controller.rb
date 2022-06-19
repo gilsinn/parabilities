@@ -7,7 +7,7 @@ class ChannelsController < ApplicationController
     @messages = Message.all
     @post = @messages.find_by(params[:user_id])
     @message = Message.new
-    @user = @post.user
+    # @user = @post.user
     @reviews = Review.all
     @facilities = Facility.all
     @facility = @facilities.find_by(params[:category_id])

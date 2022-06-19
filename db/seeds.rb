@@ -32,6 +32,7 @@ Ann = User.create!(
 )
 
 Ann.photo.attach(io: file, filename: 'Ann.png', content_type: 'image/png')
+Ann.save!
 
 
 file = URI.open('https://source.unsplash.com/ZHvM3XIOHoE')
@@ -44,6 +45,7 @@ Joe = User.create!(
 )
 
 Joe.photo.attach(io: file, filename: 'Joe.png', content_type: 'image/png')
+Joe.save!
 
 
 Bob = User.create!(
