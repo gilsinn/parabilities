@@ -3,27 +3,27 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 16px;
+
 }
 
 .icons {
   background-color: white;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
 }
 
 .verified-card {
-  color: black;
   padding: 16px;
   border-radius: 16px;
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+
+  background-position:center;
 }
 
 .all-card {
@@ -36,15 +36,16 @@
 
 .details {
   text-decoration: none;
-  line-height: 1;
+  line-height: 1.5;
   color: white;
 }
 
 .badge-verified {
   color: white;
-  background-color: #4a4e69;
-  border-radius: 6px;
-  text-align: bottom;
+  background-color: #22223B;
+  border-radius: 24px;
+  padding: 8px;
+
 }
 
 // Facility-details
@@ -300,7 +301,8 @@ $card-height-mobile: 12rem;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Quicksand", sans-serif;
+  font-family: "Quicksand", "Sans-serif";
+
 }
 
 .content-wrapper {
