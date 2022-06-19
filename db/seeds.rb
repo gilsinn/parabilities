@@ -20,48 +20,63 @@ puts 'Database Clean!'
 # ---------------------
 # users seeds
 # ---------------------
-puts 'Creating 4 fix and 30 random users...'
+puts 'Creating 4 fix and 6 random users...'
 
-Ann = User.create!(
+file = URI.open('https://source.unsplash.com/l0aeuaECCNA')
+ann = User.new(
   firstname: "Ann",
   lastname: "Baker",
   username: "ann",
   email: "ann@abc.com",
   password: "123456"
 )
+ann.photo.attach(io: file, filename: 'ann.png', content_type: 'image/png')
+ann.save!
 
-Joe = User.create!(
+file = URI.open('https://source.unsplash.com/l0aeuaECCNA')
+joe = User.new(
   firstname: "Joe",
   lastname: "Smith",
   username: "joe",
   email: "joe@abc.com",
   password: "123456"
 )
+joe.photo.attach(io: file, filename: 'joe.png', content_type: 'image/png')
+joe.save!
 
-Angela = User.create!(
+file = URI.open('https://source.unsplash.com/l0aeuaECCNA')
+angela = User.new(
   firstname: "Angela",
   lastname: "Baby",
   username: "Angela.B",
   email: "angel@abc.com",
   password: "123456"
 )
+angela.photo.attach(io: file, filename: 'angela.png', content_type: 'image/png')
+angela.save!
 
-Boomz_Burger = User.create!(
+file = URI.open('https://source.unsplash.com/l0aeuaECCNA')
+boomz = User.new(
   firstname: "Boomz",
   lastname: "Burger",
   username: "Boomz",
   email: "boomz@abc.com",
   password: "123456"
 )
+boomz.photo.attach(io: file, filename: 'boomz.png', content_type: 'image/png')
+boomz.save!
 
-30.times do
-  User.create!(
+6.times do
+  file = URI.open('https://source.unsplash.com/l0aeuaECCNA')
+  user = User.new(
     firstname: Faker::Name.first_name,
     lastname: Faker::Name.last_name,
     username: Faker::Internet.username(specifier: 5..10),
     email: Faker::Internet.email,
     password: "888888"
   )
+  user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+  user.save!
 end
 
 # ---------------------
@@ -135,7 +150,7 @@ end
 review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Excellent chili crab and very friendly staff service',
-  user_id: 8,
+  user_id: 6,
   facility_id: restaurant.id
 )
 review.save!
@@ -143,7 +158,7 @@ review.save!
 review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'very good but stop trying the constant upselling!',
-  user_id: 18,
+  user_id: 7,
   facility_id: restaurant.id
 )
 review.save!
@@ -178,7 +193,7 @@ end
 review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Grilled to medium-rare, the beef was juicy, though it could do with just a touch more salt',
-  user_id: 3,
+  user_id: 8,
   facility_id: restaurant.id
 )
 review.save!
@@ -186,7 +201,7 @@ review.save!
 review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Portions are huge, patties are juicy and big on flavour',
-  user_id: 22,
+  user_id: 9,
   facility_id: restaurant.id
 )
 review.save!
@@ -221,7 +236,7 @@ end
 review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Small but comfortable place for ice cream! Personally loves cookies fudge so I enjoyed in very much',
-  user_id: 14,
+  user_id: 10,
   facility_id: restaurant.id
 )
 review.save!
@@ -229,7 +244,7 @@ review.save!
 review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Best cookie ice cream combo ever! But be prepared to wait; cookies go into the oven on order.',
-  user_id: 15,
+  user_id: 6,
   facility_id: restaurant.id
 )
 review.save!
@@ -304,7 +319,7 @@ review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: ' Love this newly-launched fitness playground. Freelance personal trainers paid by the hour
   with no commission to the gym',
-  user_id: 12,
+  user_id: 8,
   facility_id: gym.id
 )
 review.save!
@@ -339,7 +354,7 @@ review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: "An inclusive community that welcomes all body types and goals.
   It’s easy to fall in love with fitness here!",
-  user_id: 20,
+  user_id: 5,
   facility_id: gym.id
 )
 review.save!
