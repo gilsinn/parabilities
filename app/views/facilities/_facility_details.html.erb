@@ -19,7 +19,6 @@
         <% end %>
       </ul>
     </div>
-    <small class="a-map"><%= link_to "Map", "http://maps.google.com/maps?q=" %></small>
   </div>
 
   <div class="facility-details">
@@ -29,7 +28,7 @@
       <div class="d-line ms-4">
         <h3 class="fs-3">Opening Hours</h3>
         <% @openinghours.each do |openinghour| %>
-            <li><%= openinghour.day %>: <%= openinghour.hours %></li>
+            <li ><%= openinghour.day %>: <%= openinghour.hours %></li>
           <% end %>
       </div>
     </div>
