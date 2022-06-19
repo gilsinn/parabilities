@@ -11,3 +11,20 @@
 .btn-ghost:hover {
   opacity: 1;
 }
+
+// longer button
+.btn-long {
+  color: white;
+  padding: 4px 48px;
+  border-radius: 20px;
+  font-weight: bold;
+  background: linear-gradient(#4a4e69, #4a4e69);
+  transition: background 0.3s ease;
+  border: 1px solid #4a4e69;
+  margin: 8;
+}
+
+.btn-long:hover {
+  background: linear-gradient(#4a4e69, #4a4e69);
+  color: white;
+}
