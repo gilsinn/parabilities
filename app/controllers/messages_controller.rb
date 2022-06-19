@@ -10,7 +10,10 @@ class MessagesController < ApplicationController
     @message.user = current_user
     @messages = Message.all
     @users = User.all
+    @user = @users.find_by(params[:user_id])
     @reviews = Review.all
+
+    raise
 
     if @message.save
       CommunityChannel.broadcast_to(
