@@ -363,6 +363,7 @@ review.save!
 puts 'Creating 10 random gyms with 1 review each...'
 
 10.times do
+  file = URI.open('https://source.unsplash.com/yDGsn39fbD4')
   gym = Facility.new(
     name: "#{Faker::Games::Pokemon.move} Gym",
     address: Faker::Address.street_address,
@@ -374,7 +375,9 @@ puts 'Creating 10 random gyms with 1 review each...'
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
     )
-   gym.save!
+    gym.photo.attach(io: file, filename: 'galgym.png', content_type: 'image/png')
+    gym.save!
+
 
   days.each do |day|
     openinghour = OpeningHour.new(
