@@ -94,6 +94,8 @@
   height: 32px;
   display: flex;
   align-items: center;
+  width: 80px;
+  justify-content: center;
 }
 
 .a-map:hover {
@@ -175,7 +177,6 @@
     backdrop-filter: blur(15px);
     border-radius: 16px;
     width: 70%;
-    height: 80px;
   }
 }
 
@@ -478,9 +479,29 @@ $card-height-mobile: 12rem;
   color: white;
 }
 
+
 .formname {
   display: flex;
   justify-content: center;
+
+.btn-back-long {
+  color: white;
+  padding: 6px 36px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(#aba688, #aba688);
+  border: 1px solid #aba688;
+  margin: 8;
+  font-family: "Quicksand", sans-serif;
+}
+
+.btn-back-long:hover {
+  background: linear-gradient(#69654a, #69654a);
+  color: white;
+}
+
+.bold {
   font-weight: bold;
   font-style: italic;
   text-decoration: underline;
