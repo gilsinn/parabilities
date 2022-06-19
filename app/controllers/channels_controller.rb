@@ -8,6 +8,8 @@ class ChannelsController < ApplicationController
     @message = Message.new
     @users = User.all
     @reviews = Review.all
+    @user = @users.find_by(params[:user_id])
+    raise
 
     @combined_content = @reviews + @messages
     @combined_content = @combined_content.sort_by {|content| content.created_at}

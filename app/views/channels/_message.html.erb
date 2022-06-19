@@ -2,6 +2,7 @@
 
   <div class="community-message-card d-flex">
     <%# Avatar %>
+      <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
 
       <%= cl_image_tag 'albert-dera-ILip77SbmOE-unsplash_yfzrit', class:"avatar-large me-3", width: 100, height: 100, crop: :fill, gravity: :face %>
 

@@ -31,8 +31,8 @@ Ann = User.create!(
   password: "123456"
 )
 
-user.photo.attach(io: file, filename: 'Joe.png', content_type: 'image/png')
-user.save!
+Ann.photo.attach(io: file, filename: 'Ann.png', content_type: 'image/png')
+
 
 file = URI.open('https://source.unsplash.com/ZHvM3XIOHoE')
 Joe = User.create!(
@@ -43,8 +43,8 @@ Joe = User.create!(
   password: "123456"
 )
 
-user.photo.attach(io: file, filename: 'Joe.png', content_type: 'image/png')
-user.save!
+Joe.photo.attach(io: file, filename: 'Joe.png', content_type: 'image/png')
+
 
 Bob = User.create!(
   firstname: "Bob",
