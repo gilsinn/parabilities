@@ -19,6 +19,7 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     @reviews = Review.where(facility_id: @facility.id)
     @review = Review.find_by(facility_id: @facility)
+    @openinghours = @facility.opening_hours
     # @comments = Comment.all
     @comment = Comment.new
 
@@ -28,14 +29,13 @@ class FacilitiesController < ApplicationController
     count = 0
 
     @reviews.each do |review|
-      @review.review_ratings.each do |review_rating|
+      review.review_ratings.each do |review_rating|
         sum += review_rating.rating
         count += 1
       end
     end
 
     @average_rating = count != 0 ? sum.fdiv(count).round : 0
-
   end
 
   def search

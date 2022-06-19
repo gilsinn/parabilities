@@ -15,7 +15,7 @@
           placeholder: "Message our ##{@channel.name}",
           wrapper_html: {class: "flex-grow-1"},
           input_html: {
-            class: "input-height",
+            class: "input-height font-set p-3",
             data: { community_subscription_target: "input" }
           }
         %>
@@ -23,7 +23,7 @@
 
       <div class="col-2 me-n1 mt-3">
         <div class="d-flex justify-content-end">
-          <%= f.submit "POST", class:"btn" %>
+          <%= f.submit "POST", class:"btn font-set mb-1 " %>
 
         </div>
 
