@@ -9,6 +9,7 @@
 @import "font-awesome";
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"); // font-family: 'Space Mono', monospace;
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap'); // font-family: 'Quicksand', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap'); // font-family: 'Major Mono Display';
 
 // Your CSS partials
 @import "components/index";
@@ -30,5 +31,11 @@ body::-webkit-scrollbar {
 
 h1{
   color: #22223B;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+p{
+  text-align: center;
   font-family: 'Quicksand', sans-serif;
 }
