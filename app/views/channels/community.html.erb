@@ -14,7 +14,7 @@
 
 
 
-          <% content.user_id == current_user %> ? :<%= render "channels/message", message: content %> : :<%= render "channels/message_left", message: content %>
+          <%= (content.user_id == current_user) ? (render "channels/message", message: content) : (render "channels/message_left", message: content)  %>
 
         <% elsif content.class == Review %>
           <%= render "channels/review", review: content %>
