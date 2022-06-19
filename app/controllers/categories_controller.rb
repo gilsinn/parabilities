@@ -3,13 +3,16 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @users = User.all
-    @user = current_user
+    @user = @users.find_by(params[:user_id])
   end
 
   def show
     @category = Category.find_by(name: params[:id])
     @facilities = @category.facilities
-    @user = User.find(params[:id])
+    @facility = @facilities.find_by(params[:reviews])
+    @reviews = @facility.reviews
+    @review = @reviews.find_by(params[:user_id])
+    @user = @review.user
 
 
   end
