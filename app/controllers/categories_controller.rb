@@ -12,7 +12,9 @@ class CategoriesController < ApplicationController
     @facility = @facilities.find_by(params[:reviews])
     @reviews = @facility.reviews
     @review = @reviews.find_by(params[:user_id])
-    @user = @review.user
+    # @user = @review.user
+    @user = current_user
+
 
 
   end
