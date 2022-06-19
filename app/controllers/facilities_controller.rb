@@ -19,11 +19,7 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     @reviews = Review.where(facility_id: @facility)
     @review = Review.find_by(facility_id: @facility)
-<<<<<<< HEAD
-
-=======
     @openinghours = @facility.opening_hours
->>>>>>> 17a2633d3330768250acb48ee3af4f9387eb4d9d
     # @comments = Comment.all
     @comment = Comment.new
 
