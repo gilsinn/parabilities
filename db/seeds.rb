@@ -375,7 +375,7 @@ puts 'Creating 10 random gyms with 1 review each...'
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
     )
-    gym.photo.attach(io: file, filename: 'galgym.png', content_type: 'image/png')
+    gym.photo.attach(io: file, filename: 'gym.png', content_type: 'image/png')
     gym.save!
 
 
@@ -402,6 +402,7 @@ end
 puts 'Creating 10 random parks with 1 review each...'
 
 10.times do
+  file = URI.open('https://source.unsplash.com/n9gMACRzkDw')
   park = Facility.new(
     name: "#{Faker::Fantasy::Tolkien.location} Park",
     address: Faker::Address.street_address,
@@ -413,7 +414,8 @@ puts 'Creating 10 random parks with 1 review each...'
     verified_status: true,
     verified_date: Faker::Date.backward(days: 1000)
    )
-   park.save!
+  park.photo.attach(io: file, filename: 'park.png', content_type: 'image/png')
+  park.save!
 
   openinghour = OpeningHour.new(
     day: 'Mon - Sun',
@@ -437,6 +439,7 @@ end
 puts 'Creating 10 random restrooms without review...'
 
 10.times do
+  file = URI.open('https://source.unsplash.com/-HUAUN0jDgQ')
   restroom = Facility.new(
     name: "#{Faker::Movies::HarryPotter.location} Restroom",
     address: Faker::Address.street_address,
@@ -448,6 +451,7 @@ puts 'Creating 10 random restrooms without review...'
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
    )
+  restroom.photo.attach(io: file, filename: 'restroom.png', content_type: 'image/png')
   restroom.save!
 
   days.each do |day|
