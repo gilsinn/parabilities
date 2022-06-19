@@ -1,33 +1,36 @@
 <img src="https://source.unsplash.com/N_Y88TWmGwA" alt="facility-image" width="100%">
-<div class="row mt-2">
-  <div class="facility-name col-8 d-inline">
-    <h1><%= @facility.name %></h1>
+
+<div class="facility-details-container p-3">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="fs-1"><%= @facility.name %></h1>
     <h6><%= pluralize @facility.reviews.size,"review" %></h6>
   </div>
-</div>
 
-<div class="row five-stars">
-  <ul class="col-9">
-  <% (1..5).each do |i| %>
-    <% if i <= @average_rating %>
-        <li class="fa fa-star fa-2xl selected"></li>
-    <% else %>
-        <li class="fa fa-star fa-2xl"></li>
-    <% end %>
-  <% end %>
+  <div class="d-flex align-items-center justify-content-between">
 
-  </ul>
-</div>
+    <div class="row five-stars mt-3">
+      <ul>
+        <% (1..5).each do |i| %>
+          <% if i <= @average_rating %>
+              <li class="fa fa-star fa-2xl selected"></li>
+          <% else %>
+              <li class="fa fa-star fa-2xl"></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <small class="a-map"><%= link_to "Map", "http://maps.google.com/maps?q=" %></small>
+  </div>
 
-<div>
-  <% if user_signed_in? == true %>
-    <%= link_to "Share your experience", new_facility_review_path(@facility), class: "btn btn-gradient" %>
-  <% else %>
-    <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient" %>
-  <% end %>
-</div>
+  <div class="facility-details">
 
-<div class="facility-details">
+    <div class="opening-hours d-flex p-2">
+      <i class="fa-regular fa-clock mt-1"></i>
+      <div class="d-line ms-4">
+        <h3 class="fs-3">Opening Today</h3>
+        <h6 class="fs-5"><%= @facility.opening_hours.sample.hours %></h6>
+      </div>
+    </div>
 
   <div class="opening-hours d-flex">
     <i class="fa-regular fa-clock"></i>
@@ -38,21 +41,24 @@
         <li><%= openinghour.day %>: <%= openinghour.hours %></li>
       <% end %>
     </div>
-  </div>
 
-  <div class="address d-flex mt-2">
-    <i class="fa-solid fa-location-dot"></i>
-    <div class="d-line ms-4 ">
-      <h5>Address</h5>
-      <h6><%= @facility.address %></h6>
-      <%= link_to "Tap to view map", "http://maps.google.com/maps?q=" %>
+    <div class="type d-flex mt-2 p-2">
+      <i class="fa-solid fa-utensils"></i>
+      <div class="d-line ms-4">
+        <h6 class="fs-5"><%= @facility.price_range %>/pax . Modern . European</h6>
+      </div>
     </div>
   </div>
 
-  <div class="type d-flex mt-2">
-    <i class="fa-solid fa-utensils"></i>
-    <div class="d-line ms-4">
-      <h6><%= @facility.price_range %>/pax . Modern . European</h6>
-    </div>
+
+  <div class="d-flex justify-content-center my-4">
+    <% if user_signed_in? == true %>
+      <%= link_to "Share your experience", new_facility_review_path(@facility), class: "btn btn-gradient" %>
+    <% else %>
+      <%= link_to "Review Now", new_user_session_path, class: "btn btn-gradient" %>
+    <% end %>
   </div>
+
+
+
 </div>
