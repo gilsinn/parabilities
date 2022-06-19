@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     @user = @users.find_by(params[:user_id])
     @reviews = Review.all
 
-    raise
+
 
     if @message.save
       CommunityChannel.broadcast_to(
