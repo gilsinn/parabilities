@@ -49,11 +49,11 @@
 
 // Facility-details
 .facility-name h1 {
-  color: black;
+  color: #22223B;
 }
 
 .facility-name h6 {
-  color: black;
+  color: #22223B;
 }
 
 .facility-details {
@@ -62,11 +62,14 @@
   border-radius: 16px;
   width: 95%;
   margin: 16px auto;
+  color: #F2E9E4;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .facility-details a {
-  font-family: "Space-Mono";
-  color: rgb(230, 65, 175);
+ font-family: "Quicksand", sans-serif;
+ color: #F2E9E4;
+
 }
 
 .facility-name h1 {
@@ -79,6 +82,26 @@
 
 #review-count {
   font-size: 6px;
+}
+
+.a-map {
+  color: #F2E9E4 !important;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  transition: opacity 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  background: linear-gradient(#C9ADA7, #C9ADA7);
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.a-map:hover {
+  text-decoration: underline;
+  color: #22223b;
+  font-weight: 900;
 }
 
 // Review-card
@@ -417,12 +440,13 @@ $card-height-mobile: 12rem;
 
 .btn-gradient {
   color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
+  padding: 8px 24px;
+  border-radius: 24px;
   font-weight: bold;
   background: linear-gradient(#4a4e69, #4a4e69);
   border: 1px solid #4a4e69;
   margin: 8;
+  font-size: 18px;
   font-family: "Quicksand", sans-serif;
 }
 
