@@ -5,11 +5,12 @@ class ChannelsController < ApplicationController
 
     @channel = Channel.find_by_name("Community")
     @messages = Message.all
+    @post = @messages.find_by(params[:user_id])
     @message = Message.new
-    @users = User.all
+    @user = @post.user
     @reviews = Review.all
-    @user = @users.find_by(params[:user_id])
-
+    @facilities = Facility.all
+    @facility = @facilities.find_by(params[:category_id])
 
     @combined_content = @reviews + @messages
     @combined_content = @combined_content.sort_by {|content| content.created_at}
