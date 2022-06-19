@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
     @users = User.all
     @user = @users.find_by(params[:user_id])
     @reviews = Review.all
+    @avatar = current_user
 
 
 

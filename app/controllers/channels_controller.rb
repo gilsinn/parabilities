@@ -12,6 +12,7 @@ class ChannelsController < ApplicationController
     @facilities = Facility.all
     @facility = @facilities.find_by(params[:category_id])
 
+
     @combined_content = @reviews + @messages
     @combined_content = @combined_content.sort_by {|content| content.created_at}
   end

@@ -4,7 +4,7 @@
       <div class="row user-details d-flex align-items-center p-3">
         <%# profile image %>
         <div class="col-2 me-3">
-          <%= cl_image_tag 'albert-dera-ILip77SbmOE-unsplash_yfzrit', class:"avatar-large", width: 100, height: 100, crop: :fill, gravity: :face %>
+          <%= cl_image_tag @user.photo.key, class: :av , height: 100, width: 100, crop: :fill, gravity: :face %>
         </div>
         <%# Username %>
         <div class="col-3 textblue-shadow">
