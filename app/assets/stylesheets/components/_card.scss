@@ -3,7 +3,6 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 16px;
-
 }
 
 .icons {
@@ -23,7 +22,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  background-position:center;
+  background-position: center;
 }
 
 .all-card {
@@ -42,19 +41,18 @@
 
 .badge-verified {
   color: white;
-  background-color: #22223B;
+  background-color: #22223b;
   border-radius: 24px;
   padding: 8px;
-
 }
 
 // Facility-details
 .facility-name h1 {
-  color: #22223B;
+  color: #22223b;
 }
 
 .facility-name h6 {
-  color: #22223B;
+  color: #22223b;
 }
 
 .facility-details {
@@ -63,14 +61,13 @@
   border-radius: 16px;
   width: 95%;
   margin: 16px auto;
-  color: #F2E9E4;
+  color: #f2e9e4;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .facility-details a {
- font-family: "Quicksand", sans-serif;
- color: #F2E9E4;
-
+  font-family: "Quicksand", sans-serif;
+  color: #f2e9e4;
 }
 
 .facility-name h1 {
@@ -86,17 +83,19 @@
 }
 
 .a-map {
-  color: #F2E9E4 !important;
+  color: #f2e9e4 !important;
   text-decoration: none;
   font-family: "Quicksand", sans-serif;
   transition: opacity 0.3s ease;
   padding: 8px 12px;
   border-radius: 20px;
   font-weight: bold;
-  background: linear-gradient(#C9ADA7, #C9ADA7);
+  background: linear-gradient(#c9ada7, #c9ada7);
   height: 32px;
   display: flex;
   align-items: center;
+  width: 80px;
+  justify-content: center;
 }
 
 .a-map:hover {
@@ -134,7 +133,7 @@
   width: 95%;
 
   .icon {
-    background-color: #22223B;
+    background-color: #22223b;
     width: 36px;
     height: 36px;
 
@@ -143,14 +142,14 @@
     justify-content: center;
     align-items: center;
     font-size: 1.3rem;
-    color: #C9ADA7;
+    color: #c9ada7;
     opacity: 0.8;
     position: relative;
     .rating {
       width: 24px;
       height: 24px;
       border-radius: 50%;
-      background-color: #4A4E69;
+      background-color: #4a4e69;
       box-shadow: 1px 1px #c9ada7cc;
       display: flex;
       justify-content: center;
@@ -158,12 +157,10 @@
       position: absolute;
       top: -4px;
       right: -8px;
-      color: #C9ADA7;
+      color: #c9ada7;
       font-size: 16px;
     }
-
   }
-
 
   .image-spacing {
     display: inline;
@@ -180,7 +177,6 @@
     backdrop-filter: blur(15px);
     border-radius: 16px;
     width: 70%;
-    height: 80px;
   }
 }
 
@@ -208,10 +204,9 @@
 }
 
 .content {
-  background-color: rgba(220, 219, 218,0.4);
+  background-color: rgba(220, 219, 218, 0.4);
   border-radius: 16px;
   padding: 10px;
-
 }
 
 // community page
@@ -224,8 +219,7 @@
 }
 
 .community-name {
-
-  color: rgb(243, 233, 228,);
+  color: rgb(243, 233, 228);
   text-shadow: 2px 1px #000000;
   font-weight: bold;
   background-color: rgba(34, 34, 59, 0.8);
@@ -234,7 +228,7 @@
   position: fixed;
   position: fixed;
   top: 0;
-  width: 100%
+  width: 100%;
 }
 // community message card
 .community-message-card {
@@ -302,7 +296,6 @@ $card-height-mobile: 12rem;
   margin: 0;
   padding: 0;
   font-family: "Quicksand", "Sans-serif";
-
 }
 
 .content-wrapper {
@@ -470,7 +463,6 @@ $card-height-mobile: 12rem;
   padding-bottom: 8px;
 }
 
-
 .btn-back {
   color: white;
   padding: 4px 12px;
@@ -487,8 +479,37 @@ $card-height-mobile: 12rem;
   color: white;
 }
 
+.formname {
+  display: flex;
+  justify-content: center;
+}
+.btn-back-long {
+  color: white;
+  padding: 6px 36px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(#aba688, #aba688);
+  border: 1px solid #aba688;
+  margin: 8;
+  font-family: "Quicksand", sans-serif;
+}
+
+.btn-back-long:hover {
+  background: linear-gradient(#69654a, #69654a);
+  color: white;
+}
+
 .bold {
   font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  font-family: "Quicksand", sans-serif;
+}
+
+.formtitle {
+  display: flex;
+  justify-content: center;
   font-family: "Quicksand", sans-serif;
 }
 
