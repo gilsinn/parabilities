@@ -48,23 +48,77 @@ Joe.photo.attach(io: file, filename: 'Joe.png', content_type: 'image/png')
 Joe.save!
 
 
-Bob = User.create!(
-  firstname: "Bob",
-  lastname: "Miller",
-  username: "bob",
-  email: "bob@abc.com",
+file = URI.open('https://source.unsplash.com/rDEOVtE7vOs')
+angela = User.create!(
+  firstname: "Angela",
+  lastname: "Baby",
+  username: "Angela",
+  email: "Angel@abc.com",
   password: "123456"
 )
 
-5.times do
-  User.create!(
-    firstname: Faker::Name.first_name,
-    lastname: Faker::Name.last_name,
-    username: Faker::Internet.username(specifier: 5..10),
-    email: Faker::Internet.email,
-    password: "888888"
-  )
-end
+angela.photo.attach(io: file, filename: 'angela.png', content_type: 'image/png')
+angela.save!
+
+file = URI.open('https://source.unsplash.com/random/?person')
+gino = User.create!(
+  firstname: "Gino",
+  lastname: "Green",
+  username: "Gino Green",
+  email: "Gino@abc.com",
+  password: "123456"
+)
+
+gino.photo.attach(io: file, filename: 'gino.png', content_type: 'image/png')
+gino.save!
+
+file = URI.open('https://source.unsplash.com/random/?person')
+apolania = User.create!(
+  firstname: "Apolnia",
+  lastname: "Nia",
+  username: "Apolania",
+  email: "Apolania@abc.com",
+  password: "123456"
+)
+
+apolania.photo.attach(io: file, filename: 'apolania.png', content_type: 'image/png')
+apolania.save!
+
+file = URI.open('https://source.unsplash.com/random/?person')
+daniell = User.create!(
+  firstname: "daniell",
+  lastname: "libeskind",
+  username: "Daniell",
+  email: "Daniell@abc.com",
+  password: "123456"
+)
+
+daniell.photo.attach(io: file, filename: 'daniell.png', content_type: 'image/png')
+daniell.save!
+
+file = URI.open('https://source.unsplash.com/random/?person')
+michelina = User.create!(
+  firstname: "Michelina",
+  lastname: "Lee",
+  username: "Michelina",
+  email: "Michelina@abc.com",
+  password: "123456"
+)
+
+michelina.photo.attach(io: file, filename: 'Michelina.png', content_type: 'image/png')
+michelina.save!
+
+file = URI.open('https://source.unsplash.com/random/?person')
+antoine = User.create!(
+  firstname: "Antoine",
+  lastname: "Toni",
+  username: "Antoine",
+  email: "Antoine@abc.com",
+  password: "123456"
+)
+
+antoine.photo.attach(io: file, filename: 'Antoine.png', content_type: 'image/png')
+antoine.save!
 
 
 # ---------------------
@@ -109,7 +163,7 @@ puts 'Creating 2 fix restaurants with 2 reviews each....'
 
 # ------------- Restaurant 1 ------------
 
-restaurant = Facility.new(
+restaurant1 = Facility.new(
   name: "Amazing Seafood",
   address: "20 Collyer Quay",
   distance: 800,
@@ -122,37 +176,37 @@ restaurant = Facility.new(
  )
 #  restaurant.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 #  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
- restaurant.save!
+ restaurant1.save!
 
 days.each do |day|
   openinghour = OpeningHour.new(
     day: day,
     hours: hours.sample
   )
-  openinghour.facility = restaurant
+  openinghour.facility = restaurant1
   openinghour.save!
 end
 
 
-review = Review.new(
+review2 = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Excellent chili crab and very friendly staff service',
   user_id: 8,
-  facility_id: restaurant.id
+  facility_id: restaurant1.id
 )
-review.save!
+review2.save!
 
-review = Review.new(
+review3 = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'very good but stop trying the constant upselling!',
-  user_id: 18,
-  facility_id: restaurant.id
+  user_id: 2,
+  facility_id: restaurant1.id
 )
-review.save!
+review3.save!
 
 # ------ Restaurant 2 -----------
 
-restaurant = Facility.new(
+restaurant2 = Facility.new(
   name: "Boomz Burger",
   address: "111 Somerset Road",
   distance: 550,
@@ -165,37 +219,37 @@ restaurant = Facility.new(
 )
 #  restaurant.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 #  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
-restaurant.save!
+restaurant2.save!
 
 days.each do |day|
   openinghour = OpeningHour.new(
     day: day,
     hours: hours.sample
   )
-  openinghour.facility = restaurant
+  openinghour.facility = restaurant2
   openinghour.save!
 end
 
-review = Review.new(
+review21 = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Grilled to medium-rare, the beef was juicy, though it could do with just a touch more salt',
   user_id: 3,
-  facility_id: restaurant.id
+  facility_id: restaurant2.id
 )
-review.save!
+review21.save!
 
-review = Review.new(
+review22 = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Portions are huge, patties are juicy and big on flavour',
-  user_id: 22,
-  facility_id: restaurant.id
+  user_id: 6,
+  facility_id: restaurant2.id
 )
-review.save!
+review22.save!
 
 puts 'Creating restaurants with reviews...'
 
 10.times do
-  restaurant = Facility.new(
+  restaurantz = Facility.new(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
     distance: rand(1..1000),
@@ -206,14 +260,14 @@ puts 'Creating restaurants with reviews...'
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
    )
-   restaurant.save!
+   restaurantz.save!
 
   days.each do |day|
     openinghour = OpeningHour.new(
       day: day,
       hours: hours.sample
     )
-    openinghour.facility = restaurant
+    openinghour.facility = restaurantz
     openinghour.save!
   end
 
@@ -222,9 +276,9 @@ puts 'Creating restaurants with reviews...'
     datetime: Faker::Time.backward(days: 180, format: :short),
     content: Faker::Restaurant.review,
     user_id: users.sample.id,
-    facility_id: restaurant.id
+    facility_id: restaurantz.id
   )
-  review.facility = restaurant
+  review.facility = restaurantz
   review.save!
 end
 
@@ -232,7 +286,7 @@ puts 'Creating 2 fix gyms with 1 review each....'
 
 # ----- Gym 1 --------
 
-gym = Facility.new(
+gym1 = Facility.new(
   name: "Apollo Gym",
   address: "252 North Bridge Rd",
   distance: 2750,
@@ -245,29 +299,29 @@ gym = Facility.new(
  )
 #  gym.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 #  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
- gym.save!
+ gym1.save!
 
  days.each do |day|
   openinghour = OpeningHour.new(
     day: day,
     hours: hours.sample
   )
-  openinghour.facility = gym
+  openinghour.facility = gym1
   openinghour.save!
 end
 
-review = Review.new(
+reviewg1 = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: ' Love this newly-launched fitness playground. Freelance personal trainers paid by the hour
   with no commission to the gym',
-  user_id: 12,
-  facility_id: gym.id
+  user_id: 7,
+  facility_id: gym1.id
 )
-review.save!
+reviewg1.save!
 
 # ------ Gym 2 --------
 
-gym = Facility.new(
+gym2 = Facility.new(
   name: "Titans Gym",
   address: "10 Raeburn Park",
   distance: 2750,
@@ -280,31 +334,31 @@ gym = Facility.new(
   )
 #  gym.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 #  file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
-  gym.save!
+  gym2.save!
 
 days.each do |day|
   openinghour = OpeningHour.new(
     day: day,
     hours: hours.sample
   )
-  openinghour.facility = gym
+  openinghour.facility = gym2
   openinghour.save!
 end
 
-review = Review.new(
+reviewg2 = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: "An inclusive community that welcomes all body types and goals.
   It’s easy to fall in love with fitness here!",
-  user_id: 20,
-  facility_id: gym.id
+  user_id: 3,
+  facility_id: gym2.id
 )
-review.save!
+reviewg2.save!
 
 
 puts 'Creating gyms with reviews...'
 
 10.times do
-  gym = Facility.new(
+  gymz = Facility.new(
     name: "#{Faker::Games::Pokemon.move} Gym",
     address: Faker::Address.street_address,
     distance: rand(1..1000),
@@ -315,25 +369,25 @@ puts 'Creating gyms with reviews...'
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
     )
-   gym.save!
+   gymz.save!
 
   days.each do |day|
     openinghour = OpeningHour.new(
       day: day,
       hours: hours.sample
     )
-    openinghour.facility = gym
+    openinghour.facility = gymz
     openinghour.save!
   end
 
   users = User.all
-  review = Review.new(
+  reviewu = Review.new(
     datetime: Faker::Time.backward(days: 180, format: :short),
     content: Faker::TvShows::GameOfThrones.quote,
     user_id: users.sample.id,
-    facility_id: gym.id
+    facility_id: gymz.id
   )
-  review.save!
+  reviewu.save!
 end
 
 
