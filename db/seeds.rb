@@ -22,7 +22,7 @@ puts 'Database Clean!'
 # ---------------------
 puts 'Creating 4 fix and 6 random users...'
 
-file = URI.open('https://source.unsplash.com/l0aeuaECCNA')
+file = URI.open('https://source.unsplash.com/yMSecCHsIBc')
 ann = User.new(
   firstname: "Ann",
   lastname: "Baker",
@@ -33,7 +33,7 @@ ann = User.new(
 ann.photo.attach(io: file, filename: 'ann.png', content_type: 'image/png')
 ann.save!
 
-file = URI.open('https://source.unsplash.com/l0aeuaECCNA')
+file = URI.open('https://source.unsplash.com/E2Yd6K2A3fE')
 joe = User.new(
   firstname: "Joe",
   lastname: "Smith",
@@ -44,7 +44,7 @@ joe = User.new(
 joe.photo.attach(io: file, filename: 'joe.png', content_type: 'image/png')
 joe.save!
 
-file = URI.open('https://source.unsplash.com/l0aeuaECCNA')
+file = URI.open('https://source.unsplash.com/eU8cJsITNcQ')
 angela = User.new(
   firstname: "Angela",
   lastname: "Baby",
@@ -55,7 +55,7 @@ angela = User.new(
 angela.photo.attach(io: file, filename: 'angela.png', content_type: 'image/png')
 angela.save!
 
-file = URI.open('https://source.unsplash.com/l0aeuaECCNA')
+file = URI.open('https://source.unsplash.com/FMh5o5m5N9E')
 boomz = User.new(
   firstname: "Boomz",
   lastname: "Burger",
@@ -67,7 +67,7 @@ boomz.photo.attach(io: file, filename: 'boomz.png', content_type: 'image/png')
 boomz.save!
 
 6.times do
-  file = URI.open('https://source.unsplash.com/l0aeuaECCNA')
+  file = URI.open('https://source.unsplash.com/t0Bv0OBQuTg')
   user = User.new(
     firstname: Faker::Name.first_name,
     lastname: Faker::Name.last_name,
