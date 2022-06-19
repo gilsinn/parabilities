@@ -8,7 +8,11 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"); // font-family: 'Space Mono', monospace;
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap'); // font-family: 'Quicksand', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap'); // font-family: 'Major Mono Display';
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap"); // font-family: 'Quicksand', sans-serif;
+
 
 // Your CSS partials
 @import "components/index";
@@ -55,6 +59,7 @@ h6 {
   font-family: "Quicksand", sans-serif;
 }
 
+
 p {
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }

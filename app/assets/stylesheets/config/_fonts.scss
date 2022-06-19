@@ -1,6 +1,12 @@
 // Import Google fonts
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
 
 // Define fonts for body and headers
 $body-font: "Roboto Mono", "Helvetica", "sans-serif";
@@ -70,4 +76,8 @@ p {
   text-shadow: 1px 1px 3px rgba(242, 233, 228, 0.2);
   font-weight: bolder;
   font-family: 'Quicksand', sans-serif;
+}
+
+.major{
+  font-family: 'Major Mono Display', monospace;
 }
