@@ -5,12 +5,14 @@
   border-radius: 16px;
   width: 95%;
   color: rgb(18, 3, 3);
+  font-family: "Quicksand", sans-serif;
 }
 
 // Star ratings form
 
 .review-form {
   color: black;
+  font-family: "Quicksand", sans-serif;
 }
 
 .rating {
@@ -34,7 +36,8 @@
 }
 
 .fa-star {
-  color: rgba(112, 111, 111, 0.856);
+  color: #ffffff;
+
 }
 
 .fa-star:hover {
@@ -42,7 +45,7 @@
 }
 
 .fa-star.selected {
-  color: #fcbb08;
+  color: #C9ADA7;
 }
 
 .form2 {
@@ -58,7 +61,7 @@
 }
 
 a {
-  color: rgb(0, 0, 0);
+  color: #F2E9E4;
   text-decoration: none;
   font-family: "Quicksand", sans-serif;
 }
@@ -72,3 +75,12 @@ a:hover {
 .form-zindex {
   z-index: 1000;
 }
+
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+hr.solid2 {
+  border-top: 1px solid #F2E9E4;
+}
+

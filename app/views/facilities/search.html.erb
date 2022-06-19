@@ -4,9 +4,10 @@
 
   <% if @facilities.empty? %>
     <h1>Sorry, "<%= @query.capitalize %>" could not be found &#x1F615;</h1>
-    <%= cl_image_tag("searchgoogle_enyipo", width:'100%', style: "margin-top: -50px") %>
     <br>
+    <%= cl_image_tag("searchgoogle_enyipo", width:'100%') %>
     <%= link_to "http://maps.google.com/maps?q=#{@query}", target: :_blank do %>
+    <br>
       <div class="btn btn-gradient">Search on Google?</div>
     <% end %></h2>
       </div>
@@ -51,6 +52,8 @@
 <br>
 <br>
 <br>
+<br>
+<br>
   <h4>Would you like to make another search?</h4>
   <%= form_tag search_facilities_path, method: :get do %>
     <%= text_field_tag :name,
@@ -62,5 +65,5 @@
 </div>
 
 <div class="mx-3">
-  <p><%= link_to "Back", request.referer.present? ? request.referer : root_path, class:"btn btn-gradient mt-3" %> <%= link_to "Home", root_path, class:"btn btn-gradient mx-3 mt-3" %></p>
+  <p><%= link_to "Back", request.referer.present? ? request.referer : root_path, class:"btn btn-back mt-3" %> <%= link_to "Home", root_path, class:"btn btn-back mx-3 mt-3" %></p>
 </div>
