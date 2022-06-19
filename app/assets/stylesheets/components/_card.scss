@@ -175,6 +175,13 @@
   padding: 8px;
 }
 
+.content {
+  background-color: rgba(220, 219, 218,0.4);
+  border-radius: 16px;
+  padding: 10px;
+
+}
+
 // community page
 .community {
   background-color: rgba(220, 219, 218, 0.3);
@@ -185,31 +192,55 @@
 }
 
 .community-name {
-  color: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+  color: rgb(243, 233, 228,);
+  text-shadow: 2px 1px #000000;
+  font-weight: bold;
+  background-color: rgba(34, 34, 59, 0.8);
+  backdrop-filter: blur(15px);
+  z-index: 2;
+  position: fixed;
+  position: fixed;
+  top: 0;
+  width: 100%
 }
 // community message card
 .community-message-card {
   margin-bottom: 16px;
-  .message-description {
-    background-color: rgba(201, 173, 167, 0.8);
-    backdrop-filter: blur(15px);
-    border-radius: 24px;
-    height: 60px;
-    width: 280px;
-    font-size: 12px;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    box-shadow: 1px 1px rgba(243, 233, 228, 0.5);
-  }
+}
+
+.message-description {
+  background-color: rgba(201, 173, 167, 0.8);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  height: 60px;
+  width: 280px;
+  font-size: 12px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 1px 1px rgba(243, 233, 228, 0.5);
+  z-index: -1;
+}
+
+.message-description-left {
+  background-color: rgba(201, 173, 167, 0.8);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  height: 60px;
+  width: 280px;
+  font-size: 12px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 1px 1px rgba(243, 233, 228, 0.5);
 }
 
 // community-review-card
 .community-review-card {
   background-color: rgba(154, 140, 152, 0.6);
   backdrop-filter: blur(15px);
-  padding: 16px;
+  padding: 24px;
   margin-bottom: 16px;
   border-radius: 16px;
   box-shadow: 1px 1px rgba(201, 173, 167, 0.5);
