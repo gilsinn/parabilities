@@ -55,13 +55,25 @@
 <br>
 <br>
   <h4>Would you like to make another search?</h4>
-  <%= form_tag search_facilities_path, method: :get do %>
-    <%= text_field_tag :name,
-    params[:name],
-    class: "form-control",
-    placeholder: "Search by Name"%>
-    <%= submit_tag "Search", class: "btn btn-gradient mt-3" %>
-  <% end %>
+
+    <div class="row align-items-center ">
+      <div class="col-8 ms-n1">
+        <%= form_tag search_facilities_path, method: :get do %>
+          <%= text_field_tag :name,
+                    params[:name],
+                      class: "form-control rounded-pill ms-2",
+                    placeholder: "Search by Name"%>
+
+      </div>
+
+      <div class="col-4">
+        <%= submit_tag "Search", class: "my-3 btn btn-gradient ms-n3" %>
+      </div>
+        <% end %>
+
+    </div>
+
+
 </div>
 
 <div class="mx-3">
