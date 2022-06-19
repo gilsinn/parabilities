@@ -329,7 +329,7 @@ review.save!
 file = URI.open('https://source.unsplash.com/optBC2FxCfc')
 gym = Facility.new(
   name: "Titans Gym",
-  address: "10 Raeburn Park Singapore 088702",
+  address: "100 Tras Street",
   distance: 2750,
   phone: Faker::PhoneNumber.phone_number_with_country_code,
   price_range: '$$$',
