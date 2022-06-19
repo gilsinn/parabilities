@@ -64,7 +64,6 @@ Boomz_Burger = User.create!(
   )
 end
 
-
 # ---------------------
 # Categories seeds
 # ---------------------
