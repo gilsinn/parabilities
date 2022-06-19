@@ -27,25 +27,25 @@
     <div class="opening-hours d-flex p-2">
       <i class="fa-regular fa-clock mt-1"></i>
       <div class="d-line ms-4">
-        <h3 class="fs-3">Opening Today</h3>
-        <h6 class="fs-5"><%= @facility.opening_hours.sample.hours %></h6>
+        <h3 class="fs-3">Opening Hours</h3>
+        <% @openinghours.each do |openinghour| %>
+            <li><%= openinghour.day %>: <%= openinghour.hours %></li>
+          <% end %>
       </div>
     </div>
 
-  <div class="opening-hours d-flex">
-    <i class="fa-regular fa-clock"></i>
-    <div class="d-line ms-4">
-      <%# <h5>Opening Today</h5>
-      <%= @facility.opening_hours.sample.hours %>
-      <% @openinghours.each do |openinghour| %>
-        <li><%= openinghour.day %>: <%= openinghour.hours %></li>
-      <% end %>
+    <div class="address d-flex mt-2 p-2">
+      <i class="fa-solid fa-location-dot mt-2"></i>
+      <div class="d-line ms-4 ">
+        <h3 class="fs-3">Address</h3>
+        <h6 class="fs-5"><%= @facility.address %></h6>
+      </div>
     </div>
 
     <div class="type d-flex mt-2 p-2">
       <i class="fa-solid fa-utensils"></i>
       <div class="d-line ms-4">
-        <h6 class="fs-5"><%= @facility.price_range %>/pax . Modern . European</h6>
+        <h6 class="fs-5"><%= @facility.price_range %>/pax</h6>
       </div>
     </div>
   </div>
