@@ -6,7 +6,7 @@
       <div class= "row col-12">
           <%= simple_form_for [ @category, @facility ] do |f| %>
             <div class="form-inputs">
-              <%= f.input :name, label: 'Facility Name:', wrapper_html: { class: 'bold' }  %>
+              <%= f.input :name, label: 'Facility Name:' %>
               <%= f.input :address, label: 'Address:' %>
               <%= f.input :phone, label: 'Phone:' %>
               <%= f.input :category, collection: Category.all  %>
