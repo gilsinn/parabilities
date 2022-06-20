@@ -1,4 +1,7 @@
-<img src="https://source.unsplash.com/random/?restaurants" alt="restaurants" width="100%" height="250px" object-fit="cover">
+<%# <img src="https://source.unsplash.com/random/?restaurants" alt="restaurants" width="100%" height="250px" object-fit="cover"> %>
+<%# <% @restaurants.each do |restaurant| %>
+  <%# <%= cl_image_tag restaurant.photo.key, height: 250, width: 400, crop: :fill %>
+<%# <% end %>
 
 <div class="d-flex justify-content-start search-position">
   <%= form_tag search_facilities_path, method: :get do %>
@@ -13,7 +16,7 @@
       </div>
 
       <div class="col-2">
-        <%= submit_tag "Search", class: "my-3 btn btn-gradient ms-2" %>
+        <%= submit_tag "Search", class: "my-3 btn btn-search ms-2" %>
       </div>
 
     </div>

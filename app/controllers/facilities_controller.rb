@@ -19,8 +19,13 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
+<<<<<<< HEAD
     @reviews = Review.where(facility: @facility)
     @review = Review.find_by(facility: @facility)
+=======
+    @reviews = Review.where(facility_id: @facility)
+    @review = Review.find_by(facility_id: @facility)
+>>>>>>> master
     @openinghours = @facility.opening_hours
     # @comments = Comment.all
     @comment = Comment.new
