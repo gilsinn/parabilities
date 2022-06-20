@@ -278,7 +278,7 @@ days.each do |day|
 end
 
 
-file = URI.open('https://source.unsplash.com/random/?beef-burger')
+file = URI.open('https://source.unsplash.com/I7A_pHLcQK8')
 review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Grilled to medium-rare, the beef was juicy, though it could do with just a touch more salt',
@@ -288,7 +288,7 @@ review = Review.new(
 review.photo.attach(io: file, filename: 'beefburger1.png', content_type: 'image/png')
 review.save!
 
-file = URI.open('https://source.unsplash.com/random/?beef-burger')
+file = URI.open('https://source.unsplash.com/-GFCYhoRe48')
 review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Portions are huge, patties are juicy and big on flavour',
