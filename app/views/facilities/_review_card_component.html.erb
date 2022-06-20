@@ -41,6 +41,7 @@
       <div class="row d-flex image-spacing mb-2">
         <div class="col-12">
           <%# <%= cl_image_tag 'o7b693sl20e5206soaw3zwc0pt82', height: "150px", width: "170px" %>
+
           <% if review.photo.attached? %>
             <%= cl_image_tag(review.photo.key, width: 300, height: 150, crop: :fill) %>
           <% else %>
