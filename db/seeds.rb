@@ -273,20 +273,24 @@ days.each do |day|
   openinghour.save!
 end
 
+file = URI.open('https://source.unsplash.com/9G_oJBKwi1c')
 review21 = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Grilled to medium-rare, the beef was juicy, though it could do with just a touch more salt',
   user_id: 8,
   facility_id: restaurant.id
 )
+review21.photo.attach(io: file, filename: 'beefburger.png', content_type: 'image/png')
 review21.save!
 
+file = URI.open('https://source.unsplash.com/pu6b4yIlQF4')
 review22 = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Portions are huge, patties are juicy and big on flavour',
   user_id: 9,
   facility_id: restaurant.id
 )
+review22.photo.attach(io: file, filename: 'beefburger.png', content_type: 'image/png')
 review22.save!
 
 # ------ Restaurant 3 -----------
@@ -397,6 +401,7 @@ gym = Facility.new(
   openinghour.save!
 end
 
+file = URI.open('https://source.unsplash.com/fqMu99l8sqo')
 reviewg1 = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: ' Love this newly-launched fitness playground. Freelance personal trainers paid by the hour
@@ -404,6 +409,7 @@ reviewg1 = Review.new(
   user_id: 8,
   facility_id: gym.id
 )
+reviewg1.photo.attach(io: file, filename: 'gym1.png', content_type: 'image/png')
 reviewg1.save!
 
 # ------ Gym 2 --------
@@ -432,14 +438,17 @@ days.each do |day|
   openinghour.save!
 end
 
-review = Review.new(
+file = URI.open('https://source.unsplash.com/FodEsaNZs48c')
+reviewg2 = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: "An inclusive community that welcomes all body types and goals.
   It’s easy to fall in love with fitness here!",
   user_id: 5,
   facility_id: gym.id
 )
-review.save!
+reviewg2.photo.attach(io: file, filename: 'gym2.png', content_type: 'image/png')
+reviewg2.save!
+
 
 
 puts 'Creating 10 random gyms with 1 review each...'
