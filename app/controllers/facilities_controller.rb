@@ -24,6 +24,8 @@ class FacilitiesController < ApplicationController
     @openinghours = @facility.opening_hours
     @comment = Comment.new
 
+
+
     @markers = @facility.latitude.nil? ? [{ lat: 28.10803865, lng: -15.444108135254993 }] : [{ lat: @facility.geocode[0], lng:@facility.geocode[1] }]
 
     sum = 0

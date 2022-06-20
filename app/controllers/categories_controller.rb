@@ -14,7 +14,10 @@ class CategoriesController < ApplicationController
     @reviews = @facility.reviews
     @review = @reviews.find_by(params[:user_id])
     @user = current_user
-    @restaurants = @facilities.where(category_id: 1)
+
+
+
+
   end
 
 end
