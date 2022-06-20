@@ -16,15 +16,15 @@
     <div class="textblue-shadow">
       <h4><%= comment.user.username.capitalize %></h4>
     </div>
+
     <%# Review comments %>
-
     <p id="comment-<%= comment.id %>"><h5 class="fs-5 textblue-shadow ms-2"><%= comment.comment %></h5></p>
-
 
   </div>
     <%# Time sent ago %>
-    <div class="d-flex justify-content-end mt-2">
-      <% timecreated = comment.created_at.strftime("%a %b %e at %l:%M %p") %>
-       <i><%= time_ago_in_words(timecreated).gsub('about','') + ' ago' %></i>
-    </div>
+
+  <div class="d-flex justify-content-end mt-2">
+    <% timecreated = comment.created_at.strftime("%a %b %e at %l:%M %p") %>
+      <i><%= time_ago_in_words(timecreated).gsub('about','') + ' ago' %></i>
+  </div>
 </div>

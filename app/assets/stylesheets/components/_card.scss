@@ -430,3 +430,40 @@ h1 {
   margin: 8;
   font-family: "Quicksand", sans-serif;
 }
+.formname {
+  display: flex;
+  justify-content: center;
+}
+.btn-back-long {
+  color: white;
+  padding: 6px 36px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(#ABA688, #ABA688);
+  border: 1px solid #ABA688;
+  margin: 8;
+  font-family: "Quicksand", sans-serif;
+}
+.btn-back-long:hover {
+  background: linear-gradient(#69654A, #69654A);
+  color: white;
+}
+.bold {
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  font-family: "Quicksand", sans-serif;
+}
+.formtitle {
+  display: flex;
+  justify-content: center;
+  font-family: "Quicksand", sans-serif;
+}
+.italic {
+  font-style: italic;
+  font-family: "Quicksand", sans-serif;
+}
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+}
