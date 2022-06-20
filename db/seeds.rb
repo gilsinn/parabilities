@@ -334,7 +334,7 @@ review.save!
 puts 'Creating 10 random restaurants with 1 review each...'
 
 10.times do
-  file = URI.open('https://source.unsplash.com/N_Y88TWmGwA')
+  file = URI.open('https://source.unsplash.com/random/?restaurants')
   restaurant = Facility.new(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
@@ -445,7 +445,7 @@ review.save!
 puts 'Creating 10 random gyms with 1 review each...'
 
 10.times do
-  file = URI.open('https://source.unsplash.com/yDGsn39fbD4')
+  file = URI.open('https://source.unsplash.com/random/?gym')
   gym = Facility.new(
     name: "#{Faker::Games::Pokemon.move} Gym",
     address: Faker::Address.street_address,
@@ -483,7 +483,7 @@ end
 puts 'Creating 10 random parks with 1 review each...'
 
 10.times do
-  file = URI.open('https://source.unsplash.com/n9gMACRzkDw')
+  file = URI.open('https://source.unsplash.com/random/?park')
   park = Facility.new(
     name: "#{Faker::Fantasy::Tolkien.location} Park",
     address: Faker::Address.street_address,
@@ -520,7 +520,7 @@ end
 puts 'Creating 10 random restrooms without review...'
 
 10.times do
-  file = URI.open('https://source.unsplash.com/-HUAUN0jDgQ')
+  file = URI.open('https://source.unsplash.com/random/?restroom')
   restroom = Facility.new(
     name: "#{Faker::Movies::HarryPotter.location} Restroom",
     address: Faker::Address.street_address,
