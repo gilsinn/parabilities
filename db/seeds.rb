@@ -227,7 +227,7 @@ days.each do |day|
     day: day,
     hours: hours.sample
   )
-  openinghour.facility = restaurant1
+  openinghour.facility = restaurant
   openinghour.save!
 end
 
@@ -269,7 +269,7 @@ days.each do |day|
     day: day,
     hours: hours.sample
   )
-  openinghour.facility = restaurant2
+  openinghour.facility = restaurant
   openinghour.save!
 end
 
@@ -354,7 +354,7 @@ puts 'Creating 10 random restaurants with 1 review each...'
       day: day,
       hours: hours.sample
     )
-    openinghour.facility = restaurantz
+    openinghour.facility = restaurant
     openinghour.save!
   end
 
@@ -363,9 +363,9 @@ puts 'Creating 10 random restaurants with 1 review each...'
     datetime: Faker::Time.backward(days: 180, format: :short),
     content: Faker::Restaurant.review,
     user_id: users.sample.id,
-    facility_id: restaurantz.id
+    facility_id: restaurant.id
   )
-  review.facility = restaurantz
+  review.facility = restaurant
   review.save!
 end
 
@@ -393,7 +393,7 @@ gym = Facility.new(
     day: day,
     hours: hours.sample
   )
-  openinghour.facility = gym1
+  openinghour.facility = gym
   openinghour.save!
 end
 
@@ -428,18 +428,18 @@ days.each do |day|
     day: day,
     hours: hours.sample
   )
-  openinghour.facility = gym2
+  openinghour.facility = gym
   openinghour.save!
 end
 
-reviewg2 = Review.new(
+review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: "An inclusive community that welcomes all body types and goals.
   It’s easy to fall in love with fitness here!",
   user_id: 5,
   facility_id: gym.id
 )
-reviewg2.save!
+review.save!
 
 
 puts 'Creating 10 random gyms with 1 review each...'
@@ -465,18 +465,18 @@ puts 'Creating 10 random gyms with 1 review each...'
       day: day,
       hours: hours.sample
     )
-    openinghour.facility = gymz
+    openinghour.facility = gym
     openinghour.save!
   end
 
   users = User.all
-  reviewu = Review.new(
+  review = Review.new(
     datetime: Faker::Time.backward(days: 180, format: :short),
     content: Faker::TvShows::GameOfThrones.quote,
     user_id: users.sample.id,
-    facility_id: gymz.id
+    facility_id: gym.id
   )
-  reviewu.save!
+  review.save!
 end
 
 
