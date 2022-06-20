@@ -23,8 +23,11 @@ class FacilitiesController < ApplicationController
     @review = Review.find_by(facility: @facility)
     @openinghours = @facility.opening_hours
     @comment = Comment.new
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
 
     @markers = @facility.latitude.nil? ? [{ lat: 28.10803865, lng: -15.444108135254993 }] : [{ lat: @facility.geocode[0], lng:@facility.geocode[1] }]
 
@@ -52,6 +55,5 @@ class FacilitiesController < ApplicationController
   def facility_params
     params.require(:facility).permit(:name, :address, :phone, :photo)
   end
-
 
 end
