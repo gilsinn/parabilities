@@ -277,6 +277,7 @@ days.each do |day|
   openinghour.save!
 end
 
+
 file = URI.open('https://source.unsplash.com/random/?beef-burger')
 review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
@@ -296,6 +297,7 @@ review = Review.new(
 )
 review.photo.attach(io: file, filename: 'beefburger2.png', content_type: 'image/png')
 review.save!
+
 
 # ------ Restaurant 3 -----------
 
@@ -347,6 +349,7 @@ puts 'Creating 10 random restaurants with 1 review each...'
 
 10.times do
   file = URI.open('https://source.unsplash.com/random/?restaurant')
+
   restaurant = Facility.new(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
@@ -414,6 +417,7 @@ gym = Facility.new(
   openinghour.save!
 end
 
+
 file = URI.open('https://source.unsplash.com/random/?gym')
 review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
@@ -424,6 +428,7 @@ review = Review.new(
 )
 review.photo.attach(io: file, filename: 'gym.png', content_type: 'image/png')
 review.save!
+
 
 # ------ Gym 2 --------
 
@@ -451,8 +456,10 @@ days.each do |day|
   openinghour.save!
 end
 
+
 file = URI.open('https://source.unsplash.com/random/?gym')
 review = Review.new(
+
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: "An inclusive community that welcomes all body types and goals.
   It’s easy to fall in love with fitness here!",
@@ -461,6 +468,7 @@ review = Review.new(
 )
 review.photo.attach(io: file, filename: 'gym.png', content_type: 'image/png')
 review.save!
+
 
 
 puts 'Creating 10 random gyms with 1 review each...'
@@ -506,7 +514,7 @@ end
 puts 'Creating 10 random parks with 1 review each...'
 
 10.times do
-  file = URI.open('https://source.unsplash.com/n9gMACRzkDw')
+  file = URI.open('https://source.unsplash.com/random/?park')
   park = Facility.new(
     name: "#{Faker::Fantasy::Tolkien.location} Park",
     address: Faker::Address.street_address,
@@ -543,7 +551,7 @@ end
 puts 'Creating 10 random restrooms without review...'
 
 10.times do
-  file = URI.open('https://source.unsplash.com/-HUAUN0jDgQ')
+  file = URI.open('https://source.unsplash.com/random/?restroom')
   restroom = Facility.new(
     name: "#{Faker::Movies::HarryPotter.location} Restroom",
     address: Faker::Address.street_address,

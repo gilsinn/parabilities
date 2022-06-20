@@ -15,23 +15,23 @@
         <%# review count %>
       </div>
 
-      <div class="row d-flex justify-content-center mb-2">
-        <div class="col-3 icon mx-3">
+      <div class="icon-wrapper mb-2">
+        <div class="icon">
           <i class="fa-solid fa-wheelchair-move"></i>
           <h4 class="rating"><%= review.review_ratings[0] ? review.review_ratings[0].rating : "" %></h4>
         </div>
 
-        <div class="col-3 icon mx-3">
+        <div class="icon">
           <i class="fa-solid fa-mug-saucer"></i>
           <h4 class="rating"><%= review.review_ratings[2] ? review.review_ratings[2].rating : ""  %></h4>
         </div>
 
-        <div class="col-3 icon mx-3">
+        <div class="icon">
           <i class="fa-solid fa-clipboard-user"></i>
           <h4 class="rating"><%=  review.review_ratings[1] ? review.review_ratings[1].rating : ""  %></h4>
         </div>
 
-        <div class="col-3 icon mx-3">
+        <div class="icon">
           <i class="fa-solid fa-toilet"></i>
           <h4 class="rating"><%=  review.review_ratings[3] ? review.review_ratings[3].rating : ""  %></h4>
         </div>
@@ -39,14 +39,12 @@
       </div>
 
       <div class="row d-flex image-spacing mb-2">
-        <div class="col-6">
-          <%= cl_image_tag 'o7b693sl20e5206soaw3zwc0pt82', height: "150px", width: "170px" %>
-        </div>
+        <div class="col-12">
+          <%# <%= cl_image_tag 'o7b693sl20e5206soaw3zwc0pt82', height: "150px", width: "170px" %>
 
-        <div class="col-6">
-          <%= cl_image_tag 'davide-cantelli-jpkfc5_d-DI-unsplash_f4abel', height: "150px", width: "100%" %>
+          <%= cl_image_tag(review.photo.key, width: 300, height: 150, crop: :fill) %>
+
         </div>
-      </div>
 
       <div class="row p-1 ms-2 textblue-shadow">
         <span><h5> <%= review.content %></h5></span>
