@@ -19,12 +19,15 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
-    @reviews = Review.where(facility_id: @facility.id)
-    @review = Review.find_by(facility_id: @facility)
+    @reviews = Review.where(facility: @facility)
+    @review = Review.find_by(facility: @facility)
     @openinghours = @facility.opening_hours
     # @comments = Comment.all
     @comment = Comment.new
-    @user = @review.user
+    # @user = @reviews.find_by(params[:id])
+    # @users = @reviews.where(params[:user_id])
+    # @user = current_user
+
 
     @markers = @facility.latitude.nil? ? [{ lat: 28.10803865, lng: -15.444108135254993 }] : [{ lat: @facility.geocode[0], lng:@facility.geocode[1] }]
 

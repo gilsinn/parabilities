@@ -120,6 +120,30 @@ antoine = User.create!(
 antoine.photo.attach(io: file, filename: 'Antoine.png', content_type: 'image/png')
 antoine.save!
 
+file = URI.open('https://source.unsplash.com/random/?person')
+sammy = User.create!(
+  firstname: "Sammy",
+  lastname: "Sun",
+  username: "Sammy",
+  email: "Sammy@abc.com",
+  password: "123456"
+)
+
+sammy.photo.attach(io: file, filename: 'sammy.png', content_type: 'image/png')
+sammy.save!
+
+file = URI.open('https://source.unsplash.com/random/?person')
+hobert = User.create!(
+  firstname: "Hobert",
+  lastname: "Neville",
+  username: "Hobert",
+  email: "Hobert@abc.com",
+  password: "123456"
+)
+
+hobert.photo.attach(io: file, filename: 'Antoine.png', content_type: 'image/png')
+hobert.save!
+
 
 # ---------------------
 # Categories seeds
