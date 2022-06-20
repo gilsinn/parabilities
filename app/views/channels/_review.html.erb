@@ -3,12 +3,12 @@
 <div class="community-review-card">
 
   <div class="d-flex justify-content-between align-items-center mb-1 fw-bold">
-    <h2><%= review.facility.name.capitalize[0..8] %></h2>
+    <h2><%= review.facility.name.capitalize[0..12] %></h2>
     <button class="btn btn-gradient"><h6>New Review</h6></button>
   </div>
 
   <div class="d-flex justify-content-between mt-2">
-   <h6><%= link_to "@#{review.facility.name[0..15]}", facility_path(review.facility)%></h6>
+   <h6><%= link_to "@#{review.facility.name[0..18]}", facility_path(review.facility)%></h6>
 
     <%# Time sent ago %>
     <% timecreated = review.created_at %>
