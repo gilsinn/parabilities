@@ -409,3 +409,24 @@ $card-height-mobile: 12rem;
 h1 {
   font-family: 'Major Mono Display', monospace;
 }
+.btn-back {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  background: linear-gradient(#ABA688, #ABA688);
+  border: 1px solid #ABA688;
+  margin: 8;
+  font-family: "Quicksand", sans-serif;
+}
+.btn-back-long {
+  color: white;
+  padding: 6px 36px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(#ABA688, #ABA688);
+  border: 1px solid #ABA688;
+  margin: 8;
+  font-family: "Quicksand", sans-serif;
+}
