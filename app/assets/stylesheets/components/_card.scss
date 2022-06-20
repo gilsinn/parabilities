@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
+  z-index: -2;
 }
 
 .verified-card {
@@ -24,7 +25,32 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position:center;
+  overflow: hidden;
+  position: relative;
 }
+
+.verified-card-background {
+  background: linear-gradient(transparent, black);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.zindex-10 {
+  z-index: 10;
+}
+
+.zindex-5 {
+  z-index: 5;
+}
+
+.zindex-1 {
+  z-index: -1;
+}
+
 
 .all-card {
   background-color: silver;
