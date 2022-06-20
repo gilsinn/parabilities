@@ -1,6 +1,5 @@
 <div class="community-background">
 
-<% raise %>
    <h1 class="d-flex justify-content-center py-3 community-name"># Our <%= @channel.name %></h1>
 
   <div class="container channel-screen"
@@ -14,8 +13,12 @@
         <% if content.class == Message %>
 
 
+          <% if content.user == current_user %>
+            <%= render "channels/message", message: content%>
+          <% else %>
+            <%= render "channels/message_left", message: content %>
+          <% end %>
 
-          <%= (content.user_id == current_user) ? (render "channels/message", message: content) : (render "channels/message_left", message: content)  %>
 
         <% elsif content.class == Review %>
           <%= render "channels/review", review: content %>
