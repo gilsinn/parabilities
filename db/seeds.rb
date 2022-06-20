@@ -20,50 +20,30 @@ puts 'Database Clean!'
 # ---------------------
 # users seeds
 # ---------------------
-<<<<<<< HEAD
-puts 'Creating 8 fix and 6 random users...'
-
-file = URI.open('https://source.unsplash.com/mEZ3PoFGs_k')
-Ann = User.create!(
-=======
 puts 'Creating 11 fix and 6 random users...'
 
 
 file = URI.open('https://source.unsplash.com/yMSecCHsIBc')
 ann = User.new(
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
   firstname: "Ann",
   lastname: "Baker",
   username: "ann",
   email: "ann@abc.com",
   password: "123456"
 )
-<<<<<<< HEAD
-Ann.photo.attach(io: file, filename: 'Ann.png', content_type: 'image/png')
-Ann.save!
-
-file = URI.open('https://source.unsplash.com/ZHvM3XIOHoE')
-Joe = User.create!(
-=======
 ann.photo.attach(io: file, filename: 'ann.png', content_type: 'image/png')
 ann.save!
 
 file = URI.open('https://source.unsplash.com/E2Yd6K2A3fE')
 joe = User.new(
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
   firstname: "Joe",
   lastname: "Smith",
   username: "joe",
   email: "joe@abc.com",
   password: "123456"
 )
-<<<<<<< HEAD
-Joe.photo.attach(io: file, filename: 'Joe.png', content_type: 'image/png')
-Joe.save!
-=======
 joe.photo.attach(io: file, filename: 'joe.png', content_type: 'image/png')
 joe.save!
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
 
 file = URI.open('https://source.unsplash.com/eU8cJsITNcQ')
 angela = User.new(
@@ -86,10 +66,6 @@ boomz = User.new(
 )
 boomz.photo.attach(io: file, filename: 'boomz.png', content_type: 'image/png')
 boomz.save!
-<<<<<<< HEAD
-
-=======
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
 
 file = URI.open('https://source.unsplash.com/random/?person')
 gino = User.create!(
@@ -243,13 +219,8 @@ restaurant = Facility.new(
   verified_status: true,
   verified_date: Time.now
  )
-<<<<<<< HEAD
-  restaurant.photo.attach(io: file, filename: 'seafood.png', content_type: 'image/png')
-  restaurant.save!
-=======
 restaurant.photo.attach(io: file, filename: 'seafood.png', content_type: 'image/png')
 restaurant.save!
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
 
 days.each do |day|
   openinghour = OpeningHour.new(
@@ -260,12 +231,8 @@ days.each do |day|
   openinghour.save!
 end
 
-<<<<<<< HEAD
 file = URI.open('https://source.unsplash.com/random/?crab')
 review = Review.new(
-=======
-review2 = Review.new(
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: 'Excellent chili crab and very friendly staff service',
   user_id: 6,
@@ -298,11 +265,7 @@ restaurant = Facility.new(
   verified_status: true,
   verified_date: Time.now
 )
-<<<<<<< HEAD
 restaurant.photo.attach(io: file, filename: 'beefburger1.png', content_type: 'image/png')
-=======
-restaurant.photo.attach(io: file, filename: 'burger.png', content_type: 'image/png')
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
 restaurant.save!
 
 days.each do |day|
