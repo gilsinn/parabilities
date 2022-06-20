@@ -383,11 +383,7 @@ review.save!
 puts 'Creating 10 random restaurants with 1 review each...'
 
 10.times do
-<<<<<<< HEAD
   file = URI.open('https://source.unsplash.com/random/?restaurant')
-=======
-  file = URI.open('https://source.unsplash.com/N_Y88TWmGwA')
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
   restaurant = Facility.new(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
@@ -399,13 +395,8 @@ puts 'Creating 10 random restaurants with 1 review each...'
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
    )
-<<<<<<< HEAD
  restaurant.photo.attach(io: file, filename: 'restaurant.png', content_type: 'image/png')
  restaurant.save!
-=======
-   restaurant.photo.attach(io: file, filename: 'food.png', content_type: 'image/png')
-   restaurant.save!
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
 
   days.each do |day|
     openinghour = OpeningHour.new(
@@ -425,10 +416,7 @@ puts 'Creating 10 random restaurants with 1 review each...'
     facility_id: restaurant.id
   )
   review.facility = restaurant
-<<<<<<< HEAD
   review.photo.attach(io: file, filename: 'restaurant.png', content_type: 'image/png')
-=======
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
   review.save!
 
 
@@ -454,16 +442,6 @@ gym = Facility.new(
   gym.photo.attach(io: file, filename: 'guygym.png', content_type: 'image/png')
   gym.save!
 
-<<<<<<< HEAD
-  days.each do |day|
-    openinghour = OpeningHour.new(
-      day: day,
-      hours: hours.sample
-    )
-    openinghour.facility = gym1
-    openinghour.save!
-  end
-=======
  days.each do |day|
   openinghour = OpeningHour.new(
     day: day,
@@ -472,7 +450,6 @@ gym = Facility.new(
   openinghour.facility = gym
   openinghour.save!
 end
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
 
 file = URI.open('https://source.unsplash.com/random/?gym')
 review = Review.new(
@@ -499,13 +476,8 @@ gym = Facility.new(
   verified_status: true,
   verified_date: Time.now
   )
-<<<<<<< HEAD
-gym.photo.attach(io: file, filename: 'galgym.png', content_type: 'image/png')
-gym.save!
-=======
   gym.photo.attach(io: file, filename: 'galgym.png', content_type: 'image/png')
   gym.save!
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
 
 days.each do |day|
   openinghour = OpeningHour.new(
@@ -516,35 +488,22 @@ days.each do |day|
   openinghour.save!
 end
 
-<<<<<<< HEAD
 file = URI.open('https://source.unsplash.com/random/?gym')
-=======
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
 review = Review.new(
   datetime: Faker::Time.backward(days: 180, format: :short),
   content: "An inclusive community that welcomes all body types and goals.
   It’s easy to fall in love with fitness here!",
-<<<<<<< HEAD
   user_id: 3,
   facility_id: gym.id
 )
 review.photo.attach(io: file, filename: 'gym.png', content_type: 'image/png')
-=======
-  user_id: 5,
-  facility_id: gym.id
-)
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
 review.save!
 
 
 puts 'Creating 10 random gyms with 1 review each...'
 
 10.times do
-<<<<<<< HEAD
   file = URI.open('https://source.unsplash.com/random/?gym')
-=======
-  file = URI.open('https://source.unsplash.com/yDGsn39fbD4')
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
   gym = Facility.new(
     name: "#{Faker::Games::Pokemon.move} Gym",
     address: Faker::Address.street_address,
@@ -556,13 +515,8 @@ puts 'Creating 10 random gyms with 1 review each...'
     verified_status: [true, false].sample,
     verified_date: Faker::Date.backward(days: 1000)
     )
-<<<<<<< HEAD
   gym.photo.attach(io: file, filename: 'gym.png', content_type: 'image/png')
   gym.save!
-=======
-    gym.photo.attach(io: file, filename: 'gym.png', content_type: 'image/png')
-    gym.save!
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
 
   days.each do |day|
     openinghour = OpeningHour.new(
@@ -574,20 +528,14 @@ puts 'Creating 10 random gyms with 1 review each...'
   end
 
   users = User.all
-<<<<<<< HEAD
   file = URI.open('https://source.unsplash.com/random/?gym')
-=======
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
   review = Review.new(
     datetime: Faker::Time.backward(days: 180, format: :short),
     content: Faker::TvShows::GameOfThrones.quote,
     user_id: users.sample.id,
     facility_id: gym.id
   )
-<<<<<<< HEAD
   review.photo.attach(io: file, filename: 'gym.png', content_type: 'image/png')
-=======
->>>>>>> 24de16992fca50f13b0327a5d8db4b938ccf51c4
   review.save!
 end
 
