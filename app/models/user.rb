@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :facilities, through: :reviews
+  has_one_attached :photo
 end

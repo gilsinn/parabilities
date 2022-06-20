@@ -1,4 +1,7 @@
-<img src="https://source.unsplash.com/random/?restaurants" alt="restaurants" width="100%" height="250px" object-fit="cover">
+<%# <img src="https://source.unsplash.com/random/?restaurants" alt="restaurants" width="100%" height="250px" object-fit="cover"> %>
+<%# <% @restaurants.each do |restaurant| %>
+  <%# <%= cl_image_tag restaurant.photo.key, height: 250, width: 400, crop: :fill %>
+<%# <% end %>
 
 <div class="d-flex justify-content-start search-position">
   <%= form_tag search_facilities_path, method: :get do %>
