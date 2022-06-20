@@ -16,6 +16,16 @@
   margin-bottom: 50px;
 }
 
+.icon-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .icon {
+    margin: auto;
+  }
+}
+
 .verified-card {
   color: black;
   padding: 16px;
@@ -146,7 +156,7 @@
 
 // comment-review-card
 .comment-review-card {
-  margin-bottom: 16px;
+  margin: 0px 0px 16px 0px;
   .description {
     background-color: #f4f4f4;
     border-radius: 16px;
@@ -408,4 +418,62 @@ $card-height-mobile: 12rem;
 
 h1 {
   font-family: 'Major Mono Display', monospace;
+}
+.btn-back {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  background: linear-gradient(#ABA688, #ABA688);
+  border: 1px solid #ABA688;
+  margin: 8;
+  font-family: "Quicksand", sans-serif;
+}
+.btn-back-long {
+  color: white;
+  padding: 6px 36px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(#ABA688, #ABA688);
+  border: 1px solid #ABA688;
+  margin: 8;
+  font-family: "Quicksand", sans-serif;
+}
+.formname {
+  display: flex;
+  justify-content: center;
+}
+.btn-back-long {
+  color: white;
+  padding: 6px 36px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(#ABA688, #ABA688);
+  border: 1px solid #ABA688;
+  margin: 8;
+  font-family: "Quicksand", sans-serif;
+}
+.btn-back-long:hover {
+  background: linear-gradient(#69654A, #69654A);
+  color: white;
+}
+.bold {
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  font-family: "Quicksand", sans-serif;
+}
+.formtitle {
+  display: flex;
+  justify-content: center;
+  font-family: "Quicksand", sans-serif;
+}
+.italic {
+  font-style: italic;
+  font-family: "Quicksand", sans-serif;
+}
+.quicksand {
+  font-family: "Quicksand", sans-serif;
 }
