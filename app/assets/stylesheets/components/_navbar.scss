@@ -5,7 +5,10 @@
   background-color: #4a4e69;
   overflow: auto;
   height: auto;
-  z-index: 1;
+}
+
+.navbar {
+  z-index: 10;
 }
 
 .navbar-lewagon .navbar-collapse {
