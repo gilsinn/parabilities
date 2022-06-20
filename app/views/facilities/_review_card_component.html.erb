@@ -42,8 +42,11 @@
         <div class="col-12">
           <%# <%= cl_image_tag 'o7b693sl20e5206soaw3zwc0pt82', height: "150px", width: "170px" %>
 
-          <%= cl_image_tag(review.photo.key, width: 300, height: 150, crop: :fill) %>
-
+          <% if review.photo.attached? %>
+            <%= cl_image_tag(review.photo.key, width: 300, height: 150, crop: :fill) %>
+          <% else %>
+            <%= image_tag('placeholder.png', width: 300, height: 150) %>
+          <% end %>
         </div>
 
       <div class="row p-1 ms-2 textblue-shadow">
